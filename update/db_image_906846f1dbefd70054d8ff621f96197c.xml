@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>Service Portal</category>
+        <format>png</format>
+        <height>13</height>
+        <image/>
+        <name>bg_footer_nav.png</name>
+        <size_bytes>126</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-27 18:30:19</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>906846f1dbefd70054d8ff621f96197c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>bg_footer_nav.png</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>db_image_906846f1dbefd70054d8ff621f96197c</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-07-27 18:31:27</sys_updated_on>
+        <thumbnail/>
+        <width>3</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#535349</average_image_color>
+        <chunk_size_bytes>734003</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>image</file_name>
+        <image_height>13</image_height>
+        <image_width>3</image_width>
+        <size_bytes>126</size_bytes>
+        <size_compressed>139</size_compressed>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-27 18:30:33</sys_created_on>
+        <sys_id>7488c235dbefd70054d8ff621f9619f5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-07-27 18:30:33</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>906846f1dbefd70054d8ff621f96197c</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="7488c235dbefd70054d8ff621f9619f5">7488c235dbefd70054d8ff621f9619f5</sys_attachment>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-27 18:30:33</sys_created_on>
+        <sys_id>b488c235dbefd70054d8ff621f9619f5</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>6wzwc+flkuJiYGDg9fRwCQLSzCA2BxuQzFG6ch5ISZa4RpQE56eVlCcWpTI4puQnpSp45iampwalJqZUFp5MtQEqUvB0cQypuJWU4MB+8GAcm8IszlPv3Z8ZXOgsZjwcycDIxsB5hGmKe6mHEFAtg6ern8s6p4QmAL57dKl+AAAA</data>
+        <length>172</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="7488c235dbefd70054d8ff621f9619f5">7488c235dbefd70054d8ff621f9619f5</sys_attachment>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-27 18:30:33</sys_created_on>
+        <sys_id>3888c235dbefd70054d8ff621f9619f5</sys_id>
+    </sys_attachment_doc>
+</record_update>

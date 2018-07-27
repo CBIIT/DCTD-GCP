@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="GCP Tasks" language="en" table="x_naci_gcp_gcp_tasks">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>GCP Tasks</label>
+            <language>en</language>
+            <name>x_naci_gcp_gcp_tasks</name>
+            <plural>GCP Tasks</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2018-07-27 14:46:31</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>4f351d31db275b00b86770c08c961967</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>GCP Tasks</sys_name>
+            <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+            <sys_update_name>sys_documentation_x_naci_gcp_gcp_tasks__en</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-07-27 14:46:31</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <homepage display_value="gcp_home_page">cfb311fddbe35b00b86770c08c9619f9</homepage>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page display_value="nci_landing">d656f227dba25f00f59974131f961902</login_page>
+        <logo/>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sqanda_knowledge_base/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-27 14:36:29</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e1c2957ddbe35b00b86770c08c9619cb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>DCTD GCP</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_portal_e1c2957ddbe35b00b86770c08c9619cb</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-07-27 14:49:22</sys_updated_on>
+        <theme display_value="GCP theme">54c51131db275b00b86770c08c96193b</theme>
+        <title>DCTD GCP</title>
+        <url_suffix>gcp</url_suffix>
+    </sp_portal>
+</record_update>
