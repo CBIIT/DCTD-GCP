@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="GCP Tasks" max_length="40" name="x_naci_gcp_gcp_tasks" type="collection"/>
+    <element extends="task" label="GCP Tasks" max_length="40" name="x_naci_gcp_gcp_tasks" sizeclass="2" type="collection">
+        <element label="Apply For" max_length="255" name="apply_for" type="string"/>
+        <element label="Approval Action" max_length="255" name="approval_action" type="string"/>
+        <element label="Certificate Completion Date" max_length="255" name="certificate_completion_date" type="string"/>
+        <element label="Certificate Name" max_length="255" name="certificate_name" type="string"/>
+        <element label="Certificate Renew Date" max_length="255" name="certificate_renew_date" type="string"/>
+        <element label="Certificate Type" max_length="255" name="certificate_type" type="string"/>
+        <element label="Comment" max_length="1000" name="comment" type="string"/>
+        <element label="Employee Name" max_length="255" name="employee_name" type="string"/>
+        <element label="Employ ID" max_length="100" name="employ_id" type="string"/>
+        <element label="Manager" max_length="255" name="manager" type="string"/>
+        <element label="Manager ID" max_length="100" name="manager_id" type="string"/>
+        <element label="Ned ID" max_length="255" name="ned_id" type="string"/>
+        <element label="Organization" max_length="255" name="organization" type="string"/>
+        <element label="Research Funded By" max_length="255" name="research_funded_by" type="string"/>
+        <element label="Stage" max_length="255" name="stage" type="string"/>
+    </element>
 </database>

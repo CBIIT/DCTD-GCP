@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($location,$scope, $http) {
+  /* widget controller */
+  var c = this;
+	var s = $location.search();
+	
+	$("#user_name_tmp").autocomplete({
+		delay: 300,
+		source: function(request, response) {
+			$('.ui-autocomplete').css('display', 'block');
+			var term = $('#user_name_tmp').val();
+			console.log(term);
+			response([]);
+			if (term.length < 4) {
+				return;
+			}
+			var temp = '';
+			if (term.indexOf(',') >= 0) {
+				temp = term.split(',');
+				var length = temp.length;
+				if (length > 1) {
+					term = temp[1].trim() + " " + temp[0].trim();
+				} else {
+					term = temp[0];
+				}
+			}
+			var req = {
+				method: 'GET',
+				url: '/api/x_naci_gcp/gcprestapi/fetchUsers',
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader('X-UserToken', sessionId);
+				},
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				params: {
+					'term': term
+				}
+			};
+			$http(req).then(handleResponse, handleError);
+
+			function handleResponse(responseData) {
+				var result = responseData.data.result;
+				response(result);
+			}
+
+			function handleError(response) {
+				console.error(response);
+				alert('ERROR');
+			}
+		},
+		autoFocus: true,
+		select: function(event, ui) {
+			resetPermissionForm();
+			var title = ui.item.title;
+			alert(title);
+			$scope.$apply();
+		}
+	});
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>gcp-training</id>
+        <internal>false</internal>
+        <link/>
+        <name>gcp training</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var userName = gs.getUserDisplayName();
+	var userId = gs.getUserID();
+	
+	var user_item = new GlideRecord('sys_user');
+	user_item.addQuery('sys_id', userId);
+	user_item.query();
+	user_item.next();
+	var empType = user_item.getDisplayValue('u_employee_classification');
+	var doc = user_item.getDisplayValue('u_long_org_division');
+	
+	var	manager = user_item.getDisplayValue('manager');
+
+	data.info = {
+		name: userName,
+		id: userId,
+		empType: empType,
+		manager: manager,
+		doc: doc
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-30 18:00:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>gcp training</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-07-31 18:55:52</sys_updated_on>
+        <template><![CDATA[<div class="main-box">
+  <div class="form-content">
+    <div class="form-description col-sm-7">
+      <p>
+        <label class="label-section">NCI Staff:</label> To upload your "single" pdf file of your GCP certificate(s) select "UPLOAD". It will be necessary for you to complete the required data fields as requested.  You MUST follow the "naming convention"  of [ Last Name_First Name_Org Providing Training_GCP_MMDDYYY (training started) ] .  Please refer to the <a class="link-text" href="https://nciconnect.nci.nih.gov/sites/Collaboration/gcp/Shared%20Documents/Uploading%20your%20GCP%20document(s)%20-%20Quick%20Reference%20Guide.pdf" target="_blank">Uploading Your GCP Certificate(s) Quick Reference Guide</a> for more information.
+      </p>
+      <p>
+        <label class="label-section">My Completed Trainings:</label> The most recent GCP completion certifcate(s) uploaded will be shown in this section.  If any of the information is incorrect or there is no information available (and you have completed your training), please contact the appropriate staff member.
+      </p>
+      <p>
+        <label class="label-section">My Employees' Completed Training:</label> If you are a Supervisor, all of your employees' GCP certificates as well as the required renewal dates will appear in this area.  If an employee is not listed, then their documentation of training has not been uploaded (or is linked to another supervisor).  If that is the case, please contact the appropriate staff memeber.
+      </p>
+    </div>
+    <div class="form-box col-sm-5">
+      <div class="form-title">
+        Upload your certificate
+      </div>
+      <div class="form-section">
+        <div class="section-half">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Name</label>
+          <input type="text" value="{{c.data.info.name}}" id="user_name_tmp" name="user_name" class="form-control">
+        </div>
+        <div class="section-half">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor</label>
+        	<input type="text" value="{{c.data.info.manager}}" id="user_name" name="user_name" class="form-control">
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="section-half">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Division/Office/Center</label>
+        <input type="text" value="{{c.data.info.doc}}" id="user_name" name="user_name" class="form-control">
+        </div>
+        <div class="section-half">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Training Type</label>
+        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="section-half">
+         	<label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
+        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+        </div>
+        <div class="section-half">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Funded By</label>
+        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+        </div>
+      </div>
+      <div class="form-section">
+        <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificates</label>
+        <input type="text" value="{{c.data.info.empType}}" id="user_name" name="user_name" class="form-control">
+      </div>
+      <div class="form-section">
+        <button type="button" class="btn btn-primary" ng-model="uploadTraining">
+          <i class="fa fa-upload" aria-hidden="true"></i> Upload
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="result-section">
+		<uib-tabset>
+      <uib-tab index="0" heading="My GCP Trainings"><widget id="gcp-my-trainings"></widget></uib-tab>
+      <uib-tab index="1" heading="My Employees' GCP Trainings"><widget id="gcp-employee-trainings"></widget></uib-tab>
+    </uib-tabset>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

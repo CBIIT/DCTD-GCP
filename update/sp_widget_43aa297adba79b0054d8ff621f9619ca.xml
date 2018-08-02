@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($location) {
+  /* widget controller */
+  var c = this;
+	var s = $location.search();
+	var sessionId = c.data.info.sessionId;
+	var userId = c.data.info.userId;
+		$('#download-file').hide();
+	function readFile(file, callback) {
+		var fileReader = new FileReader();
+		fileReader.onload = function() {
+			var result = fileReader.result.replace('data:application/pdf;base64,', '');
+			callback(result);
+		}
+		fileReader.readAsDataURL(file); //file must be base64
+	}
+	
+	$('#upload-file').click(function(e) {
+		var input = $('#file-input')[0];
+		if (!input.files || input.files.length === 0) return;
+		var file = input.files[0];
+		
+		readFile(file, function(base64) {
+			
+			var data = {
+				fileName: file.name,
+				fileContents: base64
+			};
+			
+			$.post({
+				url: '/api/x_naci_gcp/gcprestapi/uploadCertificate',
+				beforeSend: function(xhr) {xhr.setRequestHeader('X-UserToken', sessionId)},
+				headers: { 'Content-Type': 'application/json' },
+				data: JSON.stringify(data),
+				processData: false
+			}).done(function(response) {
+				console.log(response);
+				$('#download-file').show();
+				$('#download-file').attr('href', 'sys_attachment.do?sys_id=' + response.result);
+			}).fail(function(error) {
+				console.log('error', error)
+			})
+		})
+		
+		
+		/*
+		console.log(file, formData);
+		*/
+		
+		
+		
+		
+	})
+	
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>gcp-report</id>
+        <internal>false</internal>
+        <link/>
+        <name>gcp report</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var sessionId = gs.getSession().getSessionToken();
+	var userId = gs.getUserID();
+	
+  data.info = {
+		sessionId: sessionId,
+		userId : userId
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-30 18:54:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
+        <sys_mod_count>36</sys_mod_count>
+        <sys_name>gcp report</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-02 21:36:16</sys_updated_on>
+        <template><![CDATA[<div class="report-box">
+  
+	<div class="filter-section">
+    <input type="file" id="file-input">
+    
+    <button class="btn btn-primary" id="upload-file" >
+			Upload      
+    </button>
+    
+    <a href="#" id="download-file" target="_blank">Download File</a>
+  </div>
+  <div class="result-section">     
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

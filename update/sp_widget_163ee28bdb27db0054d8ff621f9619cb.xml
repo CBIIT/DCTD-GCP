@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$filter, spUtil,GCPConstants) {
+  /* widget controller */
+  var c = this;
+
+  c.data.maxSize = 5;
+	c.data.pageSize = 10;
+	c.data.bigTotalItems = c.data.trainings.length;
+  c.data.bigCurrentPage = 1;
+	var resultList = [];
+	
+	for(var i = 0; i< c.data.pageSize; i++){
+		if(i >= c.data.bigTotalItems) break;
+		resultList.push(c.data.trainings[i]);
+	}
+	c.data.rlist = resultList;
+	
+	c.pageChanged = function() {
+    resultList = [];
+		var start = (c.data.bigCurrentPage-1) * c.data.pageSize;
+		for(var i = 0; i< c.data.pageSize; i++){
+			if(i + start >= c.data.bigTotalItems) break;
+			resultList.push(c.data.trainings[i+start]);
+		}
+		c.data.rlist = resultList;
+  };
+	
+	c.handleKeyPress = function(keyEvent){
+		if (keyEvent.which === 13){
+			c.filterTraining();
+		}
+	}
+	
+	c.searchTextChange = function(){
+		if(c.data.searchText.length > 3){
+			c.filterTraining();
+		}
+	}
+	
+	c.filterTraining = function(){
+		var tmp = $filter('filter')(c.data.trainings, c.data.searchText);
+		resultList = [];
+		for(var i = 0; i< c.data.pageSize; i++){
+			if(i >= tmp.length) break;
+			resultList.push(tmp[i]);
+		}
+		c.data.rlist = resultList;
+	}
+	
+	c.showHistory = function(){
+		console.log("show pop-up with history record.");
+	}
+	
+	spUtil.recordWatch($scope, "x_naci_gcp_gcp_tasks", "", function(name, data) {  
+			spUtil.update($scope);
+	});
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>gcp-employee-trainings</id>
+        <internal>false</internal>
+        <link/>
+        <name>gcp employee trainings</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.trainings = [];
+	
+	var userId = gs.getUserID();
+	var task_item = new GlideRecord('x_naci_gcp_gcp_tasks');
+	    task_item.addQuery('manager_id', userId);
+			task_item.orderBy('certificate_completion_date');
+	task_item.query();
+	while(task_item.next()){
+		var item = {};
+		item.name = task_item.getDisplayValue('certificate_name');
+		item.type = task_item.getDisplayValue('certificate_type');
+		item.employee = task_item.getDisplayValue('employee_name');
+		item.c_date = task_item.getDisplayValue('certificate_completion_date');
+		item.rr_date = task_item.getDisplayValue('certificate_renew_date');
+		item.supervisor = task_item.getDisplayValue('manager');
+		item.doc = task_item.getDisplayValue('organization');
+		item.comment = task_item.getDisplayValue('comment');
+		item.status = task_item.getDisplayValue('stage');
+		//var  user_item = new GlideRecord('sys_user');
+		//     user_item.addQuery('sys_id', userId);
+		//user_item.query();
+		//user_item.next();
+		//item.doc = user_item.getDisplayValue('u_long_org_division');
+		data.trainings.push(item);
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-07-31 18:27:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>163ee28bdb27db0054d8ff621f9619cb</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>gcp employee trainings</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_widget_163ee28bdb27db0054d8ff621f9619cb</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-02 21:22:37</sys_updated_on>
+        <template><![CDATA[<div class="tab-box">
+	<div class="tab-search-section">
+    	<div class="tab-button-bar">
+        <button type="button" class="btn btn-primary" ng-model="sendTrainingRequest" role="button" aria-invalid="false" style=""> <i class="fa fa-plus" aria-hidden="true"></i> Training Request </button>
+      </div>
+    	<span class="tab-search-button" ng-click="c.filterTraining()"><i class="fa fa-search" aria-hidden="true"></i></span>	
+    	<div class="tab-search-input">
+        <label for="employee_training_search" class="label-hidden">Search:</label>
+      	<input type="text"  ng-model="c.data.searchText" ng-keypress="c.handleKeyPress($event)" ng-change="c.searchTextChange()" id="employee_training_search" name="employee_training_search" class="form-control">
+      </div>
+  </div>
+  <div class="tab-table-section">
+    <table>
+      <tr class="table-header">
+        <th>Name</th>
+        <th>Training Type</th>
+        <th>Employee Name</th>
+        <th>Completion Date</th>
+        <th>Required Renewal Date</th>
+        <th>Supervisor Name</th>
+        <th>Organization</th>
+        <th>Status</th>
+        <th>Comment</th>
+        <th>Action</th>
+      </tr>
+      <tr class="table-row" ng-repeat="x in c.data.rlist">
+        <td>{{x.name}}</td>
+        <td>{{x.type}}</td>
+        <td>{{x.employee}}</td>
+        <td>{{x.c_date}}</td>
+        <td>{{x.rr_date}}</td>
+        <td>{{x.supervisor}}</td>
+        <td>{{x.doc}}</td>
+        <td>{{x.status}}</td>
+        <td>{{x.comment}}</td>
+        <td>
+          <button type="button" class="table-button" ng-click="c.accept()">
+            Accept
+          </button>
+          <button type="button" class="table-button" ng-click="c.reject()">
+            Reject
+          </button>
+          <button type="button" class="table-button" ng-click="c.showHistory()">
+            History
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-paging-section">
+    <ul ng-if="(c.data.bigTotalItems / c.data.pageSize) > 1"  uib-pagination total-items="c.data.bigTotalItems" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
+    </ul>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
