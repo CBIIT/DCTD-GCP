@@ -3,13 +3,33 @@
     <sp_angular_provider action="INSERT_OR_UPDATE">
         <name>GCPConstants</name>
         <script><![CDATA[function GCPConstants(){
+	this.role = "supervisor";
+	this.reject = "rejected";
+	this.approve = "approved";
 	this.allItems =[
 					{label: 'A grant or cooperative agreement', value: 'grant'},
 					{label: 'A contract', value: 'contract'},
-					{Label: 'Both', value: 'both'}
+					{label: 'Both', value: 'both'}
 				   ];
+	this.errorMessage = ['The certificate has been uploaded successfully.',
+												'Fail to upload the certificate, the certificate completed date cannot be earlier than your previous uploaded certificate.',
+											 'Fail to upload the certificate, your previous uploaded certificate is in Pending Acceptance.',
+											 'Unknown server error, please contact GCP application administrator.'
+											];
 	this.getAllItems = function(){
 			return this.allItems;
+	};
+	this.getErrorMessage = function(index){
+		return this.errorMessage[index];
+	};
+	this.getRole = function(){
+		return this.role;
+	};
+	this.getApprove = function(){
+		return this.approve;
+	};
+	this.getReject = function(){
+		return this.reject;
 	};
 }]]></script>
         <sys_class_name>sp_angular_provider</sys_class_name>
@@ -17,15 +37,15 @@
         <sys_created_on>2018-08-01 22:27:35</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bd8ee8a7dbab5f00b86770c08c961949</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>GCPConstants</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_angular_provider_bd8ee8a7dbab5f00b86770c08c961949</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-02 13:58:46</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-09 21:43:11</sys_updated_on>
         <type>service</type>
     </sp_angular_provider>
 </record_update>

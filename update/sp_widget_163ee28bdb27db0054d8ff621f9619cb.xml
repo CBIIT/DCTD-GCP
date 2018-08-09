@@ -2,32 +2,20 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope,$filter, spUtil,GCPConstants) {
+        <client_script><![CDATA[function($scope,$filter, spUtil,GCPConstants,GCPApprovalProcess) {
   /* widget controller */
   var c = this;
 
   c.data.maxSize = 5;
 	c.data.pageSize = 10;
-	c.data.bigTotalItems = c.data.trainings.length;
   c.data.bigCurrentPage = 1;
-	var resultList = [];
 	
-	for(var i = 0; i< c.data.pageSize; i++){
-		if(i >= c.data.bigTotalItems) break;
-		resultList.push(c.data.trainings[i]);
-	}
-	c.data.rlist = resultList;
+	c.data.filtered = {};
 	
 	c.pageChanged = function() {
-    resultList = [];
-		var start = (c.data.bigCurrentPage-1) * c.data.pageSize;
-		for(var i = 0; i< c.data.pageSize; i++){
-			if(i + start >= c.data.bigTotalItems) break;
-			resultList.push(c.data.trainings[i+start]);
-		}
-		c.data.rlist = resultList;
+    
   };
-	
+
 	c.handleKeyPress = function(keyEvent){
 		if (keyEvent.which === 13){
 			c.filterTraining();
@@ -41,17 +29,41 @@
 	}
 	
 	c.filterTraining = function(){
-		var tmp = $filter('filter')(c.data.trainings, c.data.searchText);
-		resultList = [];
-		for(var i = 0; i< c.data.pageSize; i++){
-			if(i >= tmp.length) break;
-			resultList.push(tmp[i]);
-		}
-		c.data.rlist = resultList;
+	}
+	
+	c.showAcceptConfirm = function(sys_id){
+		c.data.currentSysId = sys_id;
+		$('#confirmDiv').modal('show');
+	}
+	
+	c.acceptTraining = function(){
+		var dt = {};
+		dt.sysId = c.data.currentSysId;
+		dt.comment = "";
+		dt.role = GCPConstants.getRole();
+		dt.action = GCPConstants.getApprove();
+		dt.sessionId = c.data.sessionId;
+		GCPApprovalProcess.processApproval(dt.sysId,dt.comment,dt.role,dt.action,dt.sessionId).then(function(res){
+			$('#confirmDiv').modal('hide');
+		},function(error){
+			console.log(error);
+		});
+	}
+	
+	c.cancelAccept = function(){
+		$('#confirmDiv').modal('hide');
+	}
+	
+	c.showRejectConfirm = function(sys_id){
+		window.displayRejectDialog(sys_id);
 	}
 	
 	c.showHistory = function(){
 		console.log("show pop-up with history record.");
+	}
+	
+	c.showTrainingRequest = function(){
+		window.displayTrainingRequest();
 	}
 	
 	spUtil.recordWatch($scope, "x_naci_gcp_gcp_tasks", "", function(name, data) {  
@@ -78,14 +90,16 @@
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 	data.trainings = [];
-	
+	data.sessionId = gs.getSession().getSessionToken();
 	var userId = gs.getUserID();
 	var task_item = new GlideRecord('x_naci_gcp_gcp_tasks');
 	    task_item.addQuery('manager_id', userId);
-			task_item.orderBy('certificate_completion_date');
+			task_item.addQuery('active',true);
+			task_item.orderByDesc('certificate_completion_date');
 	task_item.query();
 	while(task_item.next()){
 		var item = {};
+		item.sys_id = task_item.getDisplayValue('sys_id');
 		item.name = task_item.getDisplayValue('certificate_name');
 		item.type = task_item.getDisplayValue('certificate_type');
 		item.employee = task_item.getDisplayValue('employee_name');
@@ -95,11 +109,17 @@
 		item.doc = task_item.getDisplayValue('organization');
 		item.comment = task_item.getDisplayValue('comment');
 		item.status = task_item.getDisplayValue('stage');
-		//var  user_item = new GlideRecord('sys_user');
-		//     user_item.addQuery('sys_id', userId);
-		//user_item.query();
-		//user_item.next();
-		//item.doc = user_item.getDisplayValue('u_long_org_division');
+		var attachment =  new GlideRecord('sys_attachment');
+		attachment.addQuery('table_sys_id',task_item.sys_id);
+		attachment.query();
+		attachment.next();
+		try {
+				item.attachment_id = attachment.sys_id.toString();
+		}
+		catch(err) {
+			console.log(err);
+		}
+		
 		data.trainings.push(item);
 	}
 })();]]></script>
@@ -109,7 +129,7 @@
         <sys_created_on>2018-07-31 18:27:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>163ee28bdb27db0054d8ff621f9619cb</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>gcp employee trainings</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -117,16 +137,16 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_163ee28bdb27db0054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-02 21:22:37</sys_updated_on>
+        <sys_updated_on>2018-08-09 21:53:53</sys_updated_on>
         <template><![CDATA[<div class="tab-box">
 	<div class="tab-search-section">
     	<div class="tab-button-bar">
-        <button type="button" class="btn btn-primary" ng-model="sendTrainingRequest" role="button" aria-invalid="false" style=""> <i class="fa fa-plus" aria-hidden="true"></i> Training Request </button>
+        <button type="button" class="btn btn-primary" ng-click="c.showTrainingRequest()" ng-model="sendTrainingRequest" role="button" aria-invalid="false" style=""> <i class="fa fa-plus" aria-hidden="true"></i> Training Request </button>
       </div>
     	<span class="tab-search-button" ng-click="c.filterTraining()"><i class="fa fa-search" aria-hidden="true"></i></span>	
     	<div class="tab-search-input">
         <label for="employee_training_search" class="label-hidden">Search:</label>
-      	<input type="text"  ng-model="c.data.searchText" ng-keypress="c.handleKeyPress($event)" ng-change="c.searchTextChange()" id="employee_training_search" name="employee_training_search" class="form-control">
+      	<input type="text"  ng-model="c.data.searchText" placeholder="Find a file"  ng-keypress="c.handleKeyPress($event)" ng-change="c.searchTextChange()" id="employee_training_search" name="employee_training_search" class="form-control">
       </div>
   </div>
   <div class="tab-table-section">
@@ -143,24 +163,24 @@
         <th>Comment</th>
         <th>Action</th>
       </tr>
-      <tr class="table-row" ng-repeat="x in c.data.rlist">
-        <td>{{x.name}}</td>
+      <tr class="table-row" ng-repeat="x in c.data.filtered = (c.data.trainings | filter:c.data.searchText)" ng-show="$index >= (c.data.bigCurrentPage -1) * c.data.pageSize && $index < c.data.bigCurrentPage * c.data.pageSize">
+        <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.name}}</a></td>
         <td>{{x.type}}</td>
         <td>{{x.employee}}</td>
         <td>{{x.c_date}}</td>
         <td>{{x.rr_date}}</td>
         <td>{{x.supervisor}}</td>
         <td>{{x.doc}}</td>
-        <td>{{x.status}}</td>
+        <td><span ng-class="x.status == 'Pending Acceptance' ? 'status-pending' : (x.status == 'Accepted' ? 'status-accepted' : 'status-rejected')">{{x.status}}</span></td>
         <td>{{x.comment}}</td>
         <td>
-          <button type="button" class="table-button" ng-click="c.accept()">
+          <button ng-show="x.status == 'Pending Acceptance'"  type="button" class="table-button" ng-click="c.showAcceptConfirm(x.sys_id)">
             Accept
           </button>
-          <button type="button" class="table-button" ng-click="c.reject()">
+          <button ng-show="x.status == 'Pending Acceptance'" type="button" class="table-button" ng-click="c.showRejectConfirm(x.sys_id)">
             Reject
           </button>
-          <button type="button" class="table-button" ng-click="c.showHistory()">
+          <button type="button" class="table-button" ng-click="c.showHistory(x.sys_id)">
             History
           </button>
         </td>
@@ -168,9 +188,25 @@
     </table>
   </div>
   <div class="tab-paging-section">
-    <ul ng-if="(c.data.bigTotalItems / c.data.pageSize) > 1"  uib-pagination total-items="c.data.bigTotalItems" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
+    <ul ng-if="(c.data.filtered.length / c.data.pageSize) > 1"  uib-pagination total-items="c.data.filtered.length" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
     </ul>
   </div>
+</div>
+<div id="confirmDiv" class="modal fade" data-keyborad="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg" style="width:20%;">
+        <div class="modal-content" style="height:200px; overflow-y:auto; overflow-x: hidden;">
+            <div class="modal-header">
+                Accept Confirm
+            </div>
+            <div class="col-md-12 message-box" align="center">
+              Are you sure you want to accept this training?
+          	</div>
+            <div class="col-md-12" align="center">
+              <button class="btn btn-primary" ng-click="c.acceptTraining();" data-dismiss="modal">Accept</button>
+              <button class="btn btn-primary" ng-click="c.cancelAccept();" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
 </div>]]></template>
     </sp_widget>
 </record_update>

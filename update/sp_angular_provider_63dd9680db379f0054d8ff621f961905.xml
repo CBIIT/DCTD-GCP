@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>GCPUploadCertificate</name>
+        <script><![CDATA[function GCPUploadCertificate($http){
+	this.uploadCertificate = function(params, sessionId){
+		/** params contain all GUI  input data and file contents with Base64 format.
+			params format is shown as below
+			params = {
+				employeeName : x1,
+				employeeId : x2,
+				nedId : x3,
+				supervisorName : x4,
+				supervisorId : x5,
+				doc : x6,
+				trainingType : x7,
+				dateComplete : x8,
+				dateRenew : x9,
+				fundedBy : x10,
+				fileName : x11,
+				fileContents : x12
+			}
+		**/
+		return new Promise(function(resolve, reject){
+			$http({
+				 url: '/api/x_naci_gcp/gcprestapi/uploadCertificate',
+				 method : "POST",
+				 beforeSend: function(xhr){ xhr.setRequestHeader('X-UserToken', sessionId); },
+				 headers: {'Content-Type': 'application/json'},
+				 data: JSON.stringify(params),
+				 processData: false
+			}).then(resolve, reject);
+		});
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-03 19:51:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>63dd9680db379f0054d8ff621f961905</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GCPUploadCertificate</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_angular_provider_63dd9680db379f0054d8ff621f961905</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-08 19:30:10</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>

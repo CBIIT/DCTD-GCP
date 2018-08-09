@@ -21,6 +21,13 @@ th,td{&#13;
 section.page {&#13;
   overflow: visible;&#13;
 }&#13;
+.ui-front{&#13;
+  z-index:10000 !important;&#13;
+}&#13;
+.input-info{&#13;
+  font-size: 12px;&#13;
+  font-style: oblique;&#13;
+}&#13;
 .label-hidden{&#13;
   display:none;&#13;
 }&#13;
@@ -175,7 +182,7 @@ body .padding-top{&#13;
   margin-top:10px;	&#13;
 }&#13;
 .section-half{&#13;
-  display:inline-block;&#13;
+  display:inline-grid;&#13;
   width:49.5% !important;&#13;
 }&#13;
 .section-half label,input {&#13;
@@ -184,6 +191,10 @@ body .padding-top{&#13;
 }&#13;
 .result-section{&#13;
   padding-left:40px;&#13;
+}&#13;
+.message-box{&#13;
+  margin-top: 20px;&#13;
+  margin-bottom: 20px;&#13;
 }&#13;
 .tab-box{&#13;
   border-left: 1px solid #0280a9;&#13;
@@ -255,6 +266,15 @@ body .padding-top{&#13;
   text-align:center;&#13;
   padding:5px 20px;&#13;
 }&#13;
+.status-pending{&#13;
+  color: #6161e9;&#13;
+}&#13;
+.status-accepted{&#13;
+  color: green;&#13;
+}&#13;
+.status-rejected{&#13;
+  color: #ef9b0a;&#13;
+}&#13;
 #footer .alert-info {&#13;
     color: #31708f;&#13;
     background-color: #d9edf7;&#13;
@@ -313,6 +333,26 @@ body .padding-top{&#13;
     color: #135B5D;&#13;
     text-align: center;&#13;
     width: 100%;&#13;
+}&#13;
+&#13;
+.modal {&#13;
+  text-align: center;&#13;
+  padding: 0!important;&#13;
+}&#13;
+&#13;
+.modal:before {&#13;
+  content: '';&#13;
+  display: inline-block;&#13;
+  height: 100%;&#13;
+  vertical-align: middle;&#13;
+  margin-right: -4px;&#13;
+}&#13;
+&#13;
+.modal-dialog {&#13;
+  display: inline-block;&#13;
+  text-align: left;&#13;
+  vertical-align: middle;&#13;
+  width:auto;&#13;
 }</css>
         <name>GCP_CSS</name>
         <sys_class_name>sp_css</sys_class_name>
@@ -320,7 +360,7 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>122</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -328,6 +368,6 @@ body .padding-top{&#13;
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-02 21:08:50</sys_updated_on>
+        <sys_updated_on>2018-08-09 21:40:37</sys_updated_on>
     </sp_css>
 </record_update>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>GCPApprovalProcess</name>
+        <script><![CDATA[function GCPApprovalProcess($http){
+	this.processApproval = function(sysId, comments, role, action, sessionId){
+		return new Promise(function(resolve, reject){
+			$http({
+				 url: '/api/x_naci_gcp/gcprestapi/gcpApprovalProcess',
+				 method : "POST",
+				 beforeSend: function(xhr){ xhr.setRequestHeader('X-UserToken', sessionId); },
+				 headers: {'Content-Type': 'application/json'},
+				 data: {sysId: sysId, comments: comments, role: role, action:action} 				
+			}).then(resolve, reject);
+		});
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>pansu@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-07 20:33:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6f5b4bd5db7b534054d8ff621f9619d5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>GCPApprovalProcess</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_angular_provider_6f5b4bd5db7b534054d8ff621f9619d5</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-09 17:04:24</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$http, GCPSendEmail) {
+	var c = this;
+	
+	window.displayTrainingRequest = function(){
+		$('#request_popup').modal('show');
+	}
+	
+	$("#t_employee_name").autocomplete({
+		delay: 300,
+		source: function(request, response) {
+			$('.ui-autocomplete').css('display', 'block');
+			var term = $('#t_employee_name').val();
+			response([]);
+			if (term.length < 4) {
+				return;
+			}
+			var temp = '';
+			if (term.indexOf(',') >= 0) {
+				temp = term.split(',');
+				var length = temp.length;
+				if (length > 1) {
+					term = temp[1].trim() + " " + temp[0].trim();
+				} else {
+					term = temp[0];
+				}
+			}
+			var req = {
+				method: 'GET',
+				url: '/api/x_naci_gcp/gcprestapi/fetchUsers',
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader('X-UserToken', sessionId);
+				},
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				params: {
+					'term': term
+				}
+			};
+			$http(req).then(handleResponse, handleError);
+
+			function handleResponse(responseData) {
+				var result = responseData.data.result;
+				response(result);
+			}
+
+			function handleError(response) {
+				console.error(response);
+				alert('ERROR');
+			}
+		},
+		autoFocus: true,
+		select: function(event, ui) {
+			var title = ui.item.title;
+			c.data.t_employee_name = ui.item.value;
+			c.data.t_employee_email = ui.item.email;
+			$scope.$apply();
+		}
+	});
+	
+	c.sendRequest = function(){
+		console.log("Sent request to employee:"+c.data.t_employee_name);
+		GCPSendEmail.sendTraining(c.data.sessionId).then(function(){
+			console.log('success!');
+		},function(error){
+			console.log(error);
+		});
+	}
+	
+	c.cancelRequest = function(){
+		$('#request_popup').modal('hide');
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>gcp-training-request</id>
+        <internal>false</internal>
+        <link/>
+        <name>gcp training request</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  data.sessionId = gs.getSession().getSessionToken();
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-06 15:04:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f039b049db375340b86770c08c961937</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>gcp training request</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_widget_f039b049db375340b86770c08c961937</sys_update_name>
+        <sys_updated_by>pansu@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-09 22:31:31</sys_updated_on>
+        <template><![CDATA[<div>
+  <div id="request_popup" class="modal fade" data-keyboard="false" data-backdrop="static" style="overflow-y:auto; overflow-x: auto;">   
+	<div class="modal-dialog">
+  	<div class="modal-content" id="content" style="width:900px; height:auto; overflow-y:auto; overflow-x: hidden;">
+         <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" ng-click="c.cancelRequest()" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+               <h4  class="modal-title">Training Request</h4>
+         </div>      
+         <div class="modal-body">
+           <div class="form-section">
+            	<label for="t_employee_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Employee Name</label>
+              <input type="text" ng-model="c.data.t_employee_name" id="t_employee_name" name="t_employee_name" class="form-control">
+           </div>
+           <div class="form-section" style="text-align:center;">
+            <button type="button" class="btn btn-primary" ng-click="c.sendRequest()" ng-disabled="c.data.t_employee_email == null">
+              Send Request
+            </button>
+						<button type="button" class="btn btn-primary" ng-click="c.cancelRequest()">
+              Cancel
+            </button>
+          </div>
+      	 </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

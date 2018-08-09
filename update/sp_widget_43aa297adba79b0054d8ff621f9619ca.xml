@@ -89,7 +89,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -97,10 +97,11 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-02 21:36:16</sys_updated_on>
+        <sys_updated_on>2018-08-06 16:20:28</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
+    <!--
     <input type="file" id="file-input">
     
     <button class="btn btn-primary" id="upload-file" >
@@ -108,6 +109,7 @@
     </button>
     
     <a href="#" id="download-file" target="_blank">Download File</a>
+		-->
   </div>
   <div class="result-section">     
   </div>

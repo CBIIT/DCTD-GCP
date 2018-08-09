@@ -2,67 +2,157 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($location,$scope, $http) {
+        <client_script><![CDATA[function($location,$scope, $http, GCPUtil, GCPConstants,GCPFetchDropdownOption, GCPUploadCertificate) {
   /* widget controller */
   var c = this;
 	var s = $location.search();
 	
-	$("#user_name_tmp").autocomplete({
-		delay: 300,
-		source: function(request, response) {
-			$('.ui-autocomplete').css('display', 'block');
-			var term = $('#user_name_tmp').val();
-			console.log(term);
-			response([]);
-			if (term.length < 4) {
-				return;
-			}
-			var temp = '';
-			if (term.indexOf(',') >= 0) {
-				temp = term.split(',');
-				var length = temp.length;
-				if (length > 1) {
-					term = temp[1].trim() + " " + temp[0].trim();
-				} else {
-					term = temp[0];
-				}
-			}
-			var req = {
-				method: 'GET',
-				url: '/api/x_naci_gcp/gcprestapi/fetchUsers',
-				beforeSend: function(xhr) {
-					xhr.setRequestHeader('X-UserToken', sessionId);
-				},
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				params: {
-					'term': term
-				}
-			};
-			$http(req).then(handleResponse, handleError);
+	c.data.upload_status = 'upload';
+	c.data.trainingType = null;
+	c.data.completedDate = undefined;
+	c.data.fundedBy = null;
+	c.data.certificate = "";
+	
+	c.data.showMyTrainings = true;
+	
+	if(c.data.employeeTrainings_count > 0){
+		c.data.showEmployeeTrainings = true;
+	}
+	else{
+		GCPUtil.isManager(c.data.sessionId, c.data.employee_id).then(function(res){
+			c.data.showEmployeeTrainings = res.data.result == "yes";
+		},function(error){
+			console.log(error);
+		});
+	}
+	
+	var fileInput  = document.querySelector( ".input-file" ),  
+			button     = document.querySelector( ".input-file-trigger" ),
+			fileDisplay     = $("#certificate_label");
 
-			function handleResponse(responseData) {
-				var result = responseData.data.result;
-				response(result);
-			}
-
-			function handleError(response) {
-				console.error(response);
-				alert('ERROR');
-			}
-		},
-		autoFocus: true,
-		select: function(event, ui) {
-			resetPermissionForm();
-			var title = ui.item.title;
-			alert(title);
-			$scope.$apply();
-		}
+	  
+	fileInput.addEventListener( "change", function( event ) {
+		c.data.certificate = this.value;
+		fileDisplay.html(this.value);
+		$scope.$apply();
+	});  
+	
+	c.data.fundedByList = GCPConstants.getAllItems();
+	
+	GCPFetchDropdownOption.getOptions(c.data.sessionId,"trainingType")
+		.then(function(res) {
+				c.data.trainingTypes = res.data.result;
+		}, function(error){
+			console.log(error);
 	});
+	
+	function readFile(file, callback) {
+		var fileReader = new FileReader();
+		fileReader.onload = function() {
+			var result = fileReader.result.replace('data:application/pdf;base64,', '');
+			callback(result);
+		}
+		fileReader.readAsDataURL(file); //file must be base64
+	}
+	
+	function pad(s){ 
+		return (s < 10) ? '0' + s : s; 
+	}
+	
+	c.upload = function(){
+		c.data.upload_status = 'upload...';
+		var sessionId = c.data.sessionId;
+		
+		var input = $('#certificate-hidden')[0];
+		var file = input.files[0];
+
+		readFile(file, function(base64) {
+			var d = new Date(c.data.completedDate);
+			var completedDate = [pad(d.getMonth()+1), pad(d.getDate()),  d.getFullYear()].join('/');
+			d.setFullYear(d.getFullYear() + 3);
+			var dataRenew = [pad(d.getMonth()+1), pad(d.getDate()),  d.getFullYear()].join('/');
+			
+			var params = {
+				employeeName : c.data.employee_name,
+				employeeId : c.data.employee_id,
+				nedId : c.data.employee_netId,
+				supervisorName : c.data.supervisor_name,
+				supervisorId : c.data.supervisor_id,
+				doc : c.data.employee_doc,
+				trainingType : c.data.trainingType,
+				dateComplete : completedDate,
+				dateRenew : dataRenew,
+				fundedBy : c.data.fundedBy,
+				fileName : file.name,
+				fileContents : base64
+			};
+			GCPUploadCertificate.uploadCertificate(params,sessionId)
+				.then(function(res) {
+					c.data.upload_status = 'upload';
+				  $('#messageContent').html(GCPConstants.errorMessage[parseInt(res.data.result)]);
+				  $('#messageDiv').modal('show');
+				}, function(error){
+					console.log(error);
+			});
+		});
+		
+	}
+	
+	c.closeMessageBox = function(){
+		$('#messageDiv').modal('hide');
+	}
+	
+	c.getPromise = function(sessionId, dropdownName){
+		return new Promise(function(resolve){
+			$http({
+				url: '/api/x_naci_gcp/gcprestapi/getDropOptions',
+				 method : "GET",
+				 beforeSend: function(xhr){ xhr.setRequestHeader('X-UserToken', sessionId); },
+				 headers: {'Content-Type': 'application/json'},
+				 params: {name:dropdownName}				
+			}).then(resolve);
+		});
+	}
+	
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.file-section{
+  width:100%;
+}
+.input-file-container {
+  display:inline-block;
+  position: relative;
+  
+} 
+.input-file-trigger {
+  display: block;
+  padding: 10px 25px;
+  background:#0280a9;
+  color: #fff;
+}
+.input-file {
+  position: absolute;
+  display：block;
+  top: 0; left: 0;
+  height:40px;
+  opacity: 0;
+  cursor:pointer;
+  text-indent: -999px;
+}
+
+.file-return {
+  border: 1px solid #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 49.5%;
+  height: 40px;
+  line-height:40px;
+  display: inline-block;
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+  float:left;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -79,6 +169,7 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
+	data.sessionId = gs.getSession().getSessionToken();
 	var userName = gs.getUserDisplayName();
 	var userId = gs.getUserID();
 	
@@ -88,16 +179,28 @@
 	user_item.next();
 	var empType = user_item.getDisplayValue('u_employee_classification');
 	var doc = user_item.getDisplayValue('u_long_org_division');
-	
+	var nedId = user_item.getDisplayValue('employee_number');
+	var manager_id = user_item.manager.toString();
 	var	manager = user_item.getDisplayValue('manager');
 
-	data.info = {
-		name: userName,
-		id: userId,
-		empType: empType,
-		manager: manager,
-		doc: doc
-	}
+	data.employee_name = userName;
+	data.employee_id = userId;
+	data.employee_netId = nedId;
+	data.employee_type = empType;
+	data.supervisor_name = manager;
+	data.supervisor_id = manager_id;
+	data.employee_doc = doc;
+	
+	/*
+	var item = new GlideRecord('x_naci_gcp_gcp_tasks');
+	item.addQuery('employee_id', userId);
+	item.query();
+	data.myTraining_count =  item.getRowCount();
+	*/
+	var item = new GlideRecord('x_naci_gcp_gcp_tasks');
+	item.addQuery('manager_id', userId);
+	item.query();
+	data.employeeTrainings_count = item.getRowCount();
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -105,15 +208,15 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>250</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-07-31 18:55:52</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-09 21:41:24</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
@@ -134,50 +237,77 @@
       <div class="form-section">
         <div class="section-half">
           <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Name</label>
-          <input type="text" value="{{c.data.info.name}}" id="user_name_tmp" name="user_name" class="form-control">
+          <input type="text" ng-model="c.data.employee_name" id="employee_name" name="employee_name" class="form-control" ng-disabled="true">
         </div>
         <div class="section-half">
-          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor</label>
-        	<input type="text" value="{{c.data.info.manager}}" id="user_name" name="user_name" class="form-control">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor <span class="input-info">(Please update NED if this is incorrect)</span></label>
+        	<input type="text" ng-model="c.data.supervisor_name" id="supervisor_name" name="supervisor_name" class="form-control" ng-disabled="true">
         </div>
       </div>
       <div class="form-section">
         <div class="section-half">
           <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Division/Office/Center</label>
-        <input type="text" value="{{c.data.info.doc}}" id="user_name" name="user_name" class="form-control">
+        <input type="text" ng-model="c.data.employee_doc" id="employee_doc" name="employee_doc" class="form-control" ng-disabled="true">
         </div>
         <div class="section-half">
           <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Training Type</label>
-        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+          <select class="form-control" ng-model="c.data.trainingType" ng-options="item.value as item.label for item in c.data.trainingTypes">
+          	<option value="">Select Training Type...</option>
+          </select>
         </div>
       </div>
       <div class="form-section">
         <div class="section-half">
          	<label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
-        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+          <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
         </div>
         <div class="section-half">
-          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Funded By</label>
-        	<input type="text" value="" id="user_name" name="user_name" class="form-control">
+          <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Research Funded By</label>
+        	<select class="form-control" ng-model="c.data.fundedBy" ng-options="item.value as item.label for item in c.data.fundedByList">
+          	<option value="">Select Research Funded By...</option>
+          </select>
         </div>
       </div>
       <div class="form-section">
-        <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificates</label>
-        <input type="text" value="{{c.data.info.empType}}" id="user_name" name="user_name" class="form-control">
+        <label><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificate</label>
+        <div class="file-section">
+          <div class="file-return" id="certificate_label">
+            <input type="hidden" ng-model="c.data.certificate" id="certificate" name="certificate" class="form-control" ng-disabled="true">
+          </div>
+          <div class="input-file-container">
+            <input class="input-file" id="certificate-hidden" type="file" accept="application/pdf">
+            <label for="my-file" class="input-file-trigger">Select a file...</label>
+          </div>
+        </div>
+        
       </div>
       <div class="form-section">
-        <button type="button" class="btn btn-primary" ng-model="uploadTraining">
-          <i class="fa fa-upload" aria-hidden="true"></i> Upload
+        <button type="button" class="btn btn-primary" ng-click="c.upload()" ng-model="uploadTraining" ng-disabled="c.data.upload_status == 'upload...' || c.data.employee_name =='' || c.data.supervisor_name == '' || c.data.employee_doc == '' || c.data.trainingType == null || c.data.completedDate == undefined || c.data.fundedBy == null || c.data.certificate == ''">
+          <i class="fa fa-upload" aria-hidden="true"></i> {{c.data.upload_status}}
         </button>
       </div>
     </div>
   </div>
   <div class="result-section">
 		<uib-tabset>
-      <uib-tab index="0" heading="My GCP Trainings"><widget id="gcp-my-trainings"></widget></uib-tab>
-      <uib-tab index="1" heading="My Employees' GCP Trainings"><widget id="gcp-employee-trainings"></widget></uib-tab>
+      <uib-tab index="0" ng-if="c.data.showMyTrainings" heading="My GCP Trainings"><widget id="gcp-my-trainings"></widget></uib-tab>
+      <uib-tab index="1" ng-if="c.data.showEmployeeTrainings" heading="My Employees' GCP Trainings"><widget id="gcp-employee-trainings"></widget></uib-tab>
     </uib-tabset>
   </div>
+</div>
+<div id="messageDiv" class="modal fade" data-keyborad="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg" style="width:20%;">
+        <div class="modal-content" style="height:200px; overflow-y:auto; overflow-x: hidden;">
+            <div class="modal-header">
+                 Information Dialog
+            </div>
+            <div class="col-md-12 message-box" id="messageContent" align="center">
+            </div>
+            <div class="col-md-12" align="center">
+              <button class="btn btn-primary" ng-click="c.closeMessageBox();" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
 </div>]]></template>
     </sp_widget>
 </record_update>
