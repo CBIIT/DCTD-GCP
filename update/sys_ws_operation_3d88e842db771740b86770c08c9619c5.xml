@@ -9,8 +9,10 @@
         <http_method>POST</http_method>
         <name>sendEmail</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-
-   gs.eventQueue('x_naci_gcp.sending_training_request',current, "hello", 'bye');
+   var userName = request.body.data.user_name;
+   var userEmail = request.body.data.user_email;
+	
+   gs.eventQueue('x_naci_gcp.sending_training_request',current, userName, userEmail);
 
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_naci_gcp/gcprestapi/sendEmail</operation_uri>
@@ -26,7 +28,7 @@
         <sys_created_on>2018-08-09 17:06:24</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>3d88e842db771740b86770c08c9619c5</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>sendEmail</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -34,7 +36,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ws_operation_3d88e842db771740b86770c08c9619c5</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-09 19:10:33</sys_updated_on>
+        <sys_updated_on>2018-08-10 19:09:24</sys_updated_on>
         <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

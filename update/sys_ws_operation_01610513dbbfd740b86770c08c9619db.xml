@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>getInactiveRecords</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var userId = request.queryParams.employee_id;
+	var trainingType = request.queryParams.trainingType;
+	var historyRecords = [];
+	var gcp_item = new GlideRecord('x_naci_gcp_gcp_task');
+		gcp_item.addQuery('employee_id', userId);
+		gcp_item.addQuery('certificate_type', trainingType);
+		//gcp_item.addQuery('active', false);
+		gcp_item.orderByDesc('certificate_completion_date');
+		gcp_item.query();
+	while(gcp_item.next()){
+		var item = {};
+		item.sys_id = gcp_item.sys_id.toString();
+		item.certificate_name = gcp_item.getDisplayValue('certificate_name');
+		item.certificate_completed_date = gcp_item.getDisplayValue('certificate_completion_date');
+		item.status = gcp_item.getDisplayValue('stage');
+		item.active = gcp_item.getDisplayValue('active');
+		//item.manager = gcp_item.manager.toString();
+		//item.organization = gcp_item.organization.toString();
+		//item.research_funded_by = gcp_item.research_funded_by.toString();
+		//item.employee_name = gcp_item.employee_name.toString();
+		var attach_item = new GlideRecord('sys_attachment');   
+			attach_item.addQuery('table_sys_id', item.sys_id);
+			attach_item.query();
+			attach_item.next();
+		item.attachment_id = attach_item.sys_id.toString();
+		historyRecords.push(item);
+	}
+	return historyRecords;
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_naci_gcp/gcprestapi/getInactiveRecords</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getInactiveRecords</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-13 15:41:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>01610513dbbfd740b86770c08c9619db</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>getInactiveRecords</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sys_ws_operation_01610513dbbfd740b86770c08c9619db</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-13 20:00:17</sys_updated_on>
+        <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

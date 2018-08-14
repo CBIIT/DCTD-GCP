@@ -7,53 +7,6 @@
   var c = this;
 	var s = $location.search();
 	var sessionId = c.data.info.sessionId;
-	var userId = c.data.info.userId;
-		$('#download-file').hide();
-	function readFile(file, callback) {
-		var fileReader = new FileReader();
-		fileReader.onload = function() {
-			var result = fileReader.result.replace('data:application/pdf;base64,', '');
-			callback(result);
-		}
-		fileReader.readAsDataURL(file); //file must be base64
-	}
-	
-	$('#upload-file').click(function(e) {
-		var input = $('#file-input')[0];
-		if (!input.files || input.files.length === 0) return;
-		var file = input.files[0];
-		
-		readFile(file, function(base64) {
-			
-			var data = {
-				fileName: file.name,
-				fileContents: base64
-			};
-			
-			$.post({
-				url: '/api/x_naci_gcp/gcprestapi/uploadCertificate',
-				beforeSend: function(xhr) {xhr.setRequestHeader('X-UserToken', sessionId)},
-				headers: { 'Content-Type': 'application/json' },
-				data: JSON.stringify(data),
-				processData: false
-			}).done(function(response) {
-				console.log(response);
-				$('#download-file').show();
-				$('#download-file').attr('href', 'sys_attachment.do?sys_id=' + response.result);
-			}).fail(function(error) {
-				console.log('error', error)
-			})
-		})
-		
-		
-		/*
-		console.log(file, formData);
-		*/
-		
-		
-		
-		
-	})
 	
 }
 ]]></client_script>
@@ -76,12 +29,7 @@
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 	var sessionId = gs.getSession().getSessionToken();
-	var userId = gs.getUserID();
 	
-  data.info = {
-		sessionId: sessionId,
-		userId : userId
-	}
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -89,7 +37,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -97,19 +45,65 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-06 16:20:28</sys_updated_on>
+        <sys_updated_on>2018-08-14 21:18:29</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
-    <!--
-    <input type="file" id="file-input">
-    
-    <button class="btn btn-primary" id="upload-file" >
-			Upload      
-    </button>
-    
-    <a href="#" id="download-file" target="_blank">Download File</a>
-		-->
+    <div class="filter-field">
+      <label for="renewDate">
+        Required Renewal Date:
+      </label>
+      <div>
+      	<input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
+    	</div>
+    </div>
+    <div class="filter-field">
+      <label for="employeeName">
+        Employee Name:
+      </label>
+      <div>
+        <input type="text" class="form-control" id="employeeName" ng-model="c.data.employeeName" /> 
+      </div>
+    </div>
+    <div class="filter-field">
+      <label for="doc">
+        Division/Office/Center:
+      </label>
+      <div>
+        <input type="text" class="form-control" id="doc" ng-model="c.data.doc" /> 
+      </div>
+    </div>
+    <div class="filter-field">
+      <label for="fundedBy">
+        My Activities Involve:
+      </label>
+      <div>
+        <select class="form-control" ng-model="c.data.fundedBy" id="fundedBy" ng-options="item.value as item.label for item in c.data.fundedByList">
+          	<option value="">Select Research Funded By...</option>
+          </select>
+      </div>
+    </div>
+    <div class="filter-field">
+      <label for="trainingType">Training Type</label>
+      <div>
+        <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item.value as item.label for item in c.data.trainingTypes">
+          <option value="">Select Training Type...</option>
+        </select>
+    	</div>
+    </div>
+    <div class="filter-field">
+      <label for="status">Status:</label>
+      <div>
+        <select class="form-control" ng-model="c.data.status" id="status" ng-options="item.value as item.label for item in c.data.status">
+          <option value="">Select Research Funded By...</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-field">
+      <button type="button" class="btn btn-primary btn-upload" ng-click="c.filterTraining()">
+        Filter
+      </button>
+    </div>
   </div>
   <div class="result-section">     
   </div>

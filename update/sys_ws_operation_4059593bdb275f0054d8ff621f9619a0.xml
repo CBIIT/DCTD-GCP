@@ -20,12 +20,10 @@
 	var dateCompleted = data.dateComplete;
 	var dateRenew = data.dateRenew;
 	var fundedBy = data.fundedBy;
-	//var fileName = data.fileName;
-	var fileName = employeeName+"_"+trainingType+"_GCP_"+dateCompleted.replace(/\//g, '');
-	var fileContents = data.fileContents;
+	var fileName = data.fileName;
 	
 	//validation 1, data complete date is less than current record,  ignore the status, cannot submit
-	var validate1 = new GlideRecord('x_naci_gcp_gcp_tasks');
+	var validate1 = new GlideRecord('x_naci_gcp_gcp_task');
 		validate1.addQuery('certificate_type', trainingType);
 		validate1.addQuery('employee_id', employeeId);
 		validate1.orderByDesc('sys_created_on');
@@ -46,7 +44,7 @@
 		}
 	
 	//store record into gcp task table
-	var gcp_item = new GlideRecord('x_naci_gcp_gcp_tasks');
+	var gcp_item = new GlideRecord('x_naci_gcp_gcp_task');
 		gcp_item.initialize();
 	    gcp_item.apply_for = employeeId;
 	    gcp_item.certificate_name = fileName;
@@ -61,17 +59,8 @@
 	    gcp_item.certificate_renew_date = dateRenew;
 		gcp_item.research_funded_by = fundedBy;
 	var gcp_id = gcp_item.insert();
-	
-	var attachement = new GlideSysAttachment();
-	var gr = new GlideRecord("x_naci_gcp_gcp_tasks");
-	var record = gr.get(gcp_id);
-	var attachment_sys_id = attachement.writeBase64(gr, fileName , "application/pdf", fileContents);
-	
-	if(attachment_sys_id != null && attachment_sys_id.length > 0){
-		return "0";
-	}else{
-		return "3";
-	}
+	return gcp_id;
+
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_naci_gcp/gcprestapi/uploadCertificate</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
@@ -86,15 +75,15 @@
         <sys_created_on>2018-08-02 20:17:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>4059593bdb275f0054d8ff621f9619a0</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>uploadCertificate</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ws_operation_4059593bdb275f0054d8ff621f9619a0</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-09 19:48:09</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-14 17:58:19</sys_updated_on>
         <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

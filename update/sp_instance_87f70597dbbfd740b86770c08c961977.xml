@@ -7,7 +7,7 @@
         <css/>
         <glyph/>
         <id/>
-        <order>2</order>
+        <order>3</order>
         <roles/>
         <short_description/>
         <size>md</size>
@@ -15,18 +15,18 @@
         <sp_widget display_value="gcp history">b9c83c8ddb375340b86770c08c96192f</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>yuw5@nih.gov</sys_created_by>
-        <sys_created_on>2018-08-06 15:23:03</sys_created_on>
+        <sys_created_on>2018-08-13 15:55:13</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>677d3405db775340b86770c08c961925</sys_id>
+        <sys_id>87f70597dbbfd740b86770c08c961977</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
-        <sys_update_name>sp_instance_677d3405db775340b86770c08c961925</sys_update_name>
+        <sys_update_name>sp_instance_87f70597dbbfd740b86770c08c961977</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-06 15:23:03</sys_updated_on>
+        <sys_updated_on>2018-08-13 15:55:13</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>

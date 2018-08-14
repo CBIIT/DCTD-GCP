@@ -4,6 +4,7 @@
         <category>custom</category>
         <client_script><![CDATA[function($scope,$http, GCPSendEmail) {
 	var c = this;
+	c.data.requestDisabled = true;
 	
 	window.displayTrainingRequest = function(){
 		$('#request_popup').modal('show');
@@ -14,6 +15,7 @@
 		source: function(request, response) {
 			$('.ui-autocomplete').css('display', 'block');
 			var term = $('#t_employee_name').val();
+			c.data.requestDisabled = true;
 			response([]);
 			if (term.length < 4) {
 				return;
@@ -58,14 +60,15 @@
 			var title = ui.item.title;
 			c.data.t_employee_name = ui.item.value;
 			c.data.t_employee_email = ui.item.email;
+			c.data.requestDisabled = false;
 			$scope.$apply();
 		}
 	});
 	
 	c.sendRequest = function(){
-		console.log("Sent request to employee:"+c.data.t_employee_name);
-		GCPSendEmail.sendTraining(c.data.sessionId).then(function(){
+		GCPSendEmail.sendTraining(c.data.sessionId, c.data.t_employee_name, c.data.t_employee_email).then(function(res){
 			console.log('success!');
+			$('#request_popup').modal('hide');
 		},function(error){
 			console.log(error);
 		});
@@ -101,15 +104,15 @@
         <sys_created_on>2018-08-06 15:04:17</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f039b049db375340b86770c08c961937</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>gcp training request</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_f039b049db375340b86770c08c961937</sys_update_name>
-        <sys_updated_by>pansu@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-09 22:31:31</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-10 22:08:54</sys_updated_on>
         <template><![CDATA[<div>
   <div id="request_popup" class="modal fade" data-keyboard="false" data-backdrop="static" style="overflow-y:auto; overflow-x: auto;">   
 	<div class="modal-dialog">
@@ -123,10 +126,10 @@
          <div class="modal-body">
            <div class="form-section">
             	<label for="t_employee_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Employee Name</label>
-              <input type="text" ng-model="c.data.t_employee_name" id="t_employee_name" name="t_employee_name" class="form-control">
+              <input type="text" id="t_employee_name" name="t_employee_name" class="form-control">
            </div>
            <div class="form-section" style="text-align:center;">
-            <button type="button" class="btn btn-primary" ng-click="c.sendRequest()" ng-disabled="c.data.t_employee_email == null">
+            <button type="button" class="btn btn-primary" ng-click="c.sendRequest()" ng-disabled="c.data.requestDisabled">
               Send Request
             </button>
 						<button type="button" class="btn btn-primary" ng-click="c.cancelRequest()">

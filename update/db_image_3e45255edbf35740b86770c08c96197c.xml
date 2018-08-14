@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>cms</category>
+        <format/>
+        <height/>
+        <image/>
+        <name>nci-logo-full.svg</name>
+        <size_bytes>5657</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-10 15:30:19</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3e45255edbf35740b86770c08c96197c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>nci-logo-full.svg</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>db_image_3e45255edbf35740b86770c08c96197c</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-10 15:30:36</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>734003</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>5657</size_bytes>
+        <size_compressed>1845</size_compressed>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-10 15:30:36</sys_created_on>
+        <sys_id>d595255edbf35740b86770c08c961981</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-10 15:30:36</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>3e45255edbf35740b86770c08c96197c</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="d595255edbf35740b86770c08c961981">d595255edbf35740b86770c08c961981</sys_attachment>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-10 15:30:36</sys_created_on>
+        <sys_id>dd95255edbf35740b86770c08c961981</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>2448</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="d595255edbf35740b86770c08c961981">d595255edbf35740b86770c08c961981</sys_attachment>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-10 15:30:36</sys_created_on>
+        <sys_id>5195255edbf35740b86770c08c961982</sys_id>
+    </sys_attachment_doc>
+</record_update>

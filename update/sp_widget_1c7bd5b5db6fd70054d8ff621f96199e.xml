@@ -2,7 +2,7 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($location) {
+        <client_script><![CDATA[function($scope,$location) {
   /* widget controller */
   var c = this;
 	var s = $location.search();
@@ -18,6 +18,10 @@
 		s.xpage = page;
     $location.search(s).replace();
 	}
+	
+	$scope.logout = function(){
+		window.location.href="/logout.do";
+  }
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -34,14 +38,22 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.info = {};
+	var userName = gs.getUserDisplayName();
+	var userId = gs.getUserID();
+	data.info.userName = userName;
+	data.info.userId = userId;
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>yuw5@nih.gov</sys_created_by>
         <sys_created_on>2018-07-27 15:13:38</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c7bd5b5db6fd70054d8ff621f96199e</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>gcp menu bar</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -49,16 +61,24 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_1c7bd5b5db6fd70054d8ff621f96199e</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-07-31 18:35:17</sys_updated_on>
+        <sys_updated_on>2018-08-10 16:00:20</sys_updated_on>
         <template><![CDATA[<div class="menu-box">
 	<div class="col-md-1">
   </div>
   <div class="menu-content col-md-10">
-  		<ul>
+  		<ul class="menu-ul">
         <li ng-class="c.xpage == 'home'? 'active' : ''" ng-click="c.showPage('home')">Home</li>
         <li ng-class="c.xpage == 'main'? 'active' : ''" ng-click="c.showPage('main')">Training Certificate Repository</li>
         <li ng-class="c.xpage == 'report'? 'active' : ''" ng-click="c.showPage('report')">Report</li>
 			</ul>
+    <div class="banner-user" uib-dropdown>
+      <span class="user-box" uib-dropdown-toggle>
+        {{c.data.info.userName}}<i class="fa fa-caret-down" style="font-size:16px;margin-left:10px;"></i>
+      </span>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+        <li role="menuitem"><a href="#" ng-click="logout();">Sign Out</a></li>
+      </ul>
+    </div>
   </div>
   <div class="col-md-1">
   </div>

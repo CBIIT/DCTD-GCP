@@ -7,7 +7,7 @@
         <advanced_condition/>
         <affected_field_on_event/>
         <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
-        <collection>x_naci_gcp_gcp_tasks</collection>
+        <collection>x_naci_gcp_gcp_task</collection>
         <condition/>
         <content_type>text/html</content_type>
         <default_interval/>
@@ -25,7 +25,7 @@
         <digestable>false</digestable>
         <event_name>x_naci_gcp.sending_training_request</event_name>
         <event_parm_1>false</event_parm_1>
-        <event_parm_2>false</event_parm_2>
+        <event_parm_2>true</event_parm_2>
         <exclude_delegates>false</exclude_delegates>
         <force_delivery>false</force_delivery>
         <from/>
@@ -36,7 +36,7 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hi Wei,</p>
+        <message_html><![CDATA[<p>Hi ${event.parm1},</p>
 <p>&nbsp;</p>
 <p>This is a test training request email</p>
 <p>&nbsp;</p>
@@ -50,7 +50,7 @@
         <push_message_only>false</push_message_only>
         <recipient_fields/>
         <recipient_groups/>
-        <recipient_users>7acff4a96f6f2100e04fd15eae3ee451</recipient_users>
+        <recipient_users/>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
@@ -63,7 +63,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>ca67e802db771740b86770c08c961926</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Employee Training Notification</sys_name>
         <sys_overrides/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
@@ -71,8 +71,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysevent_email_action_ca67e802db771740b86770c08c961926</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-09 19:16:12</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-10 21:16:37</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="GCP Tasks" max_length="40" name="x_naci_gcp_gcp_tasks" sizeclass="5" type="collection">
+    <element max_length="40" name="x_naci_gcp_gcp_tasks" sizeclass="4" type="collection">
         <element label="Apply For" max_length="255" name="apply_for" type="string"/>
         <element label="Approval Action" max_length="255" name="approval_action" type="string"/>
         <element label="Certificate Completion Date" max_length="255" name="certificate_completion_date" type="string"/>
