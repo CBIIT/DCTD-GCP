@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="GCPUtil">35030b91db7b534054d8ff621f96199a</sp_angular_provider>
+        <sp_widget display_value="gcp deactive">fdd52ea8db0ceb40b86770c08c961934</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-17 20:03:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f5176e20db4ceb40b86770c08c961936</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GCPUtil.gcp deactive</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_f5176e20db4ceb40b86770c08c961936</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-17 20:03:09</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>GCPReportSearch</name>
+        <script><![CDATA[function GCPReportSearch($http){
+	this.getReport = function(sessionId, criteria){
+		return new Promise(function(resolve, reject){
+			$http({
+				 url: '/api/x_naci_gcp/gcprestapi/getReport',
+				 method : "GET",
+				 beforeSend: function(xhr){ xhr.setRequestHeader('X-UserToken', sessionId); },
+				 headers: {'Content-Type': 'application/json'},
+				 params: {renew_date_start: criteria.renew_date_start,
+									renew_date_end: criteria.renew_date_end,
+									employee_name: criteria.employee_name,
+									manager_id:criteria.manager_id, 
+									manager_name:criteria.manager_name, 
+									organization:criteria.organization,
+									funded_by:criteria.funded_by,
+									employee_type: criteria.employee_type,
+									stage:criteria.stage,
+									certificate_type:criteria.certificate_type, 
+									active:criteria.active}	
+			}).then(resolve, reject);
+		});
+	};
+	
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-15 18:39:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>41a00800dbcc6b40b86770c08c961913</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>GCPReportSearch</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_angular_provider_41a00800dbcc6b40b86770c08c961913</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-16 19:54:25</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>

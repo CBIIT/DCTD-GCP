@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_css_include">
+    <sp_css_include action="INSERT_OR_UPDATE">
+        <name>GCP_UI_Select_CSS</name>
+        <source>local</source>
+        <sp_css display_value="GCP_UI_Select_CSS">41ab3aecdb4ceb40b86770c08c96198d</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-17 21:33:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b7cb72ecdb4ceb40b86770c08c9619f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GCP_UI_Select_CSS</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_css_include_b7cb72ecdb4ceb40b86770c08c9619f2</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-17 21:33:40</sys_updated_on>
+        <url/>
+    </sp_css_include>
+</record_update>

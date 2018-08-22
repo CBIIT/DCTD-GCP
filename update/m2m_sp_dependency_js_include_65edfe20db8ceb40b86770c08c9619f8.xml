@@ -3,20 +3,20 @@
     <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
         <order>100</order>
         <sp_dependency display_value="GCP_JS_DEP">64fe7d47dba3db0054d8ff621f9619c5</sp_dependency>
-        <sp_js_include display_value="GCP_JQuery UI">271f7d47dba3db0054d8ff621f9619c8</sp_js_include>
+        <sp_js_include display_value="GCP_UI_Select_JS">f7cdb620db8ceb40b86770c08c9619ff</sp_js_include>
         <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
         <sys_created_by>yuw5@nih.gov</sys_created_by>
-        <sys_created_on>2018-07-31 15:03:56</sys_created_on>
+        <sys_created_on>2018-08-17 21:42:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>859f3187dba3db0054d8ff621f9619c8</sys_id>
+        <sys_id>65edfe20db8ceb40b86770c08c9619f8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>GCP_JQuery UI_DEP.GCP_JQuery UI</sys_name>
+        <sys_name>GCP_JS_DEP.GCP_UI_Select_JS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
-        <sys_update_name>m2m_sp_dependency_js_include_859f3187dba3db0054d8ff621f9619c8</sys_update_name>
+        <sys_update_name>m2m_sp_dependency_js_include_65edfe20db8ceb40b86770c08c9619f8</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-07-31 15:03:56</sys_updated_on>
+        <sys_updated_on>2018-08-17 21:42:47</sys_updated_on>
     </m2m_sp_dependency_js_include>
 </record_update>

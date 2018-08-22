@@ -17,6 +17,19 @@
 											 'Unknown server error, please contact GCP application administrator.',
 											 'Certificate size must be less than 7 megabytes.'
 											];
+	this.statusList = [{label: 'All trainings except Archived', value: 'default'},
+										 {label: 'Pending Acceptance', value: 'Pending Acceptance'},
+										 {label: 'Accepted', value: 'Accepted'},
+										 {label: 'Rejected', value: 'Rejected'},
+										 {label: 'Archived', value: 'Archived'}];
+	this.employeeTypes = [{label: 'Federal', value: 'Federal'},
+											 {label: 'Contractor', value: 'Contractor'}];
+	this.deactiveError = ['The user has been successfully deactivated.',
+												'The user does not have any supervisor.',
+												'The user is not under this manager\'s supervision.'];
+	this.requestError = ['A training request has been sent to the employee.',
+											'The user does not have any supervisor.',
+												'The user is not under this manager\'s supervision.'];
 	this.getAllItems = function(){
 			return this.allItems;
 	};
@@ -32,13 +45,25 @@
 	this.getReject = function(){
 		return this.reject;
 	};
+	this.getStatusList = function(){
+		return this.statusList;
+	};
+	this.getEmployeeTypes = function(){
+		return this.employeeTypes;
+	};
+	this.getDeactiveError = function(index){
+		return this.deactiveError[index];
+	};
+	this.getRequestError = function(index){
+		return this.requestError[index];
+	};
 }]]></script>
         <sys_class_name>sp_angular_provider</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
         <sys_created_on>2018-08-01 22:27:35</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bd8ee8a7dbab5f00b86770c08c961949</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>GCPConstants</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -46,7 +71,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_angular_provider_bd8ee8a7dbab5f00b86770c08c961949</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-14 15:22:16</sys_updated_on>
+        <sys_updated_on>2018-08-17 22:06:53</sys_updated_on>
         <type>service</type>
     </sp_angular_provider>
 </record_update>

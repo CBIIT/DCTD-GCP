@@ -17,6 +17,7 @@
 	var managerId = data.supervisorId;
 	var doc = data.doc;
 	var trainingType = data.trainingType;
+	var employeeType = data.employeeType;
 	var dateCompleted = data.dateComplete;
 	var dateRenew = data.dateRenew;
 	var fundedBy = data.fundedBy;
@@ -55,6 +56,7 @@
 	    gcp_item.ned_id = nedId;
 		gcp_item.organization = doc;
 		gcp_item.certificate_type = trainingType;
+		gcp_item.employee_type = employeeType;
 		gcp_item.certificate_completion_date = dateCompleted;
 	    gcp_item.certificate_renew_date = dateRenew;
 		gcp_item.research_funded_by = fundedBy;
@@ -75,7 +77,7 @@
         <sys_created_on>2018-08-02 20:17:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>4059593bdb275f0054d8ff621f9619a0</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>uploadCertificate</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -83,7 +85,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ws_operation_4059593bdb275f0054d8ff621f9619a0</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-14 17:58:19</sys_updated_on>
+        <sys_updated_on>2018-08-16 19:38:01</sys_updated_on>
         <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

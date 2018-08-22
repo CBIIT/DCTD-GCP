@@ -2,11 +2,193 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($location) {
+        <client_script><![CDATA[function($scope, $filter, $location,GCPUtil, GCPConstants, GCPReportSearch, GCPHistoryData,GCPFetchDropdownOption) {
   /* widget controller */
   var c = this;
 	var s = $location.search();
-	var sessionId = c.data.info.sessionId;
+	
+	c.data.maxSize = 5;
+	c.data.pageSize = 10;
+	c.data.bigCurrentPage = 1;
+	
+	c.data.completedDate = undefined;
+	$scope.sortKey = 'c_date';
+	$scope.reverse = true;
+	c.data.selectedTrainings = [];
+	
+	c.pageChanged = function(){
+		
+	}
+	
+	$scope.sort = function(keyname) {		
+		$scope.sortKey = keyname;
+		$scope.reverse = !$scope.reverse;
+	};
+	
+	if(c.data.isCTEPRCRTeam){
+		c.data.showEmployeeFilter = true;
+		c.data.showManagerFilter = true;
+	}
+	else{
+		c.data.showEmployeeFilter = true;
+		c.data.showManagerFilter = false;
+	}
+	
+	
+	c.data.fundedByList = GCPConstants.getAllItems();
+	c.data.employeeTypes = GCPConstants.getEmployeeTypes();
+	
+	GCPFetchDropdownOption.getOptions(c.data.sessionId,"trainingType")
+		.then(function(res) {
+				c.data.trainingTypes = res.data.result;
+		}, function(error){
+			console.log(error);
+	});
+	
+	c.data.statusList = GCPConstants.getStatusList();
+	
+	c.filterTraining = function(){
+		var params = {};
+		params.renew_date_start = c.data.renewDate_start;
+		params.renew_date_end = c.data.renewDate_end;
+		if(c.data.isCTEPRCRTeam){
+			params.employee_name = c.data.employeeName;
+			params.manager_name = c.data.managerName;
+		}
+		else{
+			params.employee_name = c.data.employeeName;
+			params.manager_id = c.data.employee_id;
+		}
+		params.organization = c.data.doc;
+		params.funded_by = c.data.fundedBy;
+		params.employee_type = c.data.employeeType;
+		params.certificate_type = c.data.trainingType;
+		if(c.data.status == "default"){
+			params.active = true;
+		}
+		else if(c.data.status == "Pending Acceptance"){
+			params.stage = c.data.status;
+			params.active = true;
+		}
+		else if(c.data.status == "Accepted"){
+			params.stage = c.data.status;
+			params.active = true;
+		}
+		else if(c.data.status == "Rejected"){
+			params.stage = c.data.status;
+			params.active = true;
+		}
+		else{
+			params.active = false;
+		}
+		GCPReportSearch.getReport(c.data.sessionId,params)
+		.then(function(res) {
+			c.data.trainings = res.data.result;
+			c.data.bigCurrentPage = 1;
+			c.data.selectedTrainings = [];
+			$scope.$apply();
+		}, function(error){
+				console.log(error);
+		});
+	}
+	
+	function long2DateString(value){
+		var dt = new Date(value);
+		var dd = dt.getDate();
+		var mm = dt.getMonth()+1;
+		var yyyy = dt.getFullYear();
+
+		if(dd<10) {
+				dd = '0'+dd
+		} 
+
+		if(mm<10) {
+				mm = '0'+mm
+		} 
+
+		return mm + "/"+ dd + "/" + yyyy;
+	}
+	
+	c.export2Excel = function(){
+		var data = [];
+		var itemsSorted = null;
+		if($scope.sortKey){
+			itemsSorted  = $filter('orderBy')(c.data.trainings, $scope.sortKey,$scope.reverse);
+		}
+		else{
+			itemsSorted = c.data.trainings;
+		}
+		
+		console.log(c.data.trainings);
+		itemsSorted.forEach(function(t){
+			if(c.data.selectedTrainings.indexOf(t.sys_id) > -1 ){
+				var tmp = {};
+				tmp.Name = t.name;
+				tmp["Training Type"] = t.type;
+				tmp["Employee Name"] = t.employee;
+				tmp["Completion Date"] = long2DateString(t.c_date);
+				tmp["Required Renewal Date"] = long2DateString(t.rr_date);
+				tmp["Supervisor Name"] = t.manager;
+				tmp.Organization = t.doc;
+				data.push(tmp);
+			}
+		});
+		/* generate a worksheet */
+		var ws = XLSX.utils.json_to_sheet(data);
+
+		/* add to workbook */
+		var wb = XLSX.utils.book_new();
+		XLSX.utils.book_append_sheet(wb, ws, "sheet1");
+
+		/* write workbook and force a download */
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1;
+		var yyyy = today.getFullYear();
+
+		if(dd<10) {
+				dd = '0'+dd
+		} 
+
+		if(mm<10) {
+				mm = '0'+mm
+		} 
+
+		today = yyyy + "-"+ mm + "-" + dd;
+		XLSX.writeFile(wb, "GCP_report_"+today+".xlsx");
+	}
+	
+	c.selectAll = function(){
+		var selectAll = document.getElementById("selectAllTrainings");
+		c.data.selectedTrainings = [];
+		if(selectAll.checked){
+			var tmp = [];
+			c.data.trainings.map(function(obj){
+				tmp.push(obj.sys_id);
+			});
+			c.data.selectedTrainings = tmp;
+		}
+	}
+	
+	c.updateSelected = function(item){
+		if(item.selected){
+			c.data.selectedTrainings.push(item.sys_id);
+		}
+		else{
+			var idx = c.data.selectedTrainings.indexOf(item.sys_id);
+			if (idx > -1) {
+				c.data.selectedTrainings.splice(idx, 1);
+			}
+		}
+	}
+	
+	c.showHistory = function(employee_id,type){
+		GCPHistoryData.getHistoryData(employee_id,type,c.data.sessionId).then(function(res){
+			window.displayHistoryDialog(res.data.result);
+		},function(error){
+			console.log(error);
+		});
+	}
 	
 }
 ]]></client_script>
@@ -28,8 +210,49 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-	var sessionId = gs.getSession().getSessionToken();
+	data.sessionId = gs.getSession().getSessionToken();
+	data.trainings = [];
 	
+	data.isCTEPRCRTeam = gs.getUser().isMemberOf('GCP CTEP RCR Team');
+	data.employee_id = gs.getUserID();
+	
+	var task_item = new GlideRecord('x_naci_gcp_gcp_task');
+	if(!data.isCTEPRCRTeam){
+		var tmp = task_item.addQuery('employee_id', data.employee_id);
+		tmp.addOrCondition('manager_id',data.employee_id);
+	}
+	task_item.addQuery('active',true);
+	task_item.orderByDesc('certificate_completion_date');
+	task_item.query();
+	while(task_item.next()){
+		var item = {};
+		item.sys_id = task_item.sys_id.toString();
+		item.name = task_item.getDisplayValue('certificate_name');
+		item.type = task_item.getDisplayValue('certificate_type');
+		item.employee_id = task_item.getDisplayValue('employee_id');
+		item.employee = task_item.getDisplayValue('employee_name');
+		item.c_date = Date.parse(task_item.getDisplayValue('certificate_completion_date'));
+		item.rr_date = Date.parse(task_item.getDisplayValue('certificate_renew_date'));
+		item.manager = task_item.getDisplayValue('manager');
+		item.doc = task_item.getDisplayValue('organization');
+		item.status = task_item.getDisplayValue('stage');
+		item.active = task_item.getDisplayValue('active');
+		if(!item.active){
+			item.status = "Archived";
+		}
+		var attachment =  new GlideRecord('sys_attachment');
+		attachment.addQuery('table_sys_id',task_item.sys_id);
+		attachment.query();
+		attachment.next();
+		try {
+				item.attachment_id = attachment.sys_id.toString();
+		}
+		catch(err) {
+			console.log(err);
+		}
+		
+		data.trainings.push(item);
+	}
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -37,7 +260,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>242</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -45,19 +268,21 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-14 21:18:29</sys_updated_on>
+        <sys_updated_on>2018-08-17 19:26:38</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
-    <div class="filter-field">
+    <div class="filter-width-20" >
       <label for="renewDate">
         Required Renewal Date:
       </label>
       <div>
-      	<input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
+      	<label for="renewDate_start" class="label-hidden">Start:</label><input style="width:48%;float:left;" placeholder="start" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="renewDate_start" name="renewDate_start" class="form-control" ng-click="c.data.datepicker1Opened = true;" ng-model="c.data.renewDate_start" is-open="c.data.datepicker1Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+        <span style="float:left;line-height: 34px;">&nbsp;-&nbsp;</span>
+        <label for="renewDate_end" class="label-hidden">End:</label><input style="width:48%;float:left;"  placeholder="end" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="renewDate_end" name="renewDate_end" class="form-control" ng-click="c.data.datepicker2Opened = true;" ng-model="c.data.renewDate_end" is-open="c.data.datepicker2Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
     	</div>
     </div>
-    <div class="filter-field">
+    <div ng-show="c.data.showEmployeeFilter" class="filter-width-10" >
       <label for="employeeName">
         Employee Name:
       </label>
@@ -65,7 +290,15 @@
         <input type="text" class="form-control" id="employeeName" ng-model="c.data.employeeName" /> 
       </div>
     </div>
-    <div class="filter-field">
+    <div ng-show="c.data.showManagerFilter" class="filter-width-10" >
+      <label for="managerName">
+        Manager Name:
+      </label>
+      <div>
+        <input type="text" class="form-control" id="managerName" ng-model="c.data.managerName" /> 
+      </div>
+    </div>
+    <div  ng-show="c.data.showEmployeeFilter && c.data.showManagerFilter" class="filter-width-10" >
       <label for="doc">
         Division/Office/Center:
       </label>
@@ -73,39 +306,98 @@
         <input type="text" class="form-control" id="doc" ng-model="c.data.doc" /> 
       </div>
     </div>
-    <div class="filter-field">
+    <div class="filter-width-10" >
       <label for="fundedBy">
-        My Activities Involve:
+        My Work Activities Involve:
       </label>
       <div>
         <select class="form-control" ng-model="c.data.fundedBy" id="fundedBy" ng-options="item.value as item.label for item in c.data.fundedByList">
-          	<option value="">Select Research Funded By...</option>
+          	<option value="">Select ...</option>
           </select>
       </div>
     </div>
-    <div class="filter-field">
-      <label for="trainingType">Training Type</label>
+    <div class="filter-width-10" >
+      <label for="trainingType">Employee Type:</label>
       <div>
-        <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item.value as item.label for item in c.data.trainingTypes">
-          <option value="">Select Training Type...</option>
+        <select class="form-control" id="employeeType" ng-model="c.data.employeeType" ng-options="item.value as item.label for item in c.data.employeeTypes">
+          <option value="">Select ...</option>
         </select>
     	</div>
     </div>
-    <div class="filter-field">
+    <div class="filter-width-10" >
+      <label for="trainingType">Training Type</label>
+      <div>
+        <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item.value as item.label for item in c.data.trainingTypes">
+          <option value="">Select ...</option>
+        </select>
+    	</div>
+    </div>
+    <div class="filter-width-10" >
       <label for="status">Status:</label>
       <div>
-        <select class="form-control" ng-model="c.data.status" id="status" ng-options="item.value as item.label for item in c.data.status">
-          <option value="">Select Research Funded By...</option>
+        <select class="form-control" ng-model="c.data.status" id="status" ng-init="c.data.status = 'default'" ng-options="item.value as item.label for item in c.data.statusList">
         </select>
       </div>
     </div>
-    <div class="filter-field">
-      <button type="button" class="btn btn-primary btn-upload" ng-click="c.filterTraining()">
+    <div class="filter-width-10" >
+      <button type="button" class="btn btn-primary btn-upload" ng-click="c.filterTraining()" style="margin-top:25px;">
         Filter
       </button>
     </div>
   </div>
-  <div class="result-section">     
+  <div class="report-result-section">
+    <div class="report-action-section">
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" ng-click="c.export2Excel()" role="button" aria-invalid="false" style="" ng-disabled="c.data.selectedTrainings.length == 0"> <i class="fa fa-download" aria-hidden="true"></i> Export to Excel </button>
+        </div>
+    </div>
+    <div class="report-result-section">
+      <table>
+        <tr class="table-header">
+          <th style="width:2%; min-width:50px; text-align:center;"><label for="selectAllTrainings" class="label-hidden">select:</label><input type="checkbox" id="selectAllTrainings" class="" ng-click="c.selectAll()" ng-checked="c.data.selectedTrainings.length != 0  && c.data.selectedTrainings.length == c.data.trainings.length"></th>
+          <th ng-click="sort('name')" style="width:15%; min-width:300px;">Name <i ng-show="sortKey == 'name' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'name' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('type')" style="width:10%; min-width:150px;">Training Type <i ng-show="sortKey == 'type' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'type' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('employee')" style="width:10%; min-width:150px;">Employee Name <i ng-show="sortKey == 'employee' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'employee' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('c_date')" style="width:10%; min-width:150px;">Completion Date <i ng-show="sortKey == 'c_date' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'c_date' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('rr_date')" style="width:10%; min-width:150px;">Required Renewal Date <i ng-show="sortKey == 'rr_date' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'rr_date' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('manager')" style="width:10%; min-width:150px;">Supervisor/Project Officer <i ng-show="sortKey == 'manager' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'manager' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('doc')" style="width:10%; min-width:150px;">Organization <i ng-show="sortKey == 'doc' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'doc' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('status')" style="width:10%; min-width:150px;">Status <i ng-show="sortKey == 'status' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'status' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th style="min-width:150px;">Action</th>
+        </tr>
+        <tr class="table-row" ng-repeat="x in c.data.trainings | orderBy:sortKey:reverse" ng-show="$index >= (c.data.bigCurrentPage -1) * c.data.pageSize && $index < c.data.bigCurrentPage * c.data.pageSize">
+          <td align="center">
+            <input type="checkbox" class="" ng-model="x.selected" ng-click="c.updateSelected(x)" value="{{x.sys_id}}" role="checkbox" aria-invalid="false" ng-checked="true" ng-checked="c.data.selectedTrainings.indexOf(x.sys_id) > -1">
+          </td>
+          <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.name}}</a></td>
+          <td>{{x.type}}</td>
+          <td>{{x.employee}}</td>
+          <td>{{x.c_date | date:'MM/dd/yyyy'}}</td>
+          <td>{{x.rr_date | date:'MM/dd/yyyy'}}</td>
+          <td>{{x.manager}}</td>
+          <td>{{x.doc}}</td>
+          <td>{{x.status}}</td>
+          <td>
+            <button type="button" class="table-button" ng-click="c.showHistory(x.employee_id, x.type)">
+              History
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="tab-paging-section" style="padding:0px;">
+      <ul ng-if="(c.data.trainings.length / c.data.pageSize) > 1"  uib-pagination total-items="c.data.trainings.length" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
+      </ul>
+      <div class="tab-paging-setting">
+        <select class="form-control" ng-model="c.data.pageSize" ng-init="c.data.pageSize = '10'">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="tab-paging-label">Items per page:</div>
+      </div>
   </div>
 </div>]]></template>
     </sp_widget>
