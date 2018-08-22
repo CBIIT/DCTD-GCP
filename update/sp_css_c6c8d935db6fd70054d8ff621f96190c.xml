@@ -274,7 +274,13 @@ body .padding-top{&#13;
   height:40px;&#13;
 }&#13;
 .table-row{&#13;
-  height:40px;&#13;
+  height: 50px;&#13;
+  border-bottom: 1px solid lightgray;&#13;
+  border-left: 1px solid lightgray;&#13;
+  border-right: 1px solid lightgray;&#13;
+}&#13;
+.table-row:hover{&#13;
+  background-color: #f9f9f9;&#13;
 }&#13;
 .table-button{&#13;
   color: #31708f;&#13;
@@ -433,14 +439,14 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>165</sys_mod_count>
+        <sys_mod_count>168</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
-        <sys_updated_by>pansu@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-22 20:48:31</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-22 22:21:49</sys_updated_on>
     </sp_css>
 </record_update>
