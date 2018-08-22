@@ -53,7 +53,6 @@
 			var result = fileReader.result.replace('data:application/pdf;base64,', '');
 			callback(result);
 		}
-		console.log(file.size);
 		fileReader.readAsDataURL(file); //file must be base64
 	}
 	
@@ -80,7 +79,7 @@
 				d.setFullYear(d.getFullYear() + 3);
 				var dataRenew = [pad(d.getMonth()+1), pad(d.getDate()),  d.getFullYear()].join('/');
 
-				var filename = c.data.employee_name+'_'+c.data.trainingType +'_GCP_' +completedDate.replace(/\//g,''); 
+				var filename = c.data.employee_name+'_'+c.data.trainingType.label +'_GCP_' +completedDate.replace(/\//g,''); 
 				var params = {
 					employeeName : c.data.employee_name,
 					employeeId : c.data.employee_id,
@@ -88,7 +87,7 @@
 					supervisorName : c.data.supervisor_name,
 					supervisorId : c.data.supervisor_id,
 					doc : c.data.employee_doc,
-					trainingType : c.data.trainingType,
+					trainingType : c.data.trainingType.value,
 					employeeType: c.data.employee_type,
 					dateComplete : completedDate,
 					dateRenew : dataRenew,
@@ -245,15 +244,15 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>302</sys_mod_count>
+        <sys_mod_count>306</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
-        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-17 20:51:20</sys_updated_on>
+        <sys_updated_by>pansu@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-22 21:25:12</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
@@ -280,20 +279,16 @@
           <label for="supervisor_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor/Project Officer <span class="input-info">(Please update NED if this is incorrect)</span></label>
         	<input type="text" ng-model="c.data.supervisor_name" id="supervisor_name" name="supervisor_name" class="form-control" ng-disabled="true">
         </div>
-      </div>
-      <div class="form-section">
         <div class="section-half">
           <label for="employee_doc"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Division/Office/Center</label>
         <input type="text" ng-model="c.data.employee_doc" id="employee_doc" name="employee_doc" class="form-control" ng-disabled="true">
         </div>
         <div class="section-half">
           <label for="trainingType"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Training Type</label>
-          <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item.value as item.label for item in c.data.trainingTypes">
+          <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item as item.label for item in c.data.trainingTypes">
           	<option value="">Select ...</option>
           </select>
         </div>
-      </div>
-      <div class="form-section">
         <div class="section-half">
          	<label for="completionDate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
           <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
