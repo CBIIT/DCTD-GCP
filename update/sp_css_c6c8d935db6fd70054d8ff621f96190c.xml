@@ -178,15 +178,19 @@ body .padding-top{&#13;
 .form-content{&#13;
   position:relative;&#13;
   width:100%;&#13;
+  margin-bottom:10px;&#13;
 }&#13;
 .form-description{&#13;
-  padding:20px 40px;&#13;
+  padding:20px 0px 20px 40px;&#13;
 }&#13;
 .form-box{&#13;
   border:1px solid #0280a9;&#13;
   border-radius:5px;&#13;
   padding-top:10px;&#13;
   padding-bottom:10px;&#13;
+  padding-left: 15px;&#13;
+  padding-right: 15px;&#13;
+  margin-left: 25px;&#13;
 }&#13;
 .form-title{&#13;
   font-weight:bold;&#13;
@@ -199,7 +203,8 @@ body .padding-top{&#13;
   min-width:150px;&#13;
 }&#13;
 .section-half{&#13;
- &#13;
+  display: inline-grid;&#13;
+  width: 49.5%;&#13;
 }&#13;
 .section-half label,.section-half input {&#13;
   display:block !important;&#13;
@@ -301,6 +306,9 @@ body .padding-top{&#13;
   text-align:center;&#13;
   padding:5px 20px;&#13;
   height: 50px;&#13;
+}&#13;
+.status-pastdue{&#13;
+  color: red;&#13;
 }&#13;
 .status-pending{&#13;
   color: #6161e9;&#13;
@@ -439,7 +447,7 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>168</sys_mod_count>
+        <sys_mod_count>176</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -447,6 +455,6 @@ body .padding-top{&#13;
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-22 22:21:49</sys_updated_on>
+        <sys_updated_on>2018-08-23 15:57:30</sys_updated_on>
     </sp_css>
 </record_update>

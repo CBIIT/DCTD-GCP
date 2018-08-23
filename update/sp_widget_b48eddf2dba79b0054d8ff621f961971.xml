@@ -244,15 +244,15 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>306</sys_mod_count>
+        <sys_mod_count>309</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
-        <sys_updated_by>pansu@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-22 21:25:12</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-23 15:21:02</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
@@ -266,57 +266,59 @@
         <label class="label-section">My Employees'/Contractors' Completed Training:</label> If you are a Supervisor/Project Officer, all of your employees'/contractors' GCP certificates as well as the required renewal dates will appear in this area.  If an employee or a contractor is not listed, then their documentation of training has not been uploaded (or you are not listed as their Supervisor/Project Officer).  Please verify that NED has the correct information for your employee/contractor as this will not display appropriately until NED is updated.
       </p>
     </div>
-    <div class="form-box col-sm-5">
-      <div class="form-title">
-        Upload your certificate
-      </div>
-      <div class="form-section">
-        <div class="section-half">
-          <label for="employee_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Name</label>
-          <input type="text" ng-model="c.data.employee_name" id="employee_name" name="employee_name" class="form-control" ng-disabled="true">
+    <div class="col-sm-5" style="padding-right:0px;">
+    	<div class="form-box">
+        <div class="form-title">
+          Upload your certificate
         </div>
-        <div class="section-half">
-          <label for="supervisor_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor/Project Officer <span class="input-info">(Please update NED if this is incorrect)</span></label>
-        	<input type="text" ng-model="c.data.supervisor_name" id="supervisor_name" name="supervisor_name" class="form-control" ng-disabled="true">
-        </div>
-        <div class="section-half">
-          <label for="employee_doc"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Division/Office/Center</label>
-        <input type="text" ng-model="c.data.employee_doc" id="employee_doc" name="employee_doc" class="form-control" ng-disabled="true">
-        </div>
-        <div class="section-half">
-          <label for="trainingType"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Training Type</label>
-          <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item as item.label for item in c.data.trainingTypes">
-          	<option value="">Select ...</option>
-          </select>
-        </div>
-        <div class="section-half">
-         	<label for="completionDate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
-          <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
-        </div>
-        <div class="section-half">
-          <label for="fundedBy"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> My Work Activities Involve</label>
-        	<select class="form-control" ng-model="c.data.fundedBy" id="fundedBy" ng-options="item.value as item.label for item in c.data.fundedByList">
-          	<option value="">Select ...</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-section">
-        <label for="certificate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificate</label>
-        <div class="file-section">
-          <div class="file-return" id="certificate_label">
-            <span style="color: #949292;font-weight: normal;margin-left: 10px;">Select pdf file to be uploaded</span>
+        <div class="form-section">
+          <div>
+            <label for="employee_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Name</label>
+            <input type="text" ng-model="c.data.employee_name" id="employee_name" name="employee_name" class="form-control" ng-disabled="true">
           </div>
-          <div class="input-file-container">
-            <input class="input-file" id="certificate-hidden" type="file" accept="application/pdf">
-            <label for="certificate-hidden" class="input-file-trigger">Browse...</label>
+          <div>
+            <label for="supervisor_name"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Supervisor/Project Officer <span class="input-info">(Please update NED if this is incorrect)</span></label>
+            <input type="text" ng-model="c.data.supervisor_name" id="supervisor_name" name="supervisor_name" class="form-control" ng-disabled="true">
+          </div>
+          <div class="section-half">
+            <label for="employee_doc"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Division/Office/Center</label>
+          <input type="text" ng-model="c.data.employee_doc" id="employee_doc" name="employee_doc" class="form-control" ng-disabled="true">
+          </div>
+          <div class="section-half">
+            <label for="trainingType"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Training Type</label>
+            <select class="form-control" id="trainingType" ng-model="c.data.trainingType" ng-options="item as item.label for item in c.data.trainingTypes">
+              <option value="">Select ...</option>
+            </select>
+          </div>
+          <div class="section-half">
+            <label for="completionDate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
+            <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
+          </div>
+          <div class="section-half">
+            <label for="fundedBy"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> My Work Activities Involve</label>
+            <select class="form-control" ng-model="c.data.fundedBy" id="fundedBy" ng-options="item.value as item.label for item in c.data.fundedByList">
+              <option value="">Select ...</option>
+            </select>
           </div>
         </div>
-        
-      </div>
-      <div class="form-section">
-        <button type="button" class="btn btn-primary btn-upload" ng-click="c.upload()" ng-model="uploadTraining" ng-disabled="c.data.upload_status == 'upload...' || c.data.employee_name =='' || c.data.supervisor_name == '' || c.data.employee_doc == '' || c.data.trainingType == null || c.data.completedDate == undefined || c.data.fundedBy == null || c.data.certificate == ''">
-          <i class="fa fa-upload" aria-hidden="true"></i> {{c.data.upload_status}}
-        </button>
+        <div class="form-section">
+          <label for="certificate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificate</label>
+          <div class="file-section">
+            <div class="file-return" id="certificate_label">
+              <span style="color: #949292;font-weight: normal;margin-left: 10px;">Select pdf file to be uploaded</span>
+            </div>
+            <div class="input-file-container">
+              <input class="input-file" id="certificate-hidden" type="file" accept="application/pdf">
+              <label for="certificate-hidden" class="input-file-trigger">Browse...</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-section">
+          <button type="button" class="btn btn-primary btn-upload" ng-click="c.upload()" ng-model="uploadTraining" ng-disabled="c.data.upload_status == 'upload...' || c.data.employee_name =='' || c.data.supervisor_name == '' || c.data.employee_doc == '' || c.data.trainingType == null || c.data.completedDate == undefined || c.data.fundedBy == null || c.data.certificate == ''">
+            <i class="fa fa-upload" aria-hidden="true"></i> {{c.data.upload_status}}
+          </button>
+        </div>
       </div>
     </div>
   </div>
