@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>This is the GCP URL </description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_naci_gcp.gcp_url</name>
+        <read_roles/>
+        <suffix>gcp_url</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-08-24 21:10:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2159bef6db44a300b86770c08c9619bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_naci_gcp.gcp_url</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sys_properties_2159bef6db44a300b86770c08c9619bc</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-24 21:10:03</sys_updated_on>
+        <type>string</type>
+        <value>https://service-dev2.nci.nih.gov/gcp</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=2159bef6db44a300b86770c08c9619bc"/>
+</record_update>

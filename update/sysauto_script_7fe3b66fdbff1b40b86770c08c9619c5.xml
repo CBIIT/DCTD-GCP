@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sysauto_script">
     <sysauto_script action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <condition/>
         <conditional>false</conditional>
         <name>GCP check certificate expired</name>
         <run_as display_value="Jim Zhou">7acff4a96f6f2100e04fd15eae3ee451</run_as>
         <run_as_tz/>
-        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofmonth>24</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
         <run_period/>
         <run_start>2018-08-14 18:25:20</run_start>
-        <run_time>1970-01-01 05:30:00</run_time>
+        <run_time>1970-01-01 20:03:00</run_time>
         <run_type>monthly</run_type>
         <script><![CDATA[//query database to get all people who's certificate will be expired in three months
 //either send group email or loop all people to send an individual one.
@@ -24,7 +24,7 @@ gs.eventQueue('x_naci_gcp.send_Expired_Reminder',current, userName, userEmail);]
         <sys_created_on>2018-08-14 18:28:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7fe3b66fdbff1b40b86770c08c9619c5</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>GCP check certificate expired</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -32,7 +32,7 @@ gs.eventQueue('x_naci_gcp.send_Expired_Reminder',current, userName, userEmail);]
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysauto_script_7fe3b66fdbff1b40b86770c08c9619c5</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-14 19:10:06</sys_updated_on>
+        <sys_updated_on>2018-08-24 19:01:47</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

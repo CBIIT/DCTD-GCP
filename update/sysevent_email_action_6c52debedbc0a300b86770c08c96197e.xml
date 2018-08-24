@@ -23,7 +23,7 @@
         <digest_template/>
         <digest_text/>
         <digestable>false</digestable>
-        <event_name>x_naci_gcp.sending_training_request</event_name>
+        <event_name>x_naci_gcp.send_Expired_Reminder</event_name>
         <event_parm_1>false</event_parm_1>
         <event_parm_2>true</event_parm_2>
         <exclude_delegates>false</exclude_delegates>
@@ -37,22 +37,23 @@
         <mandatory>false</mandatory>
         <message/>
         <message_html><![CDATA[<p>Hello ${event.parm1},</p>
-<p>&nbsp;As you may be aware, NIH employees involved in the design, conduct, oversight and management of NIH-funded clinical trials are required to complete a GCP training course at a minimum of every three years. &nbsp;&nbsp;&nbsp;Your new position includes clinical trials related responsibilities and you are required to complete GCP training within 30 days of employment.</p>
-<p>&nbsp;You may register to complete <strong><u>one</u></strong> of the following NCI recommended free GCP courses online by selecting one of the links below.</p>
+<p>As you may be aware, NIH employees are required to complete a Good Clinical Practice (GCP) training course at a minimum of every three years.</p>
+<p>You are receiving this email as you have not completed this <strong>mandatory </strong>training within the past three years. Please do so <strong>no later than &lt;MMMMM DD, 20YY&gt;</strong>.</p>
+<p>You may register to complete <strong><u>one</u></strong> of the following NCI recommended free GCP courses online by selecting one of the links below.</p>
 <ul style="list-style-position: inside;">
-<li>&nbsp;<a href="https://gcp.nihtraining.com/">National Institute on Drug Abuse (NIDA) course titled "National Drug Abuse Treatment Clinical Trials Network Good Clinical Practice"</a></li>
-<li>&nbsp;<a href="https://ohsr.od.nih.gov/nih/citi.php">Collaborative Institutional Training Initiative Program (CITI)</a></li>
-<li>&nbsp;<a href="https://gcplearningcenter.niaid.nih.gov/">National Institute of Allergy and Infectious Diseases (NIAID) GCP Learning Center</a></li>
-<li>&nbsp;<a href="https://lms.learning.hhs.gov/">NIH Good Clinical Practice for Behavioral and Social Sciences Training (00162946)</a></li>
+<li><a href="https://gcp.nihtraining.com/">National Institute on Drug Abuse (NIDA) course titled "National Drug Abuse Treatment Clinical Trials Network Good Clinical Practice"</a></li>
+<li><a href="https://ohsr.od.nih.gov/nih/citi.php">Collaborative Institutional Training Initiative Program (CITI)</a></li>
+<li><a href="https://gcplearningcenter.niaid.nih.gov/">National Institute of Allergy and Infectious Diseases (NIAID) GCP Learning Center</a></li>
+<li><a href="https://lms.learning.hhs.gov/">NIH Good Clinical Practice for Behavioral and Social Sciences Training (00162946)</a></li>
 </ul>
 <p>This course must be accessed via the HHS Learning Management System. The e-Learning course is comprised of nine video course modules. All 9 courses are required to get your certificate.</p>
-<p>&nbsp;If you experience technical issues when logging into one of these online courses, please contact the help desk associated with that training.&nbsp; &nbsp;Please contact <a>TBD</a>&nbsp;for all other inquiries regarding this email.</p>
-<p>Once you have completed your training, please&nbsp;go to <a>Training Certificate Repository </a>to upload your&nbsp;completed certificate(s).&nbsp; For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.&nbsp; Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).</p>
-<p><em>Note:&nbsp; If you have more than one certificate (i.e. the course provides individual certificates for each section of their course), you must combine those into one pdf document prior to uploading. A pdf Adobe Portfolio is not permitted for this upload.</em></p>
+<p>&nbsp;General questions or concerns about this training should be directed to your &lt;supervisor or COR&gt;.&nbsp;&nbsp; If you need technical assistance or have questions regarding the training, please contact the appropriate help desk associated with the training you have selected to complete.&nbsp; If you need technical assistance with uploading your document(s), please contact: ( <a>TBD</a>&nbsp; )</p>
+<p>&nbsp;Once you have completed your training, please&nbsp;go to <a>Training Certificate Repository</a>&nbsp;to upload your&nbsp;completed certificate(s).&nbsp; For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.&nbsp; Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).</p>
+<p>&nbsp;<em>Note:&nbsp; If you have more than one certificate (i.e. the course provides individual certificates for each section of their course), you must combine those into one pdf document prior to uploading. A pdf Adobe Portfolio is not permitted for this upload.</em></p>
 <div>&nbsp;</div>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>Employee Training Notification</name>
+        <name>GCP Employee Training expired</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
@@ -63,24 +64,24 @@
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Please take the following GCP training class</subject>
+        <subject>Your Training Certificate will be expired in three months</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-08-09 16:22:57</sys_created_on>
+        <sys_created_on>2018-08-24 18:19:46</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>ca67e802db771740b86770c08c961926</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Employee Training Notification</sys_name>
+        <sys_id>6c52debedbc0a300b86770c08c96197e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GCP Employee Training expired</sys_name>
         <sys_overrides/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
-        <sys_update_name>sysevent_email_action_ca67e802db771740b86770c08c961926</sys_update_name>
+        <sys_update_name>sysevent_email_action_6c52debedbc0a300b86770c08c96197e</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-24 18:57:50</sys_updated_on>
+        <sys_updated_on>2018-08-24 19:01:27</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
