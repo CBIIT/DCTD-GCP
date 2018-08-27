@@ -148,7 +148,7 @@
         <sys_created_on>2018-07-31 18:27:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>163ee28bdb27db0054d8ff621f9619cb</sys_id>
-        <sys_mod_count>92</sys_mod_count>
+        <sys_mod_count>95</sys_mod_count>
         <sys_name>gcp employee trainings</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -156,14 +156,14 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_163ee28bdb27db0054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-23 16:15:51</sys_updated_on>
+        <sys_updated_on>2018-08-27 21:59:08</sys_updated_on>
         <template><![CDATA[<div class="tab-box">
 	<div class="tab-search-section">
     	<div class="tab-button-bar">
         <button type="button" class="btn btn-primary" ng-click="c.showTrainingRequest()" ng-model="sendTrainingRequest" role="button" aria-invalid="false" style=""> <i class="fa fa-plus" aria-hidden="true"></i> Request GCP training for New Staff </button>
         <button type="button" class="btn btn-primary" ng-click="c.deactiveUser()" role="button" aria-invalid="false" style=""><i class="fa fa-minus" aria-hidden="true"></i> Deactive employee </button>
       </div>
-    	<span class="tab-search-button" ng-click="c.filterTraining()"><i class="fa fa-search" aria-hidden="true"></i></span>	
+    	<span class="tab-search-button" ng-click="c.filterTraining()" aria-label="search"><i class="fa fa-search" aria-hidden="true"></i></span>	
     	<div class="tab-search-input">
         <label for="employee_training_search" class="label-hidden">Search:</label>
       	<input type="text"  ng-model="c.data.searchText" placeholder="Find a file"  ng-keypress="c.handleKeyPress($event)" ng-change="c.searchTextChange()" id="employee_training_search" name="employee_training_search" class="form-control">
@@ -211,7 +211,8 @@
     <ul ng-if="(c.data.filtered.length / c.data.pageSize) > 1"  uib-pagination total-items="c.data.filtered.length" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
     </ul>
     <div class="tab-paging-setting">
-      <select class="form-control" ng-model="c.data.pageSize" ng-init="c.data.pageSize = '10'">
+      <label for="employee_pageSize" class="label-hidden">pageSize:</label>
+      <select class="form-control" id="employee_pageSize" ng-model="c.data.pageSize" ng-init="c.data.pageSize = '10'">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>

@@ -7,6 +7,8 @@
   var c = this;
 	var s = $location.search();
 	
+	
+	c.data.today = new Date().toISOString().substr(0,10);
 	c.data.upload_status = 'upload';
 	c.data.trainingType = null;
 	c.data.completedDate = undefined;
@@ -61,14 +63,14 @@
 	}
 	
 	c.upload = function(){
-		c.data.upload_status = 'upload...';
+		c.data.upload_status = 'uploading...';
 		var sessionId = c.data.sessionId;
 		
 		var input = $('#certificate-hidden')[0];
 		var file = input.files[0];
 		
 		//if(file.size >= 7340032){
-		if(file.size >= 30240032){
+		if(file.size >= 18874368){
 			$('#messageContent').html(GCPConstants.errorMessage[4]);
 			$('#messageDiv').modal('show');
 			c.data.upload_status = 'upload';
@@ -245,26 +247,26 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>313</sys_mod_count>
+        <sys_mod_count>323</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-27 13:45:21</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-08-27 21:38:19</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
       <p>
-        <label class="label-section">NCI Staff:</label> To upload your "single" pdf file of your GCP certificate(s) it will be necessary for you to complete the required data fields in the box on the right as requested.  You MUST follow the "naming convention"  of [ Last Name_First Name_Org Providing Training_GCP_MMDDYYY (first training date completed) ] .  Please refer to the <a class="link-text" href="https://nciconnect.nci.nih.gov/sites/Collaboration/gcp/Shared%20Documents/Uploading%20your%20GCP%20document(s)%20-%20Quick%20Reference%20Guide.pdf" target="_blank">Uploading Your GCP Certificate(s) Quick Reference Guide</a> for more information.
+        <span class="label-section">NCI Staff:</span> To upload your "single" pdf file of your GCP certificate(s) it will be necessary for you to complete the required data fields in the box on the right as requested.  You MUST follow the "naming convention"  of [ Last Name_First Name_Org Providing Training_GCP_MMDDYYY (first training date completed) ] .  Please refer to the <a class="link-text" href="https://nciconnect.nci.nih.gov/sites/Collaboration/gcp/Shared%20Documents/Uploading%20your%20GCP%20document(s)%20-%20Quick%20Reference%20Guide.pdf" target="_blank">Uploading Your GCP Certificate(s) Quick Reference Guide</a> for more information.
       </p>
       <p>
-        <label class="label-section">My Completed Trainings:</label> The most recent GCP completion certifcate(s) uploaded will be shown in this section.  If any of the information is incorrect or there is no information available (and you have completed your training), please contact email box name that we decide to use for your team and ours.
+        <span class="label-section">My Completed Trainings:</span> The most recent GCP completion certificate(s) uploaded will be shown in this section.  If any of the information is incorrect or there is no information available (and you have completed your training), please contact email box name that we decide to use for your team and ours.
       </p>
       <p ng-show="c.data.showEmployeeTrainings">
-        <label class="label-section">My Employees'/Contractors' Completed Training:</label> If you are a Supervisor/Project Officer, all of your employees'/contractors' GCP certificates as well as the required renewal dates will appear in this area.  If an employee or a contractor is not listed, then their documentation of training has not been uploaded (or you are not listed as their Supervisor/Project Officer).  Please verify that NED has the correct information for your employee/contractor as this will not display appropriately until NED is updated.
+        <span class="label-section">My Employees'/Contractors' Completed Training:</span> If you are a Supervisor/Project Officer, all of your employees'/contractors' GCP certificates as well as the required renewal dates will appear in this area.  If an employee or a contractor is not listed, then their documentation of training has not been uploaded (or you are not listed as their Supervisor/Project Officer).  Please verify that NED has the correct information for your employee/contractor as this will not display appropriately until NED is updated.
       </p>
     </div>
     <div class="col-sm-5" style="padding-right:0px;">
@@ -293,7 +295,7 @@
           </div>
           <div class="section-half">
             <label for="completionDate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
-            <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
+            <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false"  max-date="'{{c.data.today}}'" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
           </div>
           <div class="section-half">
             <label for="fundedBy"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> My Work Activities Involve</label>
@@ -306,7 +308,7 @@
           <label for="certificate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Certificate</label>
           <div class="file-section">
             <div class="file-return" id="certificate_label">
-              <span style="color: #949292;font-weight: normal;margin-left: 10px;">Select pdf file to be uploaded</span>
+              <span style="color: #716f6f;font-weight: normal;margin-left: 10px;">Select pdf file to be uploaded</span>
             </div>
             <div class="input-file-container">
               <input class="input-file" id="certificate-hidden" type="file" accept="application/pdf">

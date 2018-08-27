@@ -36,7 +36,7 @@
         <sys_created_on>2018-07-27 14:37:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>163311bddbe35b00b86770c08c96197f</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>gcp home content</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -44,7 +44,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_163311bddbe35b00b86770c08c96197f</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-23 17:28:04</sys_updated_on>
+        <sys_updated_on>2018-08-27 20:19:16</sys_updated_on>
         <template><![CDATA[<div>
   <div class="home-box" ng-if="c.xpage == 'home'">
     <h1>
@@ -57,7 +57,7 @@
       This training requirement applies to individuals who participate in the development, implementation, monitoring, and/or evaluation of clinical research activities affiliated with clinical trials and should be commensurate with their role and responsibility.  For NCI, this includes program staff, contracting officer's representatives, health specialists, program analysts, nurse consultants, medical monitors, and many others involved in the technical aspects of grants, cooperative agreements or contracts through which clinical trials are conducted, as well as those participants making decisions about the design and conduct of clinical trials.
     </p>
     <p>
-      <label class="label-section">NCI Staff Instructions:</label>  Once you have completed your GCP training, please go to the <a class="link-text" href="gcp?xpage=main">Training Certificate Repository</a> (select tab on the top) to upload your completed certificate(s).  For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.  Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).
+      <span class="label-section">NCI Staff Instructions:</span>  Once you have completed your GCP training, please go to the <a class="link-text" href="gcp?xpage=main">Training Certificate Repository</a> (select tab on the top) to upload your completed certificate(s).  For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.  Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).
     </p>
     <p class="p_comment">
       Note:  If you have more than one certificate (i.e. the course provides individual certificates for each section of their course), you must combine those into one pdf document prior to uploading. A pdf Adobe Portfolio is not permitted for this upload.

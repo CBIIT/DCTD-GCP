@@ -36,10 +36,10 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Dear&nbsp;${event.parm1},</p>
-<p>Our records show that you have not yet completed the required <strong>Good Clinical Practice training</strong>. As you know, you are required to complete a Good Clinical Practice training course at a minimum of every 3 years.&nbsp;&nbsp; Your training was to be completed by &lt;refresher date&gt;.</p>
-<p>&nbsp;This training <strong><u>must </u></strong>be completed <strong><u>immediately</u></strong><del cite="mailto:Castro,%20Kathleen%20(NIH/NCI)%20%5bE%5d" datetime="2018-07-06T15:32">.</del> &nbsp;&nbsp;</p>
-<p>&nbsp;You may register to complete one of the following NCI recommended free GCP courses online by selecting one of the links below.</p>
+        <message_html><![CDATA[<p>Dear ${employee_name},&nbsp;</p>
+<p>Our records show that you have not yet completed the required <strong>Good Clinical Practice training</strong>. As you know, you are required to complete a Good Clinical Practice training course at a minimum of every 3 years.&nbsp;&nbsp; Your training was to be completed by ${certificate_renew_date}<br />.</p>
+<p>This training <span style="text-decoration: underline;"><strong>must</strong></span>&nbsp;be completed <span style="text-decoration: underline;"><strong>immediately</strong></span>.</p>
+<p>You may register to complete one of the following NCI recommended free GCP courses online by selecting one of the links below.</p>
 <ul style="list-style-position: inside;">
 <li>&nbsp;<a href="https://gcp.nihtraining.com/">National Institute on Drug Abuse (NIDA) course titled "National Drug Abuse Treatment Clinical Trials Network Good Clinical Practice"</a></li>
 <li>&nbsp;<a href="https://ohsr.od.nih.gov/nih/citi.php">Collaborative Institutional Training Initiative Program (CITI)</a></li>
@@ -47,7 +47,7 @@
 <li>&nbsp;<a href="https://lms.learning.hhs.gov/">NIH Good Clinical Practice for Behavioral and Social Sciences Training (00162946)</a></li>
 </ul>
 <p>This course must be accessed via the HHS Learning Management System. The e-Learning course is comprised of nine video course modules. All 9 courses are required to get your certificate.</p>
-<p>General questions or concerns about this training should be directed to your &lt;supervisor or COR&gt;.&nbsp;&nbsp; If you need technical assistance or have questions regarding the training, please contact the appropriate help desk associated with the training you have selected to complete.&nbsp; If you need technical assistance with uploading your document(s), please contact: ( <a>TBD</a>&nbsp;)</p>
+<p>General questions or concerns about this training should be directed to your manager,&nbsp; ${manager}.&nbsp; If you need technical assistance or have questions regarding the training, please contact the appropriate help desk associated with the training you have selected to complete.&nbsp; If you need technical assistance with uploading your document(s), please contact: ( <a>TBD</a>&nbsp;)</p>
 <p>&nbsp;</p>
 <p>Once you have completed your training, please&nbsp;go to <a>Training Certificate Repository </a>to upload your&nbsp;completed certificate(s).&nbsp; For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.&nbsp; Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).</p>
 <div>&nbsp;</div>]]></message_html>
@@ -72,7 +72,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>c4d3dafedbc0a300b86770c08c96190f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>GCP Employee training past due</sys_name>
         <sys_overrides/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
@@ -81,7 +81,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysevent_email_action_c4d3dafedbc0a300b86770c08c96190f</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-24 21:08:22</sys_updated_on>
+        <sys_updated_on>2018-08-27 21:57:33</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>

@@ -55,7 +55,7 @@
         <sys_created_on>2018-08-06 15:03:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7819788ddb375340b86770c08c9619dc</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>gcp comment</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -63,11 +63,11 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_7819788ddb375340b86770c08c9619dc</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-10 21:39:07</sys_updated_on>
+        <sys_updated_on>2018-08-27 21:57:50</sys_updated_on>
         <template><![CDATA[<div>
   <div id="reject_popup" class="modal fade" data-keyboard="false" data-backdrop="static" style="overflow-y:auto; overflow-x: auto;">   
 	<div class="modal-dialog">
-  	<div class="modal-content" id="content" style="width:900px; height:auto; overflow-y:auto; overflow-x: hidden;">
+  	<div class="modal-content" id="reject_content" style="width:900px; height:auto; overflow-y:auto; overflow-x: hidden;">
          <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal" ng-click="c.cancelReject()" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
