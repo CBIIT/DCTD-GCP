@@ -247,7 +247,7 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>323</sys_mod_count>
+        <sys_mod_count>324</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -255,7 +255,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-27 21:38:19</sys_updated_on>
+        <sys_updated_on>2018-08-28 18:39:06</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
@@ -295,7 +295,7 @@
           </div>
           <div class="section-half">
             <label for="completionDate"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> Date Completed</label>
-            <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false"  max-date="'{{c.data.today}}'" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
+            <input type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false" show-button-bar="false" max-date="'{{c.data.today}}'" id="completionDate" name="completionDate" class="form-control" ng-click="c.data.datepickerOpened = true;" ng-model="c.data.completedDate" is-open="c.data.datepickerOpened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">
           </div>
           <div class="section-half">
             <label for="fundedBy"><i class="fa fa-asterisk" aria-hidden="true" style="font-size:8px;color:#B22222;"></i> My Work Activities Involve</label>

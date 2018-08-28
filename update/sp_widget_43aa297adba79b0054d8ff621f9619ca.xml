@@ -262,7 +262,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>253</sys_mod_count>
+        <sys_mod_count>254</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -270,7 +270,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-27 22:06:23</sys_updated_on>
+        <sys_updated_on>2018-08-28 18:40:01</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
@@ -279,9 +279,9 @@
         Required Renewal Date:
       </label>
       <div>
-      	<label for="renewDate_start" class="label-hidden">Start:</label><input style="width:48%;float:left;" placeholder="start" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false" id="renewDate_start" name="renewDate_start" class="form-control" ng-click="c.data.datepicker1Opened = true;" ng-model="c.data.renewDate_start" is-open="c.data.datepicker1Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+      	<label for="renewDate_start" class="label-hidden">Start:</label><input style="width:48%;float:left;" placeholder="start" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false" show-button-bar="false" id="renewDate_start" name="renewDate_start" class="form-control" ng-click="c.data.datepicker1Opened = true;" ng-model="c.data.renewDate_start" is-open="c.data.datepicker1Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
         <span style="float:left;line-height: 34px;">&nbsp;-&nbsp;</span>
-        <label for="renewDate_end" class="label-hidden">End:</label><input style="width:48%;float:left;"  placeholder="end" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false" id="renewDate_end" name="renewDate_end" class="form-control" ng-click="c.data.datepicker2Opened = true;" ng-model="c.data.renewDate_end" is-open="c.data.datepicker2Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+        <label for="renewDate_end" class="label-hidden">End:</label><input style="width:48%;float:left;"  placeholder="end" type="text" value="" uib-datepicker-popup="MM/dd/yyyy" show-weeks="false" show-button-bar="false" id="renewDate_end" name="renewDate_end" class="form-control" ng-click="c.data.datepicker2Opened = true;" ng-model="c.data.renewDate_end" is-open="c.data.datepicker2Opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
     	</div>
     </div>
     <div ng-show="c.data.showEmployeeFilter" class="filter-width-10" >

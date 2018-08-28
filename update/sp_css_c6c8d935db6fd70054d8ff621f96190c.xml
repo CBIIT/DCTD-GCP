@@ -22,6 +22,7 @@ th,td{&#13;
 section.page {&#13;
   overflow: visible;&#13;
   height:auto;&#13;
+  width:auto;&#13;
 }&#13;
 .ui-front{&#13;
   z-index:10000 !important;&#13;
@@ -122,6 +123,7 @@ body .padding-top{&#13;
   height:115px;&#13;
   line-height:50px;&#13;
   color:white;&#13;
+  float:left;&#13;
 }&#13;
 .banner-logo{&#13;
   float:left;&#13;
@@ -205,7 +207,7 @@ body .padding-top{&#13;
   min-width:150px;&#13;
 }&#13;
 .section-half{&#13;
-  display: inline-grid;&#13;
+  display: inline-table;&#13;
   width: 49.5%;&#13;
 }&#13;
 .section-half label,.section-half input {&#13;
@@ -449,7 +451,7 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>178</sys_mod_count>
+        <sys_mod_count>181</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -457,6 +459,6 @@ body .padding-top{&#13;
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-27 20:51:16</sys_updated_on>
+        <sys_updated_on>2018-08-28 19:01:41</sys_updated_on>
     </sp_css>
 </record_update>
