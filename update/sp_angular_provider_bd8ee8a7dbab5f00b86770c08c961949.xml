@@ -15,7 +15,8 @@
 												'Fail to upload the certificate, the certificate completed date cannot be earlier than your previous uploaded certificate.',
 											 'Fail to upload the certificate, your previous uploaded certificate is in Pending Acceptance.',
 											 'Unknown server error, please contact GCP application administrator.',
-											 'Certificate size must be less than 18 megabytes.'
+											 'Certificate size must be less than 18 megabytes.',
+											 'Fail to upload the certificate, file should be in PDF format.'
 											];
 	this.statusList = [{label: 'All trainings except Archived', value: 'default'},
 										 {label: 'Pending Acceptance', value: 'Pending Acceptance'},
@@ -67,7 +68,7 @@
         <sys_created_on>2018-08-01 22:27:35</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bd8ee8a7dbab5f00b86770c08c961949</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>GCPConstants</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -75,7 +76,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_angular_provider_bd8ee8a7dbab5f00b86770c08c961949</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-27 15:36:15</sys_updated_on>
+        <sys_updated_on>2018-08-28 19:55:41</sys_updated_on>
         <type>service</type>
     </sp_angular_provider>
 </record_update>

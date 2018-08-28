@@ -19,10 +19,9 @@ th,td{&#13;
 .sp-page-root{&#13;
   overflow:auto !important;&#13;
 }&#13;
-section.page {&#13;
+div.page, section.page {&#13;
   overflow: visible;&#13;
   height:auto;&#13;
-  width:auto;&#13;
 }&#13;
 .ui-front{&#13;
   z-index:10000 !important;&#13;
@@ -139,7 +138,7 @@ body .padding-top{&#13;
 .banner-user{&#13;
   position: absolute;&#13;
   top: 0px;&#13;
-  right: 0px;&#13;
+  right: 40px;&#13;
   color:#fff;&#13;
 }&#13;
 .user-box{&#13;
@@ -451,7 +450,7 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>181</sys_mod_count>
+        <sys_mod_count>185</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -459,6 +458,6 @@ body .padding-top{&#13;
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-28 19:01:41</sys_updated_on>
+        <sys_updated_on>2018-08-28 19:21:33</sys_updated_on>
     </sp_css>
 </record_update>
