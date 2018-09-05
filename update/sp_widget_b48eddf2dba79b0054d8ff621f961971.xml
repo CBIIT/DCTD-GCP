@@ -251,7 +251,7 @@
         <sys_created_on>2018-07-30 18:00:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b48eddf2dba79b0054d8ff621f961971</sys_id>
-        <sys_mod_count>327</sys_mod_count>
+        <sys_mod_count>328</sys_mod_count>
         <sys_name>gcp training</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -259,19 +259,21 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b48eddf2dba79b0054d8ff621f961971</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-28 19:52:44</sys_updated_on>
+        <sys_updated_on>2018-09-05 20:48:40</sys_updated_on>
         <template><![CDATA[<div class="main-box">
   <div class="form-content">
     <div class="form-description col-sm-7">
-      <p>
-        <span class="label-section">NCI Staff:</span> To upload your "single" pdf file of your GCP certificate(s) it will be necessary for you to complete the required data fields in the box on the right as requested.  You MUST follow the "naming convention"  of [ Last Name_First Name_Org Providing Training_GCP_MMDDYYY (first training date completed) ] .  Please refer to the <a class="link-text" href="https://nciconnect.nci.nih.gov/sites/Collaboration/gcp/Shared%20Documents/Uploading%20your%20GCP%20document(s)%20-%20Quick%20Reference%20Guide.pdf" target="_blank">Uploading Your GCP Certificate(s) Quick Reference Guide</a> for more information.
-      </p>
-      <p>
-        <span class="label-section">My Completed Trainings:</span> The most recent GCP completion certificate(s) uploaded will be shown in this section.  If any of the information is incorrect or there is no information available (and you have completed your training), please contact email box name that we decide to use for your team and ours.
-      </p>
-      <p ng-show="c.data.showEmployeeTrainings">
-        <span class="label-section">My Employees'/Contractors' Completed Training:</span> If you are a Supervisor/Project Officer, all of your employees'/contractors' GCP certificates as well as the required renewal dates will appear in this area.  If an employee or a contractor is not listed, then their documentation of training has not been uploaded (or you are not listed as their Supervisor/Project Officer).  Please verify that NED has the correct information for your employee/contractor as this will not display appropriately until NED is updated.
-      </p>
+      <div class="form-text-box">
+        <p>
+          <span class="label-section">NCI Staff:</span> To upload your "single" pdf file of your GCP certificate(s) it will be necessary for you to complete the required data fields in the box on the right as requested.  You MUST follow the "naming convention"  of [ Last Name_First Name_Org Providing Training_GCP_MMDDYYY (first training date completed) ] .  Please refer to the <a class="link-text" href="https://nciconnect.nci.nih.gov/sites/Collaboration/gcp/Shared%20Documents/Uploading%20your%20GCP%20document(s)%20-%20Quick%20Reference%20Guide.pdf" target="_blank">Uploading Your GCP Certificate(s) Quick Reference Guide</a> for more information.
+        </p>
+        <p>
+          <span class="label-section">My Completed Trainings:</span> The most recent GCP completion certificate(s) uploaded will be shown in this section.  If any of the information is incorrect or there is no information available (and you have completed your training), please contact email box name that we decide to use for your team and ours.
+        </p>
+        <p ng-show="c.data.showEmployeeTrainings">
+          <span class="label-section">My Employees'/Contractors' Completed Training:</span> If you are a Supervisor/Project Officer, all of your employees'/contractors' GCP certificates as well as the required renewal dates will appear in this area.  If an employee or a contractor is not listed, then their documentation of training has not been uploaded (or you are not listed as their Supervisor/Project Officer).  Please verify that NED has the correct information for your employee/contractor as this will not display appropriately until NED is updated.
+        </p>
+      </div>
     </div>
     <div class="col-sm-5" style="padding-right:0px;">
     	<div class="form-box">
