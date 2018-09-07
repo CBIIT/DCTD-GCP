@@ -19,6 +19,7 @@
     $location.search(s).replace();
 	}
 	
+	/*
 	if(!c.data.isCTEPRCRTeam){
 		GCPUtil.isManager(c.data.info.userId, c.data.sessionId).then(function(res){
 			c.data.showReport = res.data.result == "yes";
@@ -33,6 +34,17 @@
 			if(c.xpage == "main"){
 				c.showPage('home');
 			}
+	}
+	*/
+	if(!c.data.isCTEPRCRTeam){
+		GCPUtil.isManager(c.data.info.userId, c.data.sessionId).then(function(res){
+			c.data.showReport = res.data.result == "yes";
+			if(!c.data.showReport && c.xpage == "report"){
+				c.showPage('home');
+			}
+		},function(error){
+			console.log(error);
+		});
 	}
 	
 	$scope.logout = function(){
@@ -71,7 +83,7 @@
         <sys_created_on>2018-07-27 15:13:38</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c7bd5b5db6fd70054d8ff621f96199e</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>gcp menu bar</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -79,14 +91,14 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_1c7bd5b5db6fd70054d8ff621f96199e</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-29 18:33:05</sys_updated_on>
+        <sys_updated_on>2018-09-06 20:05:17</sys_updated_on>
         <template><![CDATA[<div class="menu-box">
 	<div class="col-md-1">
   </div>
   <div class="menu-content col-md-10">
   		<ul class="menu-ul">
         <li ng-class="c.xpage == 'home'? 'active' : ''" ng-click="c.showPage('home')">Home</li>
-        <li ng-show="!c.data.isCTEPRCRTeam"  ng-class="c.xpage == 'main'? 'active' : ''" ng-click="c.showPage('main')">Training Certificate Repository</li>
+        <li ng-class="c.xpage == 'main'? 'active' : ''" ng-click="c.showPage('main')">Training Certificate Repository</li>
         <li ng-show="c.data.isCTEPRCRTeam || c.data.showReport" ng-class="c.xpage == 'report'? 'active' : ''" ng-click="c.showPage('report')">Report</li>
 			</ul>
     <div class="banner-user" uib-dropdown>

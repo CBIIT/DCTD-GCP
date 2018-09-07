@@ -23,6 +23,12 @@ div.page, section.page {&#13;
   overflow: visible;&#13;
   height:auto;&#13;
 }&#13;
+.tooltip.top .tooltip-arrow {&#13;
+    border-top-color: #0280a9;&#13;
+}&#13;
+.tooltip-inner {&#13;
+    background-color: #0280a9;&#13;
+}&#13;
 .ui-front{&#13;
   z-index:10000 !important;&#13;
 }&#13;
@@ -457,7 +463,7 @@ body .padding-top{&#13;
         <sys_created_on>2018-07-27 15:03:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c6c8d935db6fd70054d8ff621f96190c</sys_id>
-        <sys_mod_count>188</sys_mod_count>
+        <sys_mod_count>189</sys_mod_count>
         <sys_name>GCP_CSS</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -465,6 +471,6 @@ body .padding-top{&#13;
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_css_c6c8d935db6fd70054d8ff621f96190c</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-05 20:56:47</sys_updated_on>
+        <sys_updated_on>2018-09-06 21:27:24</sys_updated_on>
     </sp_css>
 </record_update>

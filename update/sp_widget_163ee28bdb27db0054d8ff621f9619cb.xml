@@ -148,7 +148,7 @@
         <sys_created_on>2018-07-31 18:27:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>163ee28bdb27db0054d8ff621f9619cb</sys_id>
-        <sys_mod_count>96</sys_mod_count>
+        <sys_mod_count>100</sys_mod_count>
         <sys_name>gcp employee trainings</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -156,7 +156,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_163ee28bdb27db0054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-05 20:22:06</sys_updated_on>
+        <sys_updated_on>2018-09-06 21:30:35</sys_updated_on>
         <template><![CDATA[<div class="tab-box">
 	<div class="tab-search-section">
     	<div class="tab-button-bar">
@@ -181,8 +181,8 @@
         <th ng-click="sort('rr_date')" style="width:10%;">Required Renewal Date <i ng-show="sortKey == 'rr_date' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'rr_date' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
         <th ng-click="sort('supervisor')" style="width:10%;">Supervisor/Project Officer <i ng-show="sortKey == 'supervisor' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'supervisor' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
         <th ng-click="sort('doc')" style="width:10%;">Organization <i ng-show="sortKey == 'doc' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'doc' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
-        <th ng-click="sort('status')" style="width:10%;">Status <i ng-show="sortKey == 'status' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'status' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
-        <th ng-click="sort('comment')" style="width:5%;">Comment <i ng-show="sortKey == 'comment' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'comment' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+        <th ng-click="sort('status')" style="width:5%;">Status <i ng-show="sortKey == 'status' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'status' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+        <th ng-click="sort('comment')" style="width:10%;">Comment <i ng-show="sortKey == 'comment' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'comment' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
         <th style="width:15%;">Action</th>
       </tr>
       <tr class="table-row" ng-repeat="x in c.data.filtered = (c.data.trainings | filter:c.data.searchText | orderBy:sortKey:reverse)" ng-show="$index >= (c.data.bigCurrentPage -1) * c.data.pageSize && $index < c.data.bigCurrentPage * c.data.pageSize">
@@ -194,7 +194,10 @@
         <td>{{x.supervisor}}</td>
         <td>{{x.doc}}</td>
         <td><span ng-class="x.status == 'Pending Acceptance' ? 'status-pending' : (x.status == 'Accepted' ? 'status-accepted' : 'status-rejected')">{{x.status}}</span></td>
-        <td>{{x.comment}}</td>
+        <td>
+          <span ng-if="x.comment.length > 20 " uib-tooltip="{{x.comment}}">{{x.comment.substring(0,20)}}...</span>
+        	<span ng-if="x.comment.length <= 20 ">{{x.comment}}</span>
+        </td>
         <td>
           <button ng-show="x.status == 'Pending Acceptance'"  type="button" class="table-button" ng-click="c.showAcceptConfirm(x.sys_id)">
             Accept

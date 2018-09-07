@@ -262,7 +262,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>254</sys_mod_count>
+        <sys_mod_count>255</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -270,7 +270,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-28 18:40:01</sys_updated_on>
+        <sys_updated_on>2018-09-05 22:15:36</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
@@ -294,7 +294,7 @@
     </div>
     <div ng-show="c.data.showManagerFilter" class="filter-width-10" >
       <label for="managerName">
-        Manager Name:
+        Supervisor/Project Officer:
       </label>
       <div>
         <input type="text" class="form-control" id="managerName" ng-model="c.data.managerName" /> 
