@@ -4,224 +4,238 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>activity.xml</element>
             <position>0</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>2f1fa69adbffd34054d8ff621f961934</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:48</sys_created_on>
+            <sys_id>207a5a9cdb64234054d8ff621f96193e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Activities (filtered)">444ea5c6bf310100e628555b3f0739d6</sys_ui_formatter>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:48</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>apply_for</element>
             <position>1</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>631fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>687a5a9cdb64234054d8ff621f96193e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>approval_action</element>
             <position>2</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>e31fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e87a5a9cdb64234054d8ff621f96193e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>certificate_completion_date</element>
             <position>3</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>671fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>6c7a5a9cdb64234054d8ff621f96193e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>certificate_name</element>
             <position>4</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>e71fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>ec7a5a9cdb64234054d8ff621f96193e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>certificate_renew_date</element>
             <position>5</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>6b1fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>607a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>certificate_type</element>
             <position>6</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>eb1fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e07a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>comment</element>
             <position>7</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>6f1fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>647a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>employee_id</element>
             <position>8</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>ef1fa69adbffd34054d8ff621f96193c</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e47a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>employee_name</element>
             <position>9</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>631fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>687a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>manager</element>
             <position>10</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>e31fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e87a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>manager_id</element>
             <position>11</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>671fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>6c7a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>ned_id</element>
             <position>12</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>e71fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>ec7a5a9cdb64234054d8ff621f96193f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>organization</element>
             <position>13</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>6b1fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>607a5a9cdb64234054d8ff621f961940</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>research_funded_by</element>
             <position>14</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>eb1fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e07a5a9cdb64234054d8ff621f961940</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>stage</element>
             <position>15</position>
-            <sys_created_by>zhoujim@nih.gov</sys_created_by>
-            <sys_created_on>2018-08-10 20:51:53</sys_created_on>
-            <sys_id>6f1fa69adbffd34054d8ff621f96193d</sys_id>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>647a5a9cdb64234054d8ff621f961940</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
-            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-            <sys_updated_on>2018-08-10 20:51:53</sys_updated_on>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>16</position>
+            <sys_created_by>yuw5@nih.gov</sys_created_by>
+            <sys_created_on>2018-09-10 21:00:49</sys_created_on>
+            <sys_id>e47a5a9cdb64234054d8ff621f961940</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_gcp_gcp_task" sys_domain="global" view="Default view">972fa69adbffd34054d8ff621f9619fb</sys_ui_section>
+            <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+            <sys_updated_on>2018-09-10 21:00:49</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
