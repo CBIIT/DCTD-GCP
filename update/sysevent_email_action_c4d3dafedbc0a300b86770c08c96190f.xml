@@ -63,7 +63,7 @@
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Your GCP training renewal date is past due</subject>
+        <subject>Action Required: Your GCP training renewal date is past due</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
@@ -71,7 +71,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>c4d3dafedbc0a300b86770c08c96190f</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>GCP Employee training past due</sys_name>
         <sys_overrides/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
@@ -80,7 +80,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysevent_email_action_c4d3dafedbc0a300b86770c08c96190f</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 18:44:58</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:05:32</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>

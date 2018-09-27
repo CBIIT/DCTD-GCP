@@ -2,7 +2,7 @@
 <record_update table="wf_workflow_version">
     <wf_workflow_version action="INSERT_OR_UPDATE">
         <active>true</active>
-        <activity_stages>{"ends":["d4129939db746f0054d8ff621f9619a5"],"activities":{"5c129939db746f0054d8ff621f9619a2":"58129539db746f0054d8ff621f961946","90129939db746f0054d8ff621f96199a":"d4129539db746f0054d8ff621f961946","98129939db746f0054d8ff621f9619a8":"58129539db746f0054d8ff621f961946","d8129939db746f0054d8ff621f96199d":"d8129539db746f0054d8ff621f961946","dc129939db746f0054d8ff621f9619a5":"d8129539db746f0054d8ff621f961946","1c129939db746f0054d8ff621f9619a7":"d8129539db746f0054d8ff621f961946","14129939db746f0054d8ff621f96199b":"d4129539db746f0054d8ff621f961946","98129939db746f0054d8ff621f9619a4":"d4129539db746f0054d8ff621f961946"},"subflows":[],"stages":{"58129539db746f0054d8ff621f961946":{"order":300,"duration":"","stageId":"58129539db746f0054d8ff621f961946","name":"Rejected","value":"rejected"},"d8129539db746f0054d8ff621f961946":{"order":100,"duration":"","stageId":"d8129539db746f0054d8ff621f961946","name":"Pending Acceptance","value":"pending_acceptance"},"d4129539db746f0054d8ff621f961946":{"order":200,"duration":"","stageId":"d4129539db746f0054d8ff621f961946","name":"Accepted","value":"accepted"}}}</activity_stages>
+        <activity_stages>{"ends":["6d422175dbb46f0054d8ff621f9619ac"],"activities":{"21422175dbb46f0054d8ff621f9619aa":"21422175dbb46f0054d8ff621f9619a3","69422175dbb46f0054d8ff621f9619ad":"a1422175dbb46f0054d8ff621f9619a3","61422175dbb46f0054d8ff621f9619a7":"a1422175dbb46f0054d8ff621f9619a3","ed422175dbb46f0054d8ff621f9619b2":"a1422175dbb46f0054d8ff621f9619a3","21422175dbb46f0054d8ff621f9619ac":"ad422175dbb46f0054d8ff621f9619a2","e1422175dbb46f0054d8ff621f9619a8":"ad422175dbb46f0054d8ff621f9619a2","ad422175dbb46f0054d8ff621f9619aa":"21422175dbb46f0054d8ff621f9619a3","2d422175dbb46f0054d8ff621f9619a4":"21422175dbb46f0054d8ff621f9619a3"},"subflows":[],"stages":{"21422175dbb46f0054d8ff621f9619a3":{"order":200,"duration":"","stageId":"21422175dbb46f0054d8ff621f9619a3","name":"Accepted","value":"accepted"},"ad422175dbb46f0054d8ff621f9619a2":{"order":300,"duration":"","stageId":"ad422175dbb46f0054d8ff621f9619a2","name":"Rejected","value":"rejected"},"a1422175dbb46f0054d8ff621f9619a3":{"order":100,"duration":"","stageId":"a1422175dbb46f0054d8ff621f9619a3","name":"Pending Acceptance","value":"pending_acceptance"}}}</activity_stages>
         <after_business_rules>false</after_business_rules>
         <checked_out/>
         <checked_out_by/>
@@ -10,10 +10,10 @@
         <condition/>
         <condition_type>run_match</condition_type>
         <description>This is the workflow for GCP certificate approval</description>
-        <expected_sequences>10129939db746f0054d8ff621f96199d,dc129939db746f0054d8ff621f9619a5,1c129939db746f0054d8ff621f9619a7,d8129939db746f0054d8ff621f96199d,14129939db746f0054d8ff621f96199b,90129939db746f0054d8ff621f96199a,98129939db746f0054d8ff621f9619a4,d4129939db746f0054d8ff621f9619a5</expected_sequences>
+        <expected_sequences>69422175dbb46f0054d8ff621f9619a3,ed422175dbb46f0054d8ff621f9619b2,61422175dbb46f0054d8ff621f9619a7,69422175dbb46f0054d8ff621f9619ad,2d422175dbb46f0054d8ff621f9619a4,21422175dbb46f0054d8ff621f9619aa,ad422175dbb46f0054d8ff621f9619aa,6d422175dbb46f0054d8ff621f9619ac</expected_sequences>
         <expected_time>1970-01-01 14:00:00</expected_time>
         <expected_time_type/>
-        <full_sequences>10129939db746f0054d8ff621f96199d,dc129939db746f0054d8ff621f9619a5,1c129939db746f0054d8ff621f9619a7,d8129939db746f0054d8ff621f96199d,14129939db746f0054d8ff621f96199b,5c129939db746f0054d8ff621f9619a2,90129939db746f0054d8ff621f96199a,98129939db746f0054d8ff621f9619a8,98129939db746f0054d8ff621f9619a4,d4129939db746f0054d8ff621f9619a5</full_sequences>
+        <full_sequences>69422175dbb46f0054d8ff621f9619a3,ed422175dbb46f0054d8ff621f9619b2,61422175dbb46f0054d8ff621f9619a7,69422175dbb46f0054d8ff621f9619ad,2d422175dbb46f0054d8ff621f9619a4,e1422175dbb46f0054d8ff621f9619a8,21422175dbb46f0054d8ff621f9619aa,21422175dbb46f0054d8ff621f9619ac,ad422175dbb46f0054d8ff621f9619aa,6d422175dbb46f0054d8ff621f9619ac</full_sequences>
         <journal/>
         <max_activity_count>100</max_activity_count>
         <name>gcp certificate approval workflow</name>
@@ -28,13 +28,13 @@
         <schedule/>
         <stage_field/>
         <stage_order>computed</stage_order>
-        <start display_value="Begin">10129939db746f0054d8ff621f96199d</start>
+        <start display_value="Begin">69422175dbb46f0054d8ff621f9619a3</start>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>d4129539db746f0054d8ff621f961945</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619a1</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:58:40</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:04:36</sys_updated_on>
         <table>x_naci_gcp_gcp_task</table>
         <timezone/>
         <validated>false</validated>
@@ -70,39 +70,39 @@
         <ola>1970-01-01 00:00:00</ola>
         <order>200</order>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>d4129539db746f0054d8ff621f961946</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>accepted</value>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
     </wf_stage>
     <wf_stage action="INSERT_OR_UPDATE">
         <name>Pending Acceptance</name>
         <ola>1970-01-01 00:00:00</ola>
         <order>100</order>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>d8129539db746f0054d8ff621f961946</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>pending_acceptance</value>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
     </wf_stage>
     <wf_stage action="INSERT_OR_UPDATE">
         <name>Rejected</name>
         <ola>1970-01-01 00:00:00</ola>
         <order>300</order>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>58129539db746f0054d8ff621f961946</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619a2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>rejected</value>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
     </wf_stage>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Begin">c7a5e32c0a0a0b3a002377c24ed8ea76</activity_definition>
@@ -120,21 +120,21 @@
         <pinned_version/>
         <stage/>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f96199d</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619a3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width>80</width>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>20</x>
         <y>20</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=10129939db746f0054d8ff621f96199d"/>
+    <sys_variable_value action="delete_multiple" query="document_key=69422175dbb46f0054d8ff621f9619a3"/>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Begin">10129939db746f0054d8ff621f96199d</activity>
+        <activity display_value="Begin">69422175dbb46f0054d8ff621f9619a3</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -148,11 +148,11 @@
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f96199d</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619a4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Set Values">1ca8d7cf0a0a0b265e9a000c2c08248c</activity_definition>
@@ -168,51 +168,51 @@
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Accepted">d4129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Accepted">21422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f96199a</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>970</x>
         <y>293</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=90129939db746f0054d8ff621f96199a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=21422175dbb46f0054d8ff621f9619aa"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>90129939db746f0054d8ff621f96199a</document_key>
+        <document_key>21422175dbb46f0054d8ff621f9619aa</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199a</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Accepted^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>90129939db746f0054d8ff621f96199a</document_key>
+        <document_key>21422175dbb46f0054d8ff621f9619aa</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199a</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Accepted^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Completed">90129939db746f0054d8ff621f96199a</activity>
+        <activity display_value="Completed">21422175dbb46f0054d8ff621f9619aa</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -226,11 +226,11 @@
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f96199a</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="End">c7a66f7d0a0a0b3a004544a6d2f14076</activity_definition>
@@ -248,19 +248,19 @@
         <pinned_version/>
         <stage/>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619a5</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619ac</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width>80</width>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>1038</x>
         <y>710</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=d4129939db746f0054d8ff621f9619a5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=6d422175dbb46f0054d8ff621f9619ac"/>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Set Values">1ca8d7cf0a0a0b265e9a000c2c08248c</activity_definition>
         <activity_definition_updated>false</activity_definition_updated>
@@ -275,51 +275,51 @@
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Rejected">58129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Rejected">ad422175dbb46f0054d8ff621f9619a2</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a8</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619ac</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>658</x>
         <y>476</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=98129939db746f0054d8ff621f9619a8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=21422175dbb46f0054d8ff621f9619ac"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>98129939db746f0054d8ff621f9619a8</document_key>
+        <document_key>21422175dbb46f0054d8ff621f9619ac</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a8</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619ac</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Rejected^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>98129939db746f0054d8ff621f9619a8</document_key>
+        <document_key>21422175dbb46f0054d8ff621f9619ac</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a8</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619ac</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Rejected^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Manager reject certificate">98129939db746f0054d8ff621f9619a8</activity>
+        <activity display_value="Manager reject certificate">21422175dbb46f0054d8ff621f9619ac</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -333,11 +333,11 @@
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a9</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619ac</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Approval - User">35433da80a0a029a0028c639a1e51eb4</activity_definition>
@@ -353,159 +353,159 @@
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Pending Acceptance">d8129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Pending Acceptance">a1422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f96199d</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619ad</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>623</x>
         <y>134</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=d8129939db746f0054d8ff621f96199d"/>
+    <sys_variable_value action="delete_multiple" query="document_key=69422175dbb46f0054d8ff621f9619ad"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>2000</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">02ca01820a0a0b261cf923fb95f5e1d0</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>104</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">e37a96e80a0004f978b47d2d6c5e0b22</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>50</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">4485eef70a6a803f6bc4bafa9e999640</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>18129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>29422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">c35e4cc40a0a0ba96248a7098ec9cb06</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>101</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval</value>
         <variable display_value="">e846198f0a0004f91fba434a514ba8b8</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>115</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a76680b9c0a8006661b107d0f21fae67</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1110</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a769a182c0a8006629db7fa3fc2a863d</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1360</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set 'answer' to the number of seconds this timer should wait&#13;
 answer = 0;</value>
         <variable display_value="">a782cde9c0a8006608f39abdd85c8395</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1330</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">02c618170a0a0b26436f5c2c9f7a3901</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>2050</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user ids and/or group ids or an array of user/group ids to add as approvers.&#13;
 //&#13;
 // For example:&#13;
@@ -516,113 +516,113 @@ answer = 0;</value>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>110</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f96199d</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619ad</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a77191a4c0a800662b403f7dff5f1bbd</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>900</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>08fcd0830a0a0b2600079f56b1adb9ae</value>
         <variable display_value="">a7754e91c0a800664938d0ef6d2664d7</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>120</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a77903a7c0a8006641af7c9b1d34444e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a775f59ac0a8006665d72362ae687035</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>900</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a774138dc0a80066000be7af20961c7d</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1150</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a9422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a76b8c6ec0a800664bb14d5d8b9cd7c4</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>310</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>reject</value>
         <variable display_value="">502163410a6a803f0356332b24dc7945</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1370</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to '', 'approved' or 'rejected' to indicate the approval status for this approval.  When called, the following information is available:&#13;
 //&#13;
 //    counts.total = total number of users that are part of this approval&#13;
@@ -642,366 +642,366 @@ if(current.approval_action == 'approved'){&#13;
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>script</value>
         <variable display_value="">c35e5bdd0a0a0ba96248a709f495c9ae</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1120</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
         <variable display_value="">a76c6257c0a8006645cff43883470e64</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>330</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e9422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_history</value>
         <variable display_value="">e863e3b80a0004f911d67787e77e0f16</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>103</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ed422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">e37b77ac0a0004f973283ad13b341c5b</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ed422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a7781cb6c0a80066147dc7a5244d5d16</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>50</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">4485eef70a6a803f6bc4bafa9e999640</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>script</value>
         <variable display_value="">c35e5bdd0a0a0ba96248a709f495c9ae</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>101</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval</value>
         <variable display_value="">e846198f0a0004f91fba434a514ba8b8</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>103</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ed422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">e37b77ac0a0004f973283ad13b341c5b</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>104</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">e37a96e80a0004f978b47d2d6c5e0b22</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>110</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f96199d</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619ad</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a77191a4c0a800662b403f7dff5f1bbd</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>115</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a76680b9c0a8006661b107d0f21fae67</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>120</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a77903a7c0a8006641af7c9b1d34444e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>18129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>29422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">c35e4cc40a0a0ba96248a7098ec9cb06</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>310</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>reject</value>
         <variable display_value="">502163410a6a803f0356332b24dc7945</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>330</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e9422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_history</value>
         <variable display_value="">e863e3b80a0004f911d67787e77e0f16</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>900</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a774138dc0a80066000be7af20961c7d</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>900</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>08fcd0830a0a0b2600079f56b1adb9ae</value>
         <variable display_value="">a7754e91c0a800664938d0ef6d2664d7</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1110</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a769a182c0a8006629db7fa3fc2a863d</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1120</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
         <variable display_value="">a76c6257c0a8006645cff43883470e64</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1150</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a0</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a9422175dbb46f0054d8ff621f9619b0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a76b8c6ec0a800664bb14d5d8b9cd7c4</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a775f59ac0a8006665d72362ae687035</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ed422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">a7781cb6c0a80066147dc7a5244d5d16</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1330</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">02c618170a0a0b26436f5c2c9f7a3901</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1360</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f96199f</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619af</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set 'answer' to the number of seconds this timer should wait&#13;
 answer = 0;</value>
         <variable display_value="">a782cde9c0a8006608f39abdd85c8395</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>1370</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to '', 'approved' or 'rejected' to indicate the approval status for this approval.  When called, the following information is available:&#13;
 //&#13;
 //    counts.total = total number of users that are part of this approval&#13;
@@ -1021,29 +1021,29 @@ if(current.approval_action == 'approved'){&#13;
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>2000</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f96199e</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619ae</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">02ca01820a0a0b261cf923fb95f5e1d0</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>d8129939db746f0054d8ff621f96199d</document_key>
+        <document_key>69422175dbb46f0054d8ff621f9619ad</document_key>
         <order>2050</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f9619a1</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619b1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user ids and/or group ids or an array of user/group ids to add as approvers.&#13;
 //&#13;
 // For example:&#13;
@@ -1053,7 +1053,7 @@ if(current.approval_action == 'approved'){&#13;
         <variable display_value="">c35e582f0a0a0ba96248a70985207e63</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Manager Verify Certification">d8129939db746f0054d8ff621f96199d</activity>
+        <activity display_value="Manager Verify Certification">69422175dbb46f0054d8ff621f9619ad</activity>
         <condition>activity.result == 'approved'</condition>
         <condition_default display_value="Approved">586e1fa60a0a0b5c008121ab894f2b06</condition_default>
         <condition_type>standard</condition_type>
@@ -1067,14 +1067,14 @@ if(current.approval_action == 'approved'){&#13;
         <short_description>Approval request was approved</short_description>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619a2</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a5422175dbb46f0054d8ff621f9619b2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Manager Verify Certification">d8129939db746f0054d8ff621f96199d</activity>
+        <activity display_value="Manager Verify Certification">69422175dbb46f0054d8ff621f9619ad</activity>
         <condition>activity.result == 'rejected'</condition>
         <condition_default display_value="Rejected">586e4ef60a0a0b5c00440b56c014c8a5</condition_default>
         <condition_type>standard</condition_type>
@@ -1088,11 +1088,11 @@ if(current.approval_action == 'approved'){&#13;
         <short_description>Approval request was rejected</short_description>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f9619a2</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>29422175dbb46f0054d8ff621f9619b2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Set Values">1ca8d7cf0a0a0b265e9a000c2c08248c</activity_definition>
@@ -1108,51 +1108,51 @@ if(current.approval_action == 'approved'){&#13;
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Pending Acceptance">d8129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Pending Acceptance">a1422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a7</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619a7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>111</x>
         <y>364</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=1c129939db746f0054d8ff621f9619a7"/>
+    <sys_variable_value action="delete_multiple" query="document_key=61422175dbb46f0054d8ff621f9619a7"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>1c129939db746f0054d8ff621f9619a7</document_key>
+        <document_key>61422175dbb46f0054d8ff621f9619a7</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f9619a7</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619a7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Pending Acceptance^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>1c129939db746f0054d8ff621f9619a7</document_key>
+        <document_key>61422175dbb46f0054d8ff621f9619a7</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f9619a7</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619a7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approval_action=^stage=Pending Acceptance^EQ</value>
         <variable display_value="">1cb38c8f0a0a0b266fb48e08de35f507</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Pending Acceptance">1c129939db746f0054d8ff621f9619a7</activity>
+        <activity display_value="Pending Acceptance">61422175dbb46f0054d8ff621f9619a7</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -1166,11 +1166,11 @@ if(current.approval_action == 'approved'){&#13;
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f9619a8</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619a7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Approval Action">50a78fa50a6a803f66d064255f7201a5</activity_definition>
@@ -1186,51 +1186,51 @@ if(current.approval_action == 'approved'){&#13;
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Accepted">d4129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Accepted">21422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a4</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619aa</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>976</x>
         <y>472</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=98129939db746f0054d8ff621f9619a4"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ad422175dbb46f0054d8ff621f9619aa"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>98129939db746f0054d8ff621f9619a4</document_key>
+        <document_key>ad422175dbb46f0054d8ff621f9619aa</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a4</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619ab</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approved</value>
         <variable display_value="">50ab35f70a6a803f76d36e1ebaf3639e</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>98129939db746f0054d8ff621f9619a4</document_key>
+        <document_key>ad422175dbb46f0054d8ff621f9619aa</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619a4</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a1422175dbb46f0054d8ff621f9619ab</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>approved</value>
         <variable display_value="">50ab35f70a6a803f76d36e1ebaf3639e</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Review Completed">98129939db746f0054d8ff621f9619a4</activity>
+        <activity display_value="Review Completed">ad422175dbb46f0054d8ff621f9619aa</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -1244,11 +1244,11 @@ if(current.approval_action == 'approved'){&#13;
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a5</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619ab</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Notification">0a6c97790a0a0b2756919eb960284334</activity_definition>
@@ -1264,201 +1264,201 @@ if(current.approval_action == 'approved'){&#13;
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Accepted">d4129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Accepted">21422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f96199b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>2d422175dbb46f0054d8ff621f9619a4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:03:34</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>971</x>
         <y>128</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=14129939db746f0054d8ff621f96199b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=2d422175dbb46f0054d8ff621f9619a4"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619a6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:03:34</sys_updated_on>
+        <value>Dear   ${employee_name};&#13;
+&#13;
+Your GCP certificate has been reviewed and accepted by your supervisor / project officer. You may login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to see the detail.&#13;
+&#13;
+</value>
+        <variable display_value="">c35db5a50a0a0ba96248a70938ae8de6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619a5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:03:34</sys_updated_on>
+        <value>Your GCP certificate has been reviewed and accepted by your supervisor / Project Officer</value>
+        <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f96199b</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a9422175dbb46f0054d8ff621f9619a5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 	answer=current.apply_for;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>150</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f96199c</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619a6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>400</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f96199b</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619a5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>150</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>6d422175dbb46f0054d8ff621f9619a5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:03:34</sys_updated_on>
+        <value>Your GCP certificate has been reviewed and accepted by your supervisor / Project Officer</value>
+        <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>300</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f96199c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>21422175dbb46f0054d8ff621f9619a6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:03:34</sys_updated_on>
         <value>Dear   ${employee_name};&#13;
 &#13;
-The your GCP certificate has been reviewed and accepted by your supervisor / project officer. You may login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to see the detail.&#13;
+Your GCP certificate has been reviewed and accepted by your supervisor / project officer. You may login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to see the detail.&#13;
 &#13;
 </value>
         <variable display_value="">c35db5a50a0a0ba96248a70938ae8de6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value/>
-        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>200</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f96199b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value>The certificate has been accepted by supervisor</value>
-        <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f96199b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value/>
-        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>150</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f96199c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value/>
-        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>200</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f96199b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value>The certificate has been accepted by supervisor</value>
-        <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
-        <order>300</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f96199c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <value>Dear   ${employee_name};&#13;
-&#13;
-The your GCP certificate has been reviewed and accepted by your supervisor / project officer. You may login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to see the detail.&#13;
-&#13;
-</value>
-        <variable display_value="">c35db5a50a0a0ba96248a70938ae8de6</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>400</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>58129939db746f0054d8ff621f96199b</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619a5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>14129939db746f0054d8ff621f96199b</document_key>
+        <document_key>2d422175dbb46f0054d8ff621f9619a4</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f96199b</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a9422175dbb46f0054d8ff621f9619a5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 	answer=current.apply_for;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Send an email to Emloyee">14129939db746f0054d8ff621f96199b</activity>
+        <activity display_value="Send an email to Emloyee">2d422175dbb46f0054d8ff621f9619a4</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -1472,11 +1472,11 @@ The your GCP certificate has been reviewed and accepted by your supervisor / pro
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f96199c</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>a9422175dbb46f0054d8ff621f9619a6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Notification">0a6c97790a0a0b2756919eb960284334</activity_definition>
@@ -1492,165 +1492,165 @@ The your GCP certificate has been reviewed and accepted by your supervisor / pro
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Rejected">58129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Rejected">ad422175dbb46f0054d8ff621f9619a2</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f9619a2</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e1422175dbb46f0054d8ff621f9619a8</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:58:30</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:04:32</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>643</x>
         <y>316</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=5c129939db746f0054d8ff621f9619a2"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e1422175dbb46f0054d8ff621f9619a8"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
+        <order>150</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>29422175dbb46f0054d8ff621f9619a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value>Dear  ${employee_name} &#13;
+&#13;
+The your GCP certificate has been rejected by your supervisor / project officer. Please login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to view their comment. Please follow up with them directly should you have any question.&#13;
+&#13;
+ ${mail_script:GCPSupervisorEmail}&#13;
+&#13;
+</value>
+        <variable display_value="">c35db5a50a0a0ba96248a70938ae8de6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>18129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value>Your certificate has been rejected by your supervisor</value>
+        <sys_updated_on>2018-09-27 19:04:32</sys_updated_on>
+        <value>ACTION REQUIRED: Your GCP certificate has been rejected by your supervisor / Project Officer</value>
         <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f9619a3</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e9422175dbb46f0054d8ff621f9619a8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 answer=current.employee_id;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
-        <order>400</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value>1</value>
-        <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
-        <order>150</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value/>
-        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
-        <order>300</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:58:30</sys_updated_on>
-        <value>Dear  ${employee_name} &#13;
-&#13;
-The your GCP certificate has been rejected by your supervisor / project officer. Please login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to view their comment. Please follow up with them directly should you have any question.&#13;
-&#13;
- ${mail_script:GCPSupervisorEmail}&#13;
-&#13;
-</value>
-        <variable display_value="">c35db5a50a0a0ba96248a70938ae8de6</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619a2</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>65422175dbb46f0054d8ff621f9619a8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
-        <order>100</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619a2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value/>
-        <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>150</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f9619a3</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619a9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>18129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ad422175dbb46f0054d8ff621f9619a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value>Your certificate has been rejected by your supervisor</value>
+        <sys_updated_on>2018-09-27 19:04:32</sys_updated_on>
+        <value>ACTION REQUIRED: Your GCP certificate has been rejected by your supervisor / Project Officer</value>
         <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>300</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f9619a3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:58:30</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>Dear  ${employee_name} &#13;
 &#13;
 The your GCP certificate has been rejected by your supervisor / project officer. Please login to the &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to view their comment. Please follow up with them directly should you have any question.&#13;
@@ -1662,35 +1662,35 @@ The your GCP certificate has been rejected by your supervisor / project officer.
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>400</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f9619a3</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>29422175dbb46f0054d8ff621f9619a8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>5c129939db746f0054d8ff621f9619a2</document_key>
+        <document_key>e1422175dbb46f0054d8ff621f9619a8</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f9619a3</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e9422175dbb46f0054d8ff621f9619a8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 answer=current.employee_id;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Send an email to Employee">5c129939db746f0054d8ff621f9619a2</activity>
+        <activity display_value="Send an email to Employee">e1422175dbb46f0054d8ff621f9619a8</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -1704,11 +1704,11 @@ answer=current.employee_id;</value>
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f9619a4</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619a9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_activity action="INSERT_OR_UPDATE">
         <activity_definition display_value="Notification">0a6c97790a0a0b2756919eb960284334</activity_definition>
@@ -1724,74 +1724,74 @@ answer=current.employee_id;</value>
         <parent/>
         <pinned>false</pinned>
         <pinned_version/>
-        <stage display_value="Pending Acceptance">d8129539db746f0054d8ff621f961946</stage>
+        <stage display_value="Pending Acceptance">a1422175dbb46f0054d8ff621f9619a3</stage>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619a5</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>ed422175dbb46f0054d8ff621f9619b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:02:40</sys_updated_on>
         <timeout>1970-01-01 00:00:00</timeout>
         <vars/>
         <width/>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
         <x>109</x>
         <y>209</y>
     </wf_activity>
-    <sys_variable_value action="delete_multiple" query="document_key=dc129939db746f0054d8ff621f9619a5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ed422175dbb46f0054d8ff621f9619b2"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
-        <order>150</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f9619a7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value/>
-        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>400</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
+        <order>150</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>31422175dbb46f0054d8ff621f9619b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <value/>
+        <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>300</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>7d422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>Dear ${manager},&#13;
 &#13;
 The GCP certificate for ${employee_name} has been submitted to you for review, please login to &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to review the document.&#13;
@@ -1801,86 +1801,86 @@ If you have any question, please contact  &lt;a href="mailto:NCIGCPWebAdmin@mail
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>b9422175dbb46f0054d8ff621f9619b3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value>Notification for certificate review</value>
+        <sys_updated_on>2018-09-27 19:02:40</sys_updated_on>
+        <value>ACTION NEEDED Please review GCP Certificate for your staff</value>
         <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 answer=current.manager_id;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>100</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>50129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>61422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">c35daa890a0a0ba96248a709c32994d6</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>150</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>10129939db746f0054d8ff621f9619a7</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>31422175dbb46f0054d8ff621f9619b4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value/>
         <variable display_value="">ae2121c70a0a0b3459708c9a60cd7312</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>200</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>98129939db746f0054d8ff621f9619a6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>b9422175dbb46f0054d8ff621f9619b3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <value>Notification for certificate review</value>
+        <sys_updated_on>2018-09-27 19:02:40</sys_updated_on>
+        <value>ACTION NEEDED Please review GCP Certificate for your staff</value>
         <variable display_value="">c35db2180a0a0ba96248a709d1b6df20</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>300</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>5c129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>7d422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>Dear ${manager},&#13;
 &#13;
 The GCP certificate for ${employee_name} has been submitted to you for review, please login to &lt;a href="https://service-dev2.nci.nih.gov/gcp" target="_blank"&gt;Good Clinical Practice&lt;/a&gt; application to review the document.&#13;
@@ -1890,35 +1890,35 @@ If you have any question, please contact  &lt;a href="mailto:NCIGCPWebAdmin@mail
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>400</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>25422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>1</value>
         <variable display_value="">6d6816cd0a6a803f0853a8df38007572</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
-        <document_key>dc129939db746f0054d8ff621f9619a5</document_key>
+        <document_key>ed422175dbb46f0054d8ff621f9619b2</document_key>
         <order>500</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619a6</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>e5422175dbb46f0054d8ff621f9619b3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
         <value>// Set the variable 'answer' to a comma-separated list of user or group sys_ids that you want the email sent to.&#13;
 answer=current.manager_id;</value>
         <variable display_value="">c35dae3d0a0a0ba96248a7098ed9b4aa</variable>
     </sys_variable_value>
     <wf_condition action="INSERT_OR_UPDATE">
-        <activity display_value="Send Email to Manager for approval">dc129939db746f0054d8ff621f9619a5</activity>
+        <activity display_value="Send Email to Manager for approval">ed422175dbb46f0054d8ff621f9619b2</activity>
         <condition>true</condition>
         <condition_default/>
         <condition_type>standard</condition_type>
@@ -1932,135 +1932,135 @@ answer=current.manager_id;</value>
         <short_description/>
         <skip_during_generate>false</skip_during_generate>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>54129939db746f0054d8ff621f9619a7</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>75422175dbb46f0054d8ff621f9619b4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
     </wf_condition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">14129939db746f0054d8ff621f96199d</condition>
-        <from display_value="Begin">10129939db746f0054d8ff621f96199d</from>
+        <condition display_value="Always">e5422175dbb46f0054d8ff621f9619ac</condition>
+        <from display_value="Manager reject certificate">21422175dbb46f0054d8ff621f9619ac</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>14129939db746f0054d8ff621f9619ab</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>31422175dbb46f0054d8ff621f9619b6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Send Email to Manager for approval">dc129939db746f0054d8ff621f9619a5</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Review Completed">ad422175dbb46f0054d8ff621f9619aa</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">50129939db746f0054d8ff621f9619a9</condition>
-        <from display_value="Manager reject certificate">98129939db746f0054d8ff621f9619a8</from>
+        <condition display_value="Always">69422175dbb46f0054d8ff621f9619a9</condition>
+        <from display_value="Send an email to Employee">e1422175dbb46f0054d8ff621f9619a8</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>18129939db746f0054d8ff621f9619ab</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>39422175dbb46f0054d8ff621f9619b5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Review Completed">98129939db746f0054d8ff621f9619a4</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Manager reject certificate">21422175dbb46f0054d8ff621f9619ac</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Approved">14129939db746f0054d8ff621f9619a2</condition>
-        <from display_value="Manager Verify Certification">d8129939db746f0054d8ff621f96199d</from>
+        <condition display_value="Always">e5422175dbb46f0054d8ff621f9619aa</condition>
+        <from display_value="Completed">21422175dbb46f0054d8ff621f9619aa</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>1c129939db746f0054d8ff621f9619ab</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>3d422175dbb46f0054d8ff621f9619b5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Send an email to Emloyee">14129939db746f0054d8ff621f96199b</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Review Completed">ad422175dbb46f0054d8ff621f9619aa</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">50129939db746f0054d8ff621f9619a5</condition>
-        <from display_value="Review Completed">98129939db746f0054d8ff621f9619a4</from>
+        <condition display_value="Approved">a5422175dbb46f0054d8ff621f9619b2</condition>
+        <from display_value="Manager Verify Certification">69422175dbb46f0054d8ff621f9619ad</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>90129939db746f0054d8ff621f9619ac</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>75422175dbb46f0054d8ff621f9619b6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="End">d4129939db746f0054d8ff621f9619a5</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Send an email to Emloyee">2d422175dbb46f0054d8ff621f9619a4</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">54129939db746f0054d8ff621f9619a7</condition>
-        <from display_value="Send Email to Manager for approval">dc129939db746f0054d8ff621f9619a5</from>
+        <condition display_value="Always">a9422175dbb46f0054d8ff621f9619a6</condition>
+        <from display_value="Send an email to Emloyee">2d422175dbb46f0054d8ff621f9619a4</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>94129939db746f0054d8ff621f9619ac</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>f1422175dbb46f0054d8ff621f9619b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Pending Acceptance">1c129939db746f0054d8ff621f9619a7</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Completed">21422175dbb46f0054d8ff621f9619aa</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Rejected">94129939db746f0054d8ff621f9619a2</condition>
-        <from display_value="Manager Verify Certification">d8129939db746f0054d8ff621f96199d</from>
+        <condition display_value="Rejected">29422175dbb46f0054d8ff621f9619b2</condition>
+        <from display_value="Manager Verify Certification">69422175dbb46f0054d8ff621f9619ad</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>9c129939db746f0054d8ff621f9619ab</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>f5422175dbb46f0054d8ff621f9619b6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Send an email to Employee">5c129939db746f0054d8ff621f9619a2</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Send an email to Employee">e1422175dbb46f0054d8ff621f9619a8</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">d8129939db746f0054d8ff621f96199a</condition>
-        <from display_value="Completed">90129939db746f0054d8ff621f96199a</from>
+        <condition display_value="Always">e1422175dbb46f0054d8ff621f9619a4</condition>
+        <from display_value="Begin">69422175dbb46f0054d8ff621f9619a3</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d0129939db746f0054d8ff621f9619aa</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>f5422175dbb46f0054d8ff621f9619b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Review Completed">98129939db746f0054d8ff621f9619a4</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Send Email to Manager for approval">ed422175dbb46f0054d8ff621f9619b2</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">d0129939db746f0054d8ff621f9619a8</condition>
-        <from display_value="Pending Acceptance">1c129939db746f0054d8ff621f9619a7</from>
+        <condition display_value="Always">75422175dbb46f0054d8ff621f9619b4</condition>
+        <from display_value="Send Email to Manager for approval">ed422175dbb46f0054d8ff621f9619b2</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d4129939db746f0054d8ff621f9619aa</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>f9422175dbb46f0054d8ff621f9619b6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Manager Verify Certification">d8129939db746f0054d8ff621f96199d</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Pending Acceptance">61422175dbb46f0054d8ff621f9619a7</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">98129939db746f0054d8ff621f96199c</condition>
-        <from display_value="Send an email to Emloyee">14129939db746f0054d8ff621f96199b</from>
+        <condition display_value="Always">69422175dbb46f0054d8ff621f9619ab</condition>
+        <from display_value="Review Completed">ad422175dbb46f0054d8ff621f9619aa</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>d8129939db746f0054d8ff621f9619aa</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>f9422175dbb46f0054d8ff621f9619b7</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Completed">90129939db746f0054d8ff621f96199a</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="End">6d422175dbb46f0054d8ff621f9619ac</to>
     </wf_transition>
     <wf_transition action="INSERT_OR_UPDATE">
-        <condition display_value="Always">d0129939db746f0054d8ff621f9619a4</condition>
-        <from display_value="Send an email to Employee">5c129939db746f0054d8ff621f9619a2</from>
+        <condition display_value="Always">2d422175dbb46f0054d8ff621f9619a7</condition>
+        <from display_value="Pending Acceptance">61422175dbb46f0054d8ff621f9619a7</from>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:10</sys_created_on>
-        <sys_id>dc129939db746f0054d8ff621f9619aa</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>fd422175dbb46f0054d8ff621f9619b6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:10</sys_updated_on>
-        <to display_value="Manager reject certificate">98129939db746f0054d8ff621f9619a8</to>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <to display_value="Manager Verify Certification">69422175dbb46f0054d8ff621f9619ad</to>
     </wf_transition>
     <wf_estimated_runtime_config action="INSERT_OR_UPDATE">
         <estimated_run_time/>
         <no_of_data_points>1</no_of_data_points>
         <percentage_threshold_ert>20</percentage_threshold_ert>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
-        <sys_created_on>2018-09-27 17:51:09</sys_created_on>
-        <sys_id>58129539db746f0054d8ff621f961945</sys_id>
+        <sys_created_on>2018-09-27 19:01:59</sys_created_on>
+        <sys_id>69422175dbb46f0054d8ff621f9619a1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-27 17:51:09</sys_updated_on>
-        <workflow_version display_value="gcp certificate approval workflow">d4129539db746f0054d8ff621f961945</workflow_version>
+        <sys_updated_on>2018-09-27 19:01:59</sys_updated_on>
+        <workflow_version display_value="gcp certificate approval workflow">a5422175dbb46f0054d8ff621f9619a1</workflow_version>
     </wf_estimated_runtime_config>
-    <wf_workflow_version action="update_multiple" query="workflow=fd1b60bedbebdb00b86770c08c96195a^sys_id!=d4129539db746f0054d8ff621f961945">
+    <wf_workflow_version action="update_multiple" query="workflow=fd1b60bedbebdb00b86770c08c96195a^sys_id!=a5422175dbb46f0054d8ff621f9619a1">
         <published>false</published>
     </wf_workflow_version>
 </record_update>
