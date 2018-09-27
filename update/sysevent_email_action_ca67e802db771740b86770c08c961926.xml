@@ -45,10 +45,13 @@
 <li>&nbsp;<a href="https://gcplearningcenter.niaid.nih.gov/">National Institute of Allergy and Infectious Diseases (NIAID) GCP Learning Center</a></li>
 <li>&nbsp;<a href="https://lms.learning.hhs.gov/">NIH Good Clinical Practice for Behavioral and Social Sciences Training (00162946)</a></li>
 </ul>
-<p>&nbsp;If you experience technical issues when logging into one of these online courses, please contact the help desk associated with that training.&nbsp; &nbsp;Please contact NCIGCPWebAdmin@mail.nih.gov&nbsp;for all other inquiries regarding this email.</p>
-<p>Once you have completed your training, please&nbsp;go to <a title="Training Certificate Repository" href="https://service-dev2.nci.nih.gov/gcp?xpage=main" target="_blank">Training Certificate Repository</a>&nbsp;to upload your&nbsp;completed certificate(s).&nbsp; For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.</p>
+<p>&nbsp;If you experience technical issues when logging into one of these online courses, please contact the help desk associated with that training.&nbsp; &nbsp;Please contact&lt;a href="mailto:NCIGCPWebAdmin@mail.nih.gov"&gt; NCI GCP Web Admin&lt;/a&gt; for all other inquiries regarding this email.</p>
+<p>Once you have completed your training, please&nbsp;go to &lt;a herf="<a href="https://service-dev2.nci.nih.gov/gcp">https://service-dev2.nci.nih.gov/gcp</a>" target="_BLANK"&gt;Training Certificate Repository&lt;/a&gt;to upload your&nbsp;completed certificate(s).&nbsp; For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.</p>
 <p><em>Note:&nbsp; If you have more than one certificate (i.e. the course provides individual certificates for each section of their course), you must combine those into one pdf document prior to uploading. A pdf Adobe Portfolio is not permitted for this upload.</em></p>
-<div>&nbsp;</div>]]></message_html>
+<div>
+<pre>&nbsp;</pre>
+<p>&nbsp;${mail_<a href="script:GCPSupervisorEmail}">script:GCPRequestTrainingCCSupervisor}</a></p>
+</div>]]></message_html>
         <message_list/>
         <message_text/>
         <name>Employee Training Notification</name>
@@ -70,7 +73,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>ca67e802db771740b86770c08c961926</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Employee Training Notification</sys_name>
         <sys_overrides/>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
@@ -78,8 +81,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysevent_email_action_ca67e802db771740b86770c08c961926</sys_update_name>
-        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-07 18:02:04</sys_updated_on>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-27 18:58:39</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
