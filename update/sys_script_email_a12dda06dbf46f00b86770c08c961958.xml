@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>GCPSupervisorAOEmail</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+	var gr_user = new GlideRecord("sys_user");
+	if (gr_user.get(current.manager_id.toString())) {
+		email.addAddress("cc",gr_user.email.toString(), '');
+		email.addAddress("cc", gr_user.u_ao.email.toString(), '');
+	}
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2018-09-28 17:57:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a12dda06dbf46f00b86770c08c961958</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GCPSupervisorAOEmail</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sys_script_email_a12dda06dbf46f00b86770c08c961958</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-09-28 18:07:07</sys_updated_on>
+    </sys_script_email>
+</record_update>
