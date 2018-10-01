@@ -2,7 +2,7 @@
 <record_update table="sys_ui_script">
     <sys_ui_script action="INSERT_OR_UPDATE">
         <active>true</active>
-        <description>this is the UI script for GCP</description>
+        <description>this is the UI script for GCP 1.11.4</description>
         <global>false</global>
         <name>x_naci_gcp.JQuery UI GCP 1.12.1</name>
         <script><![CDATA[/*! jQuery UI - v1.11.4 - 2015-03-11
@@ -16628,7 +16628,7 @@ var tooltip = $.widget( "ui.tooltip", {
         <sys_created_on>2018-10-01 15:14:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7e545187dbbc234054d8ff621f9619cb</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>x_naci_gcp.JQuery UI GCP 1.12.1</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -16636,7 +16636,7 @@ var tooltip = $.widget( "ui.tooltip", {
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ui_script_7e545187dbbc234054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-10-01 16:23:08</sys_updated_on>
+        <sys_updated_on>2018-10-01 16:25:16</sys_updated_on>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>
 </record_update>
