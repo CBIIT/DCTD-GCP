@@ -4,7 +4,7 @@
         <active>true</active>
         <description>this is the UI script for GCP 1.11.4</description>
         <global>false</global>
-        <name>x_naci_gcp.JQuery UI GCP 1.12.1</name>
+        <name>x_naci_gcp.JQuery UI GCP 1.11.4</name>
         <script><![CDATA[/*! jQuery UI - v1.11.4 - 2015-03-11
 * http://jqueryui.com
 * Includes: core.js, widget.js, mouse.js, position.js, accordion.js, autocomplete.js, button.js, datepicker.js, dialog.js, draggable.js, droppable.js, effect.js, effect-blind.js, effect-bounce.js, effect-clip.js, effect-drop.js, effect-explode.js, effect-fade.js, effect-fold.js, effect-highlight.js, effect-puff.js, effect-pulsate.js, effect-scale.js, effect-shake.js, effect-size.js, effect-slide.js, effect-transfer.js, menu.js, progressbar.js, resizable.js, selectable.js, selectmenu.js, slider.js, sortable.js, spinner.js, tabs.js, tooltip.js
@@ -16622,21 +16622,21 @@ var tooltip = $.widget( "ui.tooltip", {
 
 
 }));]]></script>
-        <script_name>JQuery UI GCP 1.12.1</script_name>
+        <script_name>JQuery UI GCP 1.11.4</script_name>
         <sys_class_name>sys_ui_script</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
         <sys_created_on>2018-10-01 15:14:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7e545187dbbc234054d8ff621f9619cb</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>x_naci_gcp.JQuery UI GCP 1.12.1</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_naci_gcp.JQuery UI GCP 1.11.4</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ui_script_7e545187dbbc234054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-10-01 16:25:16</sys_updated_on>
+        <sys_updated_on>2018-10-01 16:26:08</sys_updated_on>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>
 </record_update>
