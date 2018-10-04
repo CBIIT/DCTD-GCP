@@ -4,9 +4,11 @@
         <active>true</active>
         <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
-        <condition/>
+        <condition table="x_naci_gcp_gcp_task.*">123TEXTQUERY321=x_naci_gcp.gcp_task_user^EQ<item endquery="false" field="123TEXTQUERY321" goto="false" newquery="false" operator="=" or="false" value="x_naci_gcp.gcp_task_user"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
         <description>Default access control on x_naci_gcp_gcp_task</description>
-        <name>x_naci_gcp_gcp_task</name>
+        <name>x_naci_gcp_gcp_task.*</name>
         <operation display_value="create">create</operation>
         <script/>
         <sys_class_name>sys_security_acl</sys_class_name>
@@ -14,15 +16,15 @@
         <sys_created_on>2018-08-10 20:35:30</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2f5b6e1edbf75740b86770c08c96191c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_naci_gcp_gcp_task</sys_name>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_naci_gcp_gcp_task.*</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_security_acl_2f5b6e1edbf75740b86770c08c96191c</sys_update_name>
-        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-08-10 20:35:30</sys_updated_on>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2018-10-03 19:55:53</sys_updated_on>
         <type display_value="record">record</type>
     </sys_security_acl>
 </record_update>
