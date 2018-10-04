@@ -10,19 +10,7 @@
         <collection>x_naci_gcp_gcp_task</collection>
         <condition/>
         <content_type>text/html</content_type>
-        <default_interval/>
         <description/>
-        <digest_from/>
-        <digest_html/>
-        <digest_reply_to/>
-        <digest_separator_html><![CDATA[<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>]]></digest_separator_html>
-        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
-        <digest_subject/>
-        <digest_template/>
-        <digest_text/>
-        <digestable>false</digestable>
         <event_name>x_naci_gcp.send_Expired_reminder_Month</event_name>
         <event_parm_1>false</event_parm_1>
         <event_parm_2>true</event_parm_2>

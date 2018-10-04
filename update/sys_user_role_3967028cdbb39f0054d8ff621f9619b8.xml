@@ -8,7 +8,6 @@
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_naci_gcp.gcp_drop_options_user</name>
-        <scoped_admin>false</scoped_admin>
         <suffix>gcp_drop_options_user</suffix>
         <sys_class_name>sys_user_role</sys_class_name>
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
