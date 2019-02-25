@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="GCP Task" max_length="40" name="x_naci_gcp_gcp_task" sizeclass="464" type="collection">
+    <element audit="true" extends="task" label="GCP Task" max_length="40" name="x_naci_gcp_gcp_task" type="collection">
         <element label="Apply For" max_length="255" name="apply_for" type="string"/>
         <element label="Approval Action" max_length="255" name="approval_action" type="string"/>
-        <element label="Certificate Completion Date" max_length="100" name="certificate_completion_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Certificate Completion Date" max_length="100" name="certificate_completion_date" type="glide_date"/>
         <element label="Certificate Name" max_length="255" name="certificate_name" type="string"/>
-        <element label="Certificate renew date" max_length="100" name="certificate_renew_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Certificate renew date" max_length="100" name="certificate_renew_date" type="glide_date"/>
         <element label="Certificate Type" max_length="255" name="certificate_type" type="string"/>
         <element label="Comment" max_length="500" name="comment" type="string"/>
         <element label="Employee ID" max_length="255" name="employee_id" type="string"/>
