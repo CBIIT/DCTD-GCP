@@ -2,14 +2,25 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope,$location,GCPUtil) {
+        <client_script><![CDATA[function($scope,$rootScope,$location,GCPUtil) {
   /* widget controller */
   var c = this;
 	var s = $location.search();
 
-  if (s.xpage) {
-    c.xpage = s.xpage;
+	c.data.isManager = $rootScope.user.isManager;
+	c.data.isCTEPRCRTeam = $rootScope.user.isCTEPRCRTeam;
+	c.data.userName = $rootScope.user.userName;
+	
+  if (s.xpage == "report" && !c.data.isCTEPRCRTeam && !c.data.isManager) {
+    c.xpage = "home";
   }
+	else if(s.xpage == "search" && !c.data.isManager){
+		//c.xpage = "home";
+		c.xpage = "search";
+	}
+	else if(["home","main","search","report"].indexOf(s.xpage) > -1){
+		c.xpage = s.xpage;
+	}
 	else{
 		c.xpage = "home";
 	}
@@ -17,35 +28,6 @@
 	c.showPage = function(page){
 		s.xpage = page;
     $location.search(s).replace();
-	}
-	
-	/*
-	if(!c.data.isCTEPRCRTeam){
-		GCPUtil.isManager(c.data.info.userId, c.data.sessionId).then(function(res){
-			c.data.showReport = res.data.result == "yes";
-			if(!c.data.showReport && c.xpage == "report"){
-				c.showPage('home');
-			}
-		},function(error){
-			console.log(error);
-		});
-	}
-	else{
-			if(c.xpage == "main"){
-				c.showPage('home');
-			}
-	}
-	*/
-	if(!c.data.isCTEPRCRTeam){
-		GCPUtil.isManager(c.data.info.userId, c.data.sessionId).then(function(res){
-			c.data.showReport = res.data.result == "yes";
-			if(!c.data.showReport && c.xpage == "report"){
-				c.showPage('home');
-			}
-			$scope.$apply();
-		},function(error){
-			console.log(error);
-		});
 	}
 	
 	$scope.logout = function(){
@@ -68,15 +50,7 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	data.sessionId = gs.getSession().getSessionToken();
-	data.info = {};
-	var userName = gs.getUserDisplayName();
-	var userId = gs.getUserID();
-	data.isCTEPRCRTeam = gs.getUser().isMemberOf('GCP CTEP RCR Team');
-	data.info.userName = userName;
-	data.info.userId = userId;
+  
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -84,7 +58,7 @@
         <sys_created_on>2018-07-27 15:13:38</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c7bd5b5db6fd70054d8ff621f96199e</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>gcp menu bar</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -92,7 +66,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_1c7bd5b5db6fd70054d8ff621f96199e</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-10-01 20:23:46</sys_updated_on>
+        <sys_updated_on>2019-03-13 17:58:56</sys_updated_on>
         <template><![CDATA[<div class="menu-box">
 	<div class="col-md-1">
   </div>
@@ -100,16 +74,49 @@
   		<ul class="menu-ul">
         <li ng-class="c.xpage == 'home'? 'active' : ''" ng-click="c.showPage('home')">Home</li>
         <li ng-class="c.xpage == 'main'? 'active' : ''" ng-click="c.showPage('main')">Training Certificate Repository</li>
-        <li ng-show="c.data.isCTEPRCRTeam || c.data.showReport" ng-class="c.xpage == 'report'? 'active' : ''" ng-click="c.showPage('report')">Report</li>
+        <li ng-show="true || c.data.isManager" ng-class="c.xpage == 'search'? 'active' : ''" ng-click="c.showPage('search')">Search</li>
+        <li ng-show="c.data.isCTEPRCRTeam || c.data.isManager" ng-class="c.xpage == 'report'? 'active' : ''" ng-click="c.showPage('report')">Report</li>
 			</ul>
     <div class="banner-user" uib-dropdown>
       <span class="user-box" uib-dropdown-toggle>
-        {{c.data.info.userName}}<i class="fa fa-caret-down" style="font-size:16px;margin-left:10px;"></i>
+        {{c.data.userName}}<i class="fa fa-caret-down" style="font-size:16px;margin-left:10px;"></i>
       </span>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu">
         <li role="menuitem"><a href="#" ng-click="logout();">Sign Out</a></li>
       </ul>
     </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+<div>
+  <div class="col-md-1">
+  </div>
+  <div class="home-box col-md-10" ng-if="c.xpage == 'home'">
+    <h1>
+      Welcome to the NCI Good Clinical Practice (GCP) Training Tracking Site!
+    </h1>
+    <p>
+      This site will be used to track compliance for NCI extramural staff who are required to complete Good Clinical Practice (GCP) training (see <a class="link-text" href="https://nih-extramural-intranet.od.nih.gov/d/nih/policies/OER_announce_2016-02.htm" target="_blank">Policy on Good Clinical Practice Training for NIH Staff Involved in the Conduct, Management, and Oversight of Clinical Trials</a>).
+    </p>
+    <p>
+      This training requirement applies to individuals who participate in the development, implementation, monitoring, and/or evaluation of clinical research activities affiliated with clinical trials and should be commensurate with their role and responsibility.  For NCI, this includes program staff, contracting officer's representatives, health specialists, program analysts, nurse consultants, medical monitors, and many others involved in the technical aspects of grants, cooperative agreements or contracts through which clinical trials are conducted, as well as those participants making decisions about the design and conduct of clinical trials.
+    </p>
+    <p>
+      <span class="label-section">NCI Staff Instructions:</span>  Once you have completed your GCP training, please go to the <a class="link-text" href="gcp?xpage=main">Training Certificate Repository</a> (select tab on the top) to upload your completed certificate(s).  For best results, please use "Print to PDF" when completing training to output a pdf to upload to this site or you may scan the printed certificate and save as a pdf to upload.  Please refer to the Instructions for Uploading GCP documents quick reference document for more detailed information (including pdf document naming requirements).
+    </p>
+    <p class="p_comment">
+      Note:  If you have more than one certificate (i.e. the course provides individual certificates for each section of their course), you must combine those into one pdf document prior to uploading. A pdf Adobe Portfolio is not permitted for this upload.
+    </p>
+  </div>
+  <div class="col-md-10" ng-if="c.xpage == 'main'">
+    <widget id="gcp-training"></widget> 
+  </div>
+  <div class="col-md-10" ng-if="c.xpage == 'search'">
+    <widget id="gcp-search"></widget> 
+  </div>
+  <div class="col-md-10" ng-if="c.xpage == 'report'">
+    <widget id="gcp-report"></widget> 
   </div>
   <div class="col-md-1">
   </div>

@@ -32,12 +32,12 @@
         <sys_created_by>zhoujim@nih.gov</sys_created_by>
         <sys_created_on>2018-10-09 18:20:52</sys_created_on>
         <sys_id>50fb03addb45a740b86770c08c961975</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-10-09 18:21:39</sys_updated_on>
+        <sys_updated_on>2019-03-12 14:00:36</sys_updated_on>
         <table>x_naci_gcp_gcp_task</table>
         <timezone/>
-        <validated>false</validated>
+        <validated>true</validated>
         <workflow display_value="gcp certificate approval workflow">fd1b60bedbebdb00b86770c08c96195a</workflow>
     </wf_workflow_version>
     <wf_workflow action="INSERT_OR_UPDATE">

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>GCP Batch Update</name>
+        <run_as/>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>5</run_dayofweek>
+        <run_period/>
+        <run_start>2019-03-12 15:00:30</run_start>
+        <run_time>1970-01-01 23:00:00</run_time>
+        <run_type>weekly</run_type>
+        <script><![CDATA[//group by employee_id and active = true
+var active_ids = [];
+var gr = new GlideRecord('x_naci_gcp_gcp_task');
+gr.addQuery('active',true);
+gr.query();
+while(gr.next()){
+	var eid = gr.employee_id.toString();
+	if(active_ids.indexOf(eid) == -1){
+		active_ids.push(eid);
+	}
+}
+var totalRecord2Update = 0;
+active_ids.forEach(function(aid){
+	var user_item = new GlideRecord('sys_user');
+	user_item.addQuery('sys_id', aid);
+	user_item.addQuery('active', true);
+	user_item.addQuery('user_name','!=', 'NULL');
+	user_item.query();
+	if(user_item.getRowCount() == 0){
+		//if Not found, then active = false, log to comment: append "&&Not found"
+		gr = new GlideRecord('x_naci_gcp_gcp_task');
+		gr.addQuery('employee_id',aid);
+		gr.query();
+		while(gr.next()){
+			gr.active = false;
+			gr.comment = gr.comment.toString() + "&&Not found";
+			gr.update();
+			totalRecord2Update ++;
+		}
+	}
+	else{
+		user_item.next();
+		var need2Update = false;
+		//update their Supervisor's information, their Organization, and their Employee Type, if Transferred, then active = false, log to comment: append "&&Transferred"
+		var supervisor_id =  user_item.manager.toString();
+		var supervisor_name = user_item.getDisplayValue('manager');
+		var org = user_item.getDisplayValue('u_long_org_division');
+		var e_type = user_item.getDisplayValue('u_employee_classification');
+		gr = new GlideRecord('x_naci_gcp_gcp_task');
+		gr.addQuery('employee_id',aid);
+		gr.query();
+		while(gr.next()){
+			if(supervisor_id != '' && supervisor_id != gr.manager_id.toString()){
+				gr.manager = supervisor_name;
+				gr.manager_id = supervisor_id;
+				need2Update = true;
+			}
+			if(e_type != '' && e_type != gr.employee_type.toString()){
+				gr.employee_type = e_type;
+				need2Update = true;
+			}
+			if(org != '' && org != gr.organization.toString()){
+				if(org.indexOf('NCI ') !== 0){
+				    gr.active = false;
+					gr.comment = gr.comment.toString() + "&&Transferred";
+				}
+				gr.organization = org;
+				need2Update = true;
+			}
+			
+			if(need2Update){
+				gr.update();
+				//total need to update
+				totalRecord2Update++;
+			}
+			
+		}
+	}
+	
+});]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2019-03-12 16:02:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3ae26f4fdbcc334054d8ff621f961980</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>GCP Batch Update</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sysauto_script_3ae26f4fdbcc334054d8ff621f961980</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-03-12 21:11:59</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,spUtil,GCPReportSearch,GCPHistoryData) {
+  /* widget controller */
+  var c = this;
+	
+	c.data.today = new Date().getTime();
+
+  c.data.maxSize = 5;
+	c.data.pageSize = 10;
+	c.data.bigCurrentPage = 1;
+	
+	c.data.filtered = {};
+	
+	c.pageChanged = function() {
+    
+  };
+	
+	$scope.sortKey = 'c_date';
+	$scope.reverse = true;
+	
+	$scope.sort = function(keyname) {		
+		$scope.sortKey = keyname;
+		$scope.reverse = !$scope.reverse;
+	};
+	
+	c.handleKeyPress = function(keyEvent){
+		if (keyEvent.which === 13){
+			c.filterTraining();
+		}
+	}
+	
+	c.filterTraining = function(){
+		if(c.data.searchText.length < 3){
+			return;
+		}
+		var params = {};
+		params.employee_name = c.data.searchText;
+		params.active = true;
+		GCPReportSearch.getReport(c.data.sessionId,params)
+		.then(function(res) {
+			c.data.trainings = res.data.result;
+			c.data.bigCurrentPage = 1;
+			c.data.selectedTrainings = [];
+			$scope.$apply();
+		}, function(error){
+				console.log(error);
+		});
+	}
+	
+	c.showHistory = function(employee_id,type){
+		GCPHistoryData.getHistoryData(employee_id,type,c.data.sessionId).then(function(res){
+			window.displayHistoryDialog(res.data.result);
+		},function(error){
+			console.log(error);
+		});
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>gcp-search</id>
+        <internal>false</internal>
+        <link/>
+        <name>gcp search</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  data.sessionId = gs.getSession().getSessionToken();
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>yuw5@nih.gov</sys_created_by>
+        <sys_created_on>2019-03-13 15:13:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c18f68ebdb84330054d8ff621f961983</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>gcp search</sys_name>
+        <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
+        <sys_update_name>sp_widget_c18f68ebdb84330054d8ff621f961983</sys_update_name>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-03-13 18:22:27</sys_updated_on>
+        <template><![CDATA[<div class="search-box">
+   <div class="search-action-section">
+      <div class="tab-search-input" style="float:left;">
+        <input type="text"  ng-model="c.data.searchText" placeholder="Employee Name" ng-keypress="c.handleKeyPress($event)" id="my_training_search" name="my_training_search" class="form-control">
+      </div>
+      <span class="tab-search-button" style="float:left;" ng-click="c.filterTraining()" aria-label="search"><i class="fa fa-search" aria-hidden="true"></i></span>	
+    </div>
+    <div class="search-result-section">
+      <table>
+        <tr class="table-header">
+          <th ng-click="sort('name')" style="width:15%;">Name <i ng-show="sortKey == 'name' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'name' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('type')" style="width:10%;">Training Type <i ng-show="sortKey == 'type' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'type' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('employee')" style="width:10%;">Employee Name <i ng-show="sortKey == 'employee' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'employee' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('c_date')" style="width:10%;">Completion Date <i ng-show="sortKey == 'c_date' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'c_date' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('rr_date')" style="width:10%;">Required Renewal Date <i ng-show="sortKey == 'rr_date' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'rr_date' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('manager')" style="width:10%;">Supervisor/Project Officer <i ng-show="sortKey == 'manager' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'manager' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('doc')" style="width:10%;">Organization <i ng-show="sortKey == 'doc' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'doc' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th ng-click="sort('status')" style="width:10%;">Status <i ng-show="sortKey == 'status' && !reverse" class="fa fa-arrow-up" aria-hidden="true"></i><i ng-show="sortKey == 'status' && reverse" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+          <th style="">Action</th>
+        </tr>
+        <tr class="table-row" ng-repeat="x in c.data.trainings | orderBy:sortKey:reverse" ng-show="$index >= (c.data.bigCurrentPage -1) * c.data.pageSize && $index < c.data.bigCurrentPage * c.data.pageSize">
+          <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.name}}</a></td>
+          <td>{{x.type}}</td>
+          <td>{{x.employee}}</td>
+          <td>{{x.c_date | date:'MM/dd/yyyy'}}</td>
+          <td><span ng-class="x.rr_date < c.data.today  ? 'status-pastdue' : ''">{{x.rr_date | date:'MM/dd/yyyy'}}</span></td>
+          <td>{{x.manager}}</td>
+          <td>{{x.doc}}</td>
+          <td>
+            <span ng-class="x.active == 'true' ? (x.status == 'Pending Acceptance' ? 'status-pending' : (x.status == 'Accepted' ? 'status-accepted' : 'status-rejected')) : 'status-archived'">
+              {{x.active == 'true' ? x.status : 'Archived'+'-'+x.status}}
+            </span>
+          </td>
+          <td>
+            <button type="button" class="table-button" ng-click="c.showHistory(x.employee_id, x.type)">
+              History
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="tab-paging-section" style="padding:0px;float:left; width:100%;margin-top:10px;">
+      <ul ng-if="(c.data.trainings.length / c.data.pageSize) > 1"  uib-pagination total-items="c.data.trainings.length" items-per-page="c.data.pageSize" ng-model="c.data.bigCurrentPage" max-size="c.data.maxSize" class="pagination-sm" ng-change="c.pageChanged()" direction-links="false" boundary-links="true" force-ellipses="true">
+      </ul>
+      <div class="tab-paging-setting">
+        <label for="report_pageSize" class="label-hidden">pageSize:</label>
+        <select class="form-control" id="report_pageSize" ng-model="c.data.pageSize" ng-init="c.data.pageSize = '10'">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="tab-paging-label">Items per page:</div>
+     </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

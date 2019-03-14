@@ -42,15 +42,15 @@
         <sys_created_on>2018-08-06 15:02:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b9c83c8ddb375340b86770c08c96192f</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>gcp history</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_b9c83c8ddb375340b86770c08c96192f</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-09-28 19:06:07</sys_updated_on>
+        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-03-12 22:10:46</sys_updated_on>
         <template><![CDATA[<div>
   <div id="history_popup" class="modal fade" data-keyboard="false" data-backdrop="static" style="overflow-y:auto; overflow-x: auto;">   
     <div class="modal-dialog">
@@ -65,17 +65,21 @@
           <div class="form-section">
             <table>
               <tr class="table-header">
-                <th>Name</th>
-                <th>Completion Date</th>
-                <th>Status</th>
+                <th width="30%">Name</th>
+                <th width="20%">Completion Date</th>
+                <th width="20%">Status</th>
+                <th width="30%">Detail</th>
               </tr>
               <tr class="table-row" ng-repeat="x in c.data.historyList">
                 <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.certificate_name}}</a></td>
                 <td>{{x.certificate_completed_date}}</td>
                 <td>
                   <span ng-class="x.active == 'true' ? (x.status == 'Pending Acceptance' ? 'status-pending' : (x.status == 'Accepted' ? 'status-accepted' : 'status-rejected')) : 'status-archived'">
-                  	{{x.active == 'true' ? x.status : (x.status == 'Rejected' ? 'Archived-Rejected' : 'Archived')}}
+                  	{{x.active == 'true' ? x.status : 'Archived'+'-'+x.status}}
                   </span>
+                </td>
+                <td>
+                  <span ng-bind-html="x.comment.indexOf('&&') == 0 ? x.comment.substring(2) : x.comment.replace('&&','<br>')"></span>
                 </td>
               </tr>
             </table>
