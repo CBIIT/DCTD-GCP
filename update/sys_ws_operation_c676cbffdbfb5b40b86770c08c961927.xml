@@ -70,14 +70,27 @@
 		task_item.addQuery('certificate_type', certificate_type);
 	}	
 	if(stage != null && stage.length > 0){
-		task_item.addQuery('stage', stage);
+		if(stage == "except Rejected"){
+			task_item.addQuery('stage','NOT IN', 'Rejected,Archived-Rejected');
+		}
+		else{
+			task_item.addQuery('stage', stage);
+		}
 	}
 	if(active != null && active.length > 0){
 		task_item.addQuery('active', active);
 	}		
 	task_item.orderByDesc('certificate_completion_date');
 	task_item.query();
+	var cache = [];
 	while(task_item.next()){
+		var e_id = task_item.getDisplayValue('employee_id');
+		if(cache.indexOf(e_id) > -1){
+			continue;
+		}
+		else{
+			cache.push(e_id);
+		}
 		var item = {};
 		item.sys_id = task_item.sys_id.toString();
 		item.name = task_item.getDisplayValue('certificate_name');
@@ -91,9 +104,6 @@
 		item.status = task_item.getDisplayValue('stage');
 		item.active = task_item.getDisplayValue('active');
 		item.comment = task_item.getDisplayValue('comment');
-		if(!item.active){
-			item.status = "Archived";
-		}
 		var attachment =  new GlideRecord('sys_attachment');
 		attachment.addQuery('table_sys_id',task_item.sys_id);
 		attachment.query();
@@ -116,7 +126,7 @@
         <sys_created_on>2018-08-15 14:25:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c676cbffdbfb5b40b86770c08c961927</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>getReport</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -124,7 +134,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ws_operation_c676cbffdbfb5b40b86770c08c961927</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-13 14:22:49</sys_updated_on>
+        <sys_updated_on>2019-03-18 17:57:14</sys_updated_on>
         <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

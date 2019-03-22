@@ -12,6 +12,8 @@
 	c.data.pageSize = 10;
 	c.data.bigCurrentPage = 1;
 	
+	c.data.trainings = [];
+	
 	c.data.filtered = {};
 	
 	c.pageChanged = function() {
@@ -86,7 +88,7 @@
         <sys_created_on>2019-03-13 15:13:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c18f68ebdb84330054d8ff621f961983</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>gcp search</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -94,7 +96,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_c18f68ebdb84330054d8ff621f961983</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-13 18:22:27</sys_updated_on>
+        <sys_updated_on>2019-03-19 14:44:15</sys_updated_on>
         <template><![CDATA[<div class="search-box">
    <div class="search-action-section">
       <div class="tab-search-input" style="float:left;">
@@ -148,7 +150,7 @@
           <option value="20">20</option>
         </select>
       </div>
-      <div class="tab-paging-label">Items per page:</div>
+      <div class="tab-paging-label"><b>{{c.data.trainings.length}}</b> Items | Items per page:</div>
      </div>
 </div>]]></template>
     </sp_widget>

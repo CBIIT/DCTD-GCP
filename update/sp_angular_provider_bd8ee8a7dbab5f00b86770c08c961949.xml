@@ -19,6 +19,7 @@
 											 'Fail to upload the certificate, file should be in PDF format.'
 											];
 	this.statusList = [{label: 'All trainings except Archived', value: 'default'},
+										 {label: 'All trainings except Rejected & Achived-Rejected', value: 'except Rejected'},
 										 {label: 'Pending Acceptance', value: 'Pending Acceptance'},
 										 {label: 'Accepted', value: 'Accepted'},
 										 {label: 'Rejected', value: 'Rejected'},
@@ -70,7 +71,7 @@
         <sys_created_on>2018-08-01 22:27:35</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bd8ee8a7dbab5f00b86770c08c961949</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>GCPConstants</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -78,7 +79,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_angular_provider_bd8ee8a7dbab5f00b86770c08c961949</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-12 21:23:58</sys_updated_on>
+        <sys_updated_on>2019-03-18 15:45:57</sys_updated_on>
         <type>service</type>
     </sp_angular_provider>
 </record_update>

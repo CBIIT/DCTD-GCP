@@ -32,13 +32,13 @@ active_ids.forEach(function(aid){
 	user_item.addQuery('user_name','!=', 'NULL');
 	user_item.query();
 	if(user_item.getRowCount() == 0){
-		//if Not found, then active = false, log to comment: append "&&Not found"
+		//if Not found, then active = false, log to comment: append "&&Left NCI or Retired"
 		gr = new GlideRecord('x_naci_gcp_gcp_task');
 		gr.addQuery('employee_id',aid);
 		gr.query();
 		while(gr.next()){
 			gr.active = false;
-			gr.comment = gr.comment.toString() + "&&Not found";
+			gr.comment = gr.comment.toString() + "&&Left NIH or Retired";
 			gr.update();
 			totalRecord2Update ++;
 		}
@@ -67,7 +67,7 @@ active_ids.forEach(function(aid){
 			if(org != '' && org != gr.organization.toString()){
 				if(org.indexOf('NCI ') !== 0){
 				    gr.active = false;
-					gr.comment = gr.comment.toString() + "&&Transferred";
+					gr.comment = gr.comment.toString() + "&&Transferred to other IC";
 				}
 				gr.organization = org;
 				need2Update = true;
@@ -88,15 +88,15 @@ active_ids.forEach(function(aid){
         <sys_created_on>2019-03-12 16:02:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>3ae26f4fdbcc334054d8ff621f961980</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>GCP Batch Update</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sysauto_script_3ae26f4fdbcc334054d8ff621f961980</sys_update_name>
-        <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-12 21:11:59</sys_updated_on>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-03-20 14:45:02</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

@@ -70,6 +70,9 @@
 		if(c.data.status == "default"){
 			params.active = true;
 		}
+		else if(c.data.status == "except Rejected"){
+			params.stage = c.data.status;
+		}
 		else if(c.data.status == "Pending Acceptance"){
 			params.stage = c.data.status;
 			params.active = true;
@@ -135,7 +138,7 @@
 			itemsSorted = c.data.trainings;
 		}
 		
-		console.log(c.data.trainings);
+		//console.log(c.data.trainings);
 		itemsSorted.forEach(function(t){
 			if(c.data.selectedTrainings.indexOf(t.sys_id) > -1 ){
 				var tmp = {};
@@ -276,7 +279,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>262</sys_mod_count>
+        <sys_mod_count>274</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -284,7 +287,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-13 14:29:17</sys_updated_on>
+        <sys_updated_on>2019-03-19 14:45:45</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
@@ -373,9 +376,7 @@
   </div>
   <div class="report-result-section">
     <div class="report-action-section">
-        <div class="button-bar">
-          <button type="button" class="btn btn-primary" ng-click="c.export2Excel()" role="button" aria-invalid="false" style="" ng-disabled="c.data.selectedTrainings.length == 0"> <i class="fa fa-download" aria-hidden="true"></i> Export to Excel </button>
-        </div>
+      <button type="button" class="btn btn-primary" ng-click="c.export2Excel()" role="button" aria-invalid="false" style="" ng-disabled="c.data.selectedTrainings.length == 0"> <i class="fa fa-download" aria-hidden="true"></i> Export to Excel </button>
     </div>
     <div class="report-result-section">
       <table>
@@ -428,7 +429,7 @@
           <option value="20">20</option>
         </select>
       </div>
-      <div class="tab-paging-label">Items per page:</div>
+      <div class="tab-paging-label"><b>{{c.data.trainings.length}}</b> Items | Items per page:</div>
       </div>
   </div>
 </div>]]></template>
