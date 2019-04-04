@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_row">
-    <sp_row action="INSERT_OR_UPDATE">
+<record_update table="sp_column">
+    <sp_column action="INSERT_OR_UPDATE">
         <class_name/>
         <order>1</order>
-        <sp_column/>
-        <sp_container display_value="GCP home page - Container 1">3dfcc639dbefd70054d8ff621f9619e3</sp_container>
-        <sys_class_name>sp_row</sys_class_name>
+        <size>12</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">e470bbefdb54bb00b86770c08c9619e8</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
         <sys_created_by>yuw5@nih.gov</sys_created_by>
-        <sys_created_on>2018-07-27 18:53:34</sys_created_on>
+        <sys_created_on>2019-03-26 15:32:15</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>71cd82f9dbefd70054d8ff621f9619d3</sys_id>
+        <sys_id>6070bbefdb54bb00b86770c08c9619ea</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>1</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
-        <sys_update_name>sp_row_71cd82f9dbefd70054d8ff621f9619d3</sys_update_name>
+        <sys_update_name>sp_column_6070bbefdb54bb00b86770c08c9619ea</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2018-07-27 18:53:34</sys_updated_on>
-    </sp_row>
+        <sys_updated_on>2019-03-26 15:32:15</sys_updated_on>
+    </sp_column>
 </record_update>
