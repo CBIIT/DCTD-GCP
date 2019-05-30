@@ -9,6 +9,8 @@
 	
 	c.data.today = new Date().getTime();
 	
+	c.data.search_text = "Search";
+	
 	c.data.maxSize = 5;
 	c.data.pageSize = 10;
 	c.data.bigCurrentPage = 1;
@@ -51,10 +53,23 @@
 	
 	c.filterTraining = function(){
 		var params = {};
-		params.completion_date_start = c.data.completionDate_start;
-		params.completion_date_end = c.data.completionDate_end;
-		params.renew_date_start = c.data.renewDate_start;
-		params.renew_date_end = c.data.renewDate_end;
+		var dt = "";
+		if(c.data.completionDate_start && c.data.completionDate_start !== ""){
+			dt = new Date(c.data.completionDate_start).toISOString();
+			params.completion_date_start = dt.substring(0, 10);
+		}
+		if(c.data.completionDate_end && c.data.completionDate_end !== ""){
+			dt = new Date(c.data.completionDate_end).toISOString();
+			params.completion_date_end = dt.substring(0, 10);
+		}
+		if(c.data.renewDate_start && c.data.renewDate_start !== ""){
+			dt = new Date(c.data.renewDate_start).toISOString();
+			params.renew_date_start = dt.substring(0, 10);
+		}
+		if(c.data.renewDate_end && c.data.renewDate_end !== ""){
+			dt = new Date(c.data.renewDate_end).toISOString();
+			params.renew_date_end = dt.substring(0, 10);
+		}
 		if(c.data.isCTEPRCRTeam){
 			params.employee_name = c.data.employeeName;
 			params.manager_name = c.data.managerName;
@@ -68,6 +83,9 @@
 		params.employee_type = c.data.employeeType;
 		params.certificate_type = c.data.trainingType;
 		if(c.data.status == "default"){
+			params.stage = c.data.status;
+		}
+		else if(c.data.status == "except Archived"){
 			params.active = true;
 		}
 		else if(c.data.status == "except Rejected"){
@@ -97,14 +115,13 @@
 			params.stage = 'Rejected';
 			params.active = false;
 		}
-		else{
-			params.active = false;
-		}
+		c.data.search_text = "Searching ...";
 		GCPReportSearch.getReport(c.data.sessionId,params)
 		.then(function(res) {
 			c.data.trainings = res.data.result;
 			c.data.bigCurrentPage = 1;
 			c.data.selectedTrainings = [];
+			c.data.search_text = "Search";
 			$scope.$apply();
 		}, function(error){
 				console.log(error);
@@ -149,6 +166,7 @@
 				tmp["Required Renewal Date"] = long2DateString(t.rr_date);
 				tmp["Supervisor Name"] = t.manager;
 				tmp.Organization = t.doc;
+				tmp.Status = t.active == 'true' ? t.status : 'Archived'+'-'+t.status;
 				data.push(tmp);
 			}
 		});
@@ -240,10 +258,18 @@
 		var tmp = task_item.addQuery('employee_id', data.employee_id);
 		tmp.addOrCondition('manager_id',data.employee_id);
 	}
-	task_item.addQuery('active',true);
+	//task_item.addQuery('active',true);
 	task_item.orderByDesc('certificate_completion_date');
 	task_item.query();
+	var cache = [];
 	while(task_item.next()){
+		var e_id = task_item.getDisplayValue('employee_id');
+		if(cache.indexOf(e_id) > -1){
+			continue;
+		}
+		else{
+			cache.push(e_id);
+		}
 		var item = {};
 		item.sys_id = task_item.sys_id.toString();
 		item.name = task_item.getDisplayValue('certificate_name');
@@ -256,9 +282,6 @@
 		item.doc = task_item.getDisplayValue('organization');
 		item.status = task_item.getDisplayValue('stage');
 		item.active = task_item.getDisplayValue('active');
-		if(!item.active){
-			item.status = "Archived";
-		}
 		var attachment =  new GlideRecord('sys_attachment');
 		attachment.addQuery('table_sys_id',task_item.sys_id);
 		attachment.query();
@@ -279,7 +302,7 @@
         <sys_created_on>2018-07-30 18:54:06</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>43aa297adba79b0054d8ff621f9619ca</sys_id>
-        <sys_mod_count>274</sys_mod_count>
+        <sys_mod_count>297</sys_mod_count>
         <sys_name>gcp report</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -287,7 +310,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_43aa297adba79b0054d8ff621f9619ca</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-19 14:45:45</sys_updated_on>
+        <sys_updated_on>2019-05-30 15:57:32</sys_updated_on>
         <template><![CDATA[<div class="report-box">
   
 	<div class="filter-section">
@@ -369,8 +392,8 @@
       </div>
     </div>
     <div class="filter-width-10" >
-      <button type="button" class="btn btn-primary btn-upload" ng-click="c.filterTraining()" style="margin-top:25px;">
-        Filter
+      <button type="button" class="btn btn-primary btn-upload" ng-click="c.filterTraining()" style="margin-top:25px;" ng-disabled="c.data.search_text == 'Searching ...'">
+        {{c.data.search_text}}
       </button>
     </div>
   </div>

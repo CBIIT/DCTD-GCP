@@ -69,7 +69,7 @@
 	if(certificate_type != null && certificate_type.length > 0){
 		task_item.addQuery('certificate_type', certificate_type);
 	}	
-	if(stage != null && stage.length > 0){
+	if(stage != null && stage.length > 0 && stage != "default"){
 		if(stage == "except Rejected"){
 			task_item.addQuery('stage','NOT IN', 'Rejected,Archived-Rejected');
 		}
@@ -126,7 +126,7 @@
         <sys_created_on>2018-08-15 14:25:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c676cbffdbfb5b40b86770c08c961927</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>getReport</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -134,7 +134,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_ws_operation_c676cbffdbfb5b40b86770c08c961927</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-18 17:57:14</sys_updated_on>
+        <sys_updated_on>2019-05-30 15:03:48</sys_updated_on>
         <web_service_definition display_value="gcpRestAPI">b36bbd43dba3db0054d8ff621f961968</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
