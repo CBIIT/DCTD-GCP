@@ -13,7 +13,7 @@
         <sys_created_on>2018-08-24 21:10:03</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2159bef6db44a300b86770c08c9619bc</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>x_naci_gcp.gcp_url</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -21,9 +21,9 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sys_properties_2159bef6db44a300b86770c08c9619bc</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-04-09 14:29:02</sys_updated_on>
+        <sys_updated_on>2019-06-10 15:00:53</sys_updated_on>
         <type>string</type>
-        <value>https://service-dev2.nci.nih.gov/gcp</value>
+        <value>https://service-stage.nci.nih.gov/gcp</value>
         <write_roles/>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=2159bef6db44a300b86770c08c9619bc"/>
