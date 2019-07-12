@@ -6,7 +6,13 @@
   /* widget controller */
   var c = this;
 	
-	c.data.today = new Date().getTime();
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0');
+	var yyyy = today.getFullYear();
+
+	c.data.today = new Date(today);
+	c.data.today.setHours(0,0,0,0);
 
   c.data.maxSize = 5;
 	c.data.pageSize = 10;
@@ -19,6 +25,11 @@
 	c.pageChanged = function() {
     
   };
+	
+	c.compareDate = function(dt){
+		var date_1 = new Date(dt);
+		return {'status-pastdue': date_1 < c.data.today};
+	};
 	
 	$scope.sortKey = 'c_date';
 	$scope.reverse = true;
@@ -88,7 +99,7 @@
         <sys_created_on>2019-03-13 15:13:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c18f68ebdb84330054d8ff621f961983</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>gcp search</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -96,7 +107,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_c18f68ebdb84330054d8ff621f961983</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-19 14:44:15</sys_updated_on>
+        <sys_updated_on>2019-06-11 20:41:27</sys_updated_on>
         <template><![CDATA[<div class="search-box">
    <div class="search-action-section">
       <div class="tab-search-input" style="float:left;">
@@ -121,8 +132,8 @@
           <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.name}}</a></td>
           <td>{{x.type}}</td>
           <td>{{x.employee}}</td>
-          <td>{{x.c_date | date:'MM/dd/yyyy'}}</td>
-          <td><span ng-class="x.rr_date < c.data.today  ? 'status-pastdue' : ''">{{x.rr_date | date:'MM/dd/yyyy'}}</span></td>
+          <td>{{x.c_date_str}}</td>
+          <td><span ng-class="c.compareDate(x.rr_date_str)">{{x.rr_date_str}}</span></td>
           <td>{{x.manager}}</td>
           <td>{{x.doc}}</td>
           <td>

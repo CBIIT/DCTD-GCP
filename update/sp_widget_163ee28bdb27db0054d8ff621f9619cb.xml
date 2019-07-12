@@ -6,7 +6,13 @@
   /* widget controller */
   var c = this;
 	
-	c.data.today = new Date().getTime();
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0');
+	var yyyy = today.getFullYear();
+
+	c.data.today = new Date(today);
+	c.data.today.setHours(0,0,0,0);
 
   c.data.maxSize = 5;
 	c.data.pageSize = 10;
@@ -17,6 +23,11 @@
 	c.pageChanged = function() {
     
   };
+	
+	c.compareDate = function(dt){
+		var date_1 = new Date(dt);
+		return {'status-pastdue': date_1 < c.data.today};
+	};
 	
 	$scope.sortKey = 'c_date';
 	$scope.reverse = true;
@@ -124,6 +135,8 @@
 		item.employee = task_item.getDisplayValue('employee_name');
 		item.c_date = Date.parse(task_item.getDisplayValue('certificate_completion_date'));
 		item.rr_date = Date.parse(task_item.getDisplayValue('certificate_renew_date'));
+		item.c_date_str = task_item.getDisplayValue('certificate_completion_date');
+		item.rr_date_str = task_item.getDisplayValue('certificate_renew_date');
 		item.supervisor = task_item.getDisplayValue('manager');
 		item.doc = task_item.getDisplayValue('organization');
 		item.comment = task_item.getDisplayValue('comment');
@@ -148,7 +161,7 @@
         <sys_created_on>2018-07-31 18:27:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>163ee28bdb27db0054d8ff621f9619cb</sys_id>
-        <sys_mod_count>104</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>gcp employee trainings</sys_name>
         <sys_package display_value="gcp" source="x_naci_gcp">609215f9dbe35b00b86770c08c9619e2</sys_package>
         <sys_policy/>
@@ -156,7 +169,7 @@
         <sys_scope display_value="gcp">609215f9dbe35b00b86770c08c9619e2</sys_scope>
         <sys_update_name>sp_widget_163ee28bdb27db0054d8ff621f9619cb</sys_update_name>
         <sys_updated_by>yuw5@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-03-19 15:17:22</sys_updated_on>
+        <sys_updated_on>2019-06-11 20:43:18</sys_updated_on>
         <template><![CDATA[<div class="tab-box">
 	<div class="tab-search-section">
     	<div class="tab-button-bar">
@@ -189,8 +202,8 @@
         <td><a class="link-text" href="sys_attachment.do?view=true&sys_id={{x.attachment_id}}" target="_blank">{{x.name}}</a></td>
         <td>{{x.type}}</td>
         <td>{{x.employee}}</td>
-        <td>{{x.c_date | date:'MM/dd/yyyy'}}</td>
-        <td><span ng-class="x.rr_date < c.data.today  ? 'status-pastdue' : ''">{{x.rr_date | date:'MM/dd/yyyy'}}</span></td>
+        <td>{{x.c_date_str}}</td>
+        <td><span ng-class="c.compareDate(x.rr_date_str)">{{x.rr_date_str}}</span></td>
         <td>{{x.supervisor}}</td>
         <td>{{x.doc}}</td>
         <td><span ng-class="x.status == 'Pending Acceptance' ? 'status-pending' : (x.status == 'Accepted' ? 'status-accepted' : 'status-rejected')">{{x.status}}</span></td>
